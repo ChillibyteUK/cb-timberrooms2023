@@ -1,0 +1,34 @@
+.contact {
+    &__contact {
+        display: flex;
+        max-width: fit-content;
+        text-decoration: none;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        color: var(--col-light-400);
+        transition: color var(--transition);
+    }
+    a.contact__contact:hover {
+        color: var(--col-highlight-400);
+    }
+    &__icon {
+        width: 3rem;
+        height: 3rem;
+        background-color: var(--col-dark);
+        color: var(--col-green-400);
+        border-radius: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            font-size: 1.5rem;
+            font-weight: 900;
+            line-height: 3.5rem;
+            margin-bottom: 0;
+        }
+    }
+    iframe {
+        border-radius: var(--border2);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+}

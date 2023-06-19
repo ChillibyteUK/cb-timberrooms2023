@@ -1,0 +1,52 @@
+ .cta {
+
+    --line-width: 150px;
+
+    padding-block: 3rem;
+
+    img {
+        width: 317px;
+        margin-bottom: 0.5rem;
+    }
+
+    h3 {
+        font-size: var(--fs-500);
+    }
+
+    a {
+        display: inline-block;
+    }
+
+    &__grid {
+        display: grid;
+        column-gap: 1rem;
+        justify-content: center;
+        grid-template-columns: var(--line-width) auto var(--line-width);
+        .h5 {
+            margin-bottom: 0;
+        }
+    }
+    .line {
+        position: relative;
+        width: var(--line-width);
+        align-self: center;
+        &::before {
+            position: absolute;
+            content: "";
+            background-color: var(--col-light-400);
+            width: 100%;
+            height: 6px;
+            left: 0;
+            right: 0;
+        }
+    }
+ }
+
+.sidebar .cta {
+    a:hover {
+        color: var(--col-primary-400);
+    }
+    .cta__grid {
+        grid-template-columns: auto;
+    }
+}

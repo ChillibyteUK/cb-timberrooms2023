@@ -1,0 +1,42 @@
+.cs_related {
+    &__grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &__slide a {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        border-radius: var(--border1);
+        &:hover {
+            img {
+                transform: scale(1.05);
+            }
+            .overlay {
+                opacity: 1;
+            }
+        }
+        img {
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            object-position: center;
+            transition: transform var(--transition);
+        }
+        .overlay {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-content: center;
+            background-color: hsl(var(--hsl-col-primary-900) / 0.8);
+            opacity: 0;
+            transition: opacity var(--transition);
+            h3 {
+                text-align: center;
+                font-size: var(--fs-500);
+                padding-inline: 2rem;
+            }
+        }
+    }
+}

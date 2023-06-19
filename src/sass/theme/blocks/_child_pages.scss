@@ -1,0 +1,41 @@
+.child_pages {
+    &__grid {
+        display: grid;
+        gap: 1rem;
+        @media (min-width:992px) {
+            grid-template-columns: repeat(4,1fr);
+        }
+    }
+    &__card {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        border-radius: var(--border1);
+        overflow: hidden;
+        display: block;
+        height: 100%;
+        background-color: var(--col-light-400);
+        &:hover {
+            .child_pages__image img {
+                transform: scale(1.05);
+            }
+            .child_pages__content {
+                color: var(--col-primary-400);
+            }
+        }
+    }
+    &__image {
+        overflow: hidden;
+        img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            object-position: center;
+            transition: transform var(--transition);
+        }
+    }
+    &__content {
+        padding: 1rem;
+        transition: color var(--transition);
+        font-weight: var(--fw-900);
+        font-size: var(--fs-450);
+    }
+}

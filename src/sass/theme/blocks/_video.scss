@@ -1,0 +1,12 @@
+.video {
+    .lite-vimeo {
+        width: min(800px,90vw);
+        margin-inline: auto;
+        border-radius: var(--border2);
+        overflow: hidden;
+        #frame:hover .lvo-playbtn {
+            background-color: var(--col-highlight-400);
+        }
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+}

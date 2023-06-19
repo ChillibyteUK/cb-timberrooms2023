@@ -1,0 +1,23 @@
+header.hero {
+    margin-top: var(--h-top);
+    background-color: var(--col-primary-400);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(50vh - var(--h-top));
+
+    display: grid;
+    place-content: center;
+
+    h1 {
+        color: white;
+        font-size: 2rem;
+        font-size: var(--fs-900);
+        font-weight: var(--fw-900);
+        margin: 1rem 0;
+        text-align: center;
+        text-shadow: 1px 1px 6px var(--col-primary-400);
+    }
+
+
+}
