@@ -10,6 +10,10 @@ else {
 
 $class = $block['className'] ?? null ?: '';
 
+if (get_field('bottom_margin')[0] == 'Yes') {
+    $class .= ' mb-5';
+}
+
 ?>
 <link rel="preload" as="image" href="<?=$img?>">
 <header class="hero <?=$class?>" style="background-image:url(<?=$img?>)">

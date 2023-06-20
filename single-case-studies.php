@@ -45,7 +45,7 @@ if (get_the_terms(get_the_ID(),'counties')) {
                 </strong>
                 <img src="<?=get_the_post_thumbnail_url(get_the_ID(),'full')?>" alt="" class="mb-4">
                 <?=apply_filters('the_content',get_the_content())?>
-                <div class="cta">
+                <div class="cta fw-bold">
                     To see more of our bespoke designs please visit the <a href="/case-studies/">case studies</a> page. For more information and to book a free site survey please call <?=do_shortcode('[contact_phone]')?> or email <?=do_shortcode('[contact_email]')?>
                 </div>
                 <?php
