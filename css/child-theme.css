@@ -23318,7 +23318,8 @@ header.hero h1, header.hero .h1 {
 .gallery figcaption {
   display: none;
 }
-.gallery figure {
+.gallery figure,
+.gallery .gallery__image {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   cursor: pointer;
   margin-bottom: 0;
@@ -23328,13 +23329,16 @@ header.hero h1, header.hero .h1 {
   overflow: hidden;
   border-radius: var(--border1);
 }
-.gallery figure:hover .overlay {
+.gallery figure:hover .overlay,
+.gallery .gallery__image:hover .overlay {
   opacity: 1;
 }
-.gallery figure:hover img {
+.gallery figure:hover img,
+.gallery .gallery__image:hover img {
   transform: scale(1.05);
 }
-.gallery figure img {
+.gallery figure img,
+.gallery .gallery__image img {
   aspect-ratio: 4/3;
   -o-object-fit: cover;
   object-fit: cover;
@@ -23342,7 +23346,8 @@ header.hero h1, header.hero .h1 {
   object-position: center;
   transition: transform var(--transition);
 }
-.gallery figure .overlay {
+.gallery figure .overlay,
+.gallery .gallery__image .overlay {
   position: absolute;
   inset: 0;
   display: grid;
@@ -23351,10 +23356,16 @@ header.hero h1, header.hero .h1 {
   opacity: 0;
   transition: opacity var(--transition);
 }
-.gallery figure .overlay h3, .gallery figure .overlay .h3 {
+.gallery figure .overlay h3, .gallery figure .overlay .h3,
+.gallery .gallery__image .overlay h3,
+.gallery .gallery__image .overlay .h3 {
   text-align: center;
   font-size: var(--fs-500);
   padding-inline: 2rem;
+}
+
+.fancybox__caption {
+  text-align: center;
 }
 
 .child_pages__grid {

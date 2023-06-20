@@ -15,7 +15,34 @@
                 ?>
                     <div data-thumb="<?=wp_get_attachment_image_url( $i, 'large' )?>" class="gallery__image" data-aos="fade" data-aos-delay="<?=$d?>" data-aos-anchor=".gallery__grid">
                         <a href="<?=wp_get_attachment_image_url( $i, 'full' )?>" data-fancybox="gallery">
-                            <img src="<?=wp_get_attachment_image_url( $i, 'medium' )?>">
+                            <img src="<?=wp_get_attachment_image_url( $i, 'full' )?>">
+                            <figcaption class="text-center"><?=get_sub_field('image_title')?><br><?php
+                            if (get_sub_field('town') != '') {
+                                echo get_sub_field('town');
+                            }
+                            if (get_sub_field('town') && get_sub_field('county')) {
+                                echo ' - ';
+                            }
+                            if (get_sub_field('county') != '') {
+                                echo get_sub_field('county');
+                            }
+                            ?></figcaption>
+                            <div class="overlay">
+                                <h3><?=get_sub_field('image_title')?></h3>
+                                <div class="text-center">
+                                <?php
+                                if (get_sub_field('town') != '') {
+                                    echo get_sub_field('town');
+                                }
+                                if (get_sub_field('town') && get_sub_field('county')) {
+                                    echo ' - ';
+                                }
+                                if (get_sub_field('county') != '') {
+                                    echo get_sub_field('county');
+                                }
+                                ?>
+                                </div>
+                            </div>
                         </a>
                     </div>
                 <?php
@@ -33,7 +60,20 @@
                 ?>
                 <figure data-src="<?=get_the_post_thumbnail_url( $i, 'full' )?>" data-fancybox="gallery" data-aos="fade" data-aos-delay="<?=$d?>" data-aos-anchor=".gallery__grid">
                     <img src="<?=get_the_post_thumbnail_url( $i, 'large' )?>">
-                    <figcaption><?=get_the_title($i)?> - <a href="<?=get_the_permalink($i)?>">View Case Study</a></figcaption>
+                    <figcaption><?=get_the_title($i)?><br>
+                        <?php
+                        if ($town != '') {
+                            echo $town;
+                        }
+                        if ($town && $county) {
+                            echo ' - ';
+                        }
+                        if ($county != '') {
+                            echo $county;
+                        }
+                        ?><br>
+                        <a href="<?=get_the_permalink($i)?>">View Case Study</a>
+                    </figcaption>
                     <div class="overlay">
                         <h3><?=get_the_title($i)?></h3>
                         <div class="text-center">

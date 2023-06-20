@@ -10,7 +10,7 @@ else {
 
 $class = $block['className'] ?? null ?: '';
 
-if (get_field('bottom_margin')[0] == 'Yes') {
+if ((get_field('bottom_margin')[0] ?? null) == 'Yes') {
     $class .= ' mb-5';
 }
 
