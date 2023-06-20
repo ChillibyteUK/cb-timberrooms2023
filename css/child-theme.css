@@ -22795,6 +22795,7 @@ footer .container-xl {
   padding-inline-start: 0;
 }
 .navigation li {
+  padding: 0.5rem 1rem;
   border-left: 1px solid var(--col-highlight-400);
   border-right: none;
   background-color: white;
@@ -22824,7 +22825,6 @@ footer .container-xl {
   display: block;
   text-decoration: none;
   color: var(--col-primary-400);
-  padding: 0.5rem 1rem;
 }
 
 /*

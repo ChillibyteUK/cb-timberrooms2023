@@ -111,7 +111,7 @@
         padding-inline-start: 0;
     }
     li {
-        
+        padding: 0.5rem 1rem;
         border-left: 1px solid var(--col-highlight-400);
         border-right: none;
         background-color: white;
@@ -142,7 +142,6 @@
         display: block;
         text-decoration: none;
         color: var(--col-primary-400);
-        padding: 0.5rem 1rem;
     }
 
 }
