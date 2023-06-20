@@ -24,6 +24,16 @@ if (get_the_terms(get_the_ID(),'counties')) {
     $county = get_the_terms(get_the_ID(),'counties')[0]->name;
 }
 
+$galleryExtras = array();
+
+$galleryExtras[] = get_post_thumbnail_id(get_the_ID());
+
+foreach (parse_blocks(get_the_content()) as $b) {
+    if ($b['blockName'] == 'core/image') {
+        $galleryExtras[] = $b['attrs']['id'];
+    }
+}
+
 ?>
 <main class="case_study pb-3">
     <div class="container-xl pt-3">
@@ -55,7 +65,9 @@ if (get_the_terms(get_the_ID(),'counties')) {
                 <div class="image-gallery mb-3">
                     <?php
                     $d = 0;
-                    foreach(get_field('gallery') as $i) {
+                    $gallery = get_field('gallery');
+                    $gallery = array_merge($gallery, $galleryExtras);
+                    foreach($gallery as $i) {
                         ?>
                     <div data-thumb="<?=wp_get_attachment_image_url( $i, 'large' )?>" data-aos="fade" data-aos-delay="<?=$d?>" data-aos-anchor=".image-gallery">
                         <a href="<?=wp_get_attachment_image_url( $i, 'full' )?>" data-fancybox="gallery">
