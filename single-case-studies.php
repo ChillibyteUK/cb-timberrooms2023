@@ -53,15 +53,17 @@ if (get_the_terms(get_the_ID(),'counties')) {
                     ?>
                 <h3>Gallery</h3>
                 <div class="image-gallery mb-3">
-                    <?PHP
+                    <?php
+                    $d = 0;
                     foreach(get_field('gallery') as $i) {
                         ?>
-                    <div data-thumb="<?=wp_get_attachment_image_url( $i, 'large' )?>">
+                    <div data-thumb="<?=wp_get_attachment_image_url( $i, 'large' )?>" data-aos="fade" data-aos-delay="<?=$d?>" data-aos-anchor=".image-gallery">
                         <a href="<?=wp_get_attachment_image_url( $i, 'full' )?>" data-fancybox="gallery">
                             <img src="<?=wp_get_attachment_image_url( $i, 'medium' )?>">
                         </a>
                     </div>
                         <?php
+                        $d += 50;
                     }
                     ?>
                 </div>
@@ -87,17 +89,19 @@ Fancybox.bind('[data-fancybox="gallery"]', {
         'posts_per_page' => 3,
         'post__not_in' => array(get_the_ID())
     ));
+    $d = 0;
     while ($q->have_posts()) {
         $q->the_post();
         $img = get_the_post_thumbnail_url(get_the_ID());
         ?>
-        <a class="cs_card mb-4" href="<?=get_the_permalink(get_the_ID())?>">
+        <a class="cs_card mb-4" href="<?=get_the_permalink(get_the_ID())?>" data-aos="fade-up" data-aos-delay="<?=$d?>" data-aos-anchor=".sidebar">
             <div class="cs_card__image"><img src="<?=$img?>"></div>
             <div class="cs_card__title">
                 <?=get_the_title(get_the_ID())?>
             </div>
         </a>
         <?php
+        $d += 50;
     }
 
     include( get_stylesheet_directory() . '/page-templates/blocks/cb_cta.php');
