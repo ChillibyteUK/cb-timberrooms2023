@@ -7,12 +7,13 @@
     <div class="container-xl">
         <div class="gallery__grid" id="lightslider">
         <?php
+        $d = 0;
         while(have_rows('images')) {
             the_row();
             if (get_sub_field('image')) {
                 $i = get_sub_field('image');
                 ?>
-                    <div data-thumb="<?=wp_get_attachment_image_url( $i, 'large' )?>" class="gallery__image">
+                    <div data-thumb="<?=wp_get_attachment_image_url( $i, 'large' )?>" class="gallery__image" data-aos="fade" data-aos-delay="<?=$d?>" data-aos-anchor=".gallery__grid">
                         <a href="<?=wp_get_attachment_image_url( $i, 'full' )?>" data-fancybox="gallery">
                             <img src="<?=wp_get_attachment_image_url( $i, 'medium' )?>">
                         </a>
@@ -30,7 +31,7 @@
                     $county = get_the_terms($i,'counties')[0]->name;
                 }
                 ?>
-                <figure data-src="<?=get_the_post_thumbnail_url( $i, 'full' )?>" data-fancybox="gallery">
+                <figure data-src="<?=get_the_post_thumbnail_url( $i, 'full' )?>" data-fancybox="gallery" data-aos="fade" data-aos-delay="<?=$d?>" data-aos-anchor=".gallery__grid">
                     <img src="<?=get_the_post_thumbnail_url( $i, 'large' )?>">
                     <figcaption><?=get_the_title($i)?> - <a href="<?=get_the_permalink($i)?>">View Case Study</a></figcaption>
                     <div class="overlay">
@@ -53,6 +54,7 @@
                     </figure>
                 <?php
             }
+            $d += 50;
         }
         ?>
         </div>

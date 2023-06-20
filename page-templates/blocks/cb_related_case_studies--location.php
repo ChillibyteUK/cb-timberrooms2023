@@ -34,6 +34,7 @@
             $tax_town
         )
     ));
+    $d = 0;
     while ($q->have_posts()) {
         $q->the_post();
         $img = get_the_post_thumbnail_url(get_the_ID(),'large');
@@ -47,7 +48,7 @@
         }
 
         ?>
-    <div class="cs_related__slide">
+    <div class="cs_related__slide" data-aos="fade-up" data-aos-delay="<?=$d?>">
         <a href="<?=get_the_permalink(get_the_ID())?>">
             <img src="<?=$img?>" alt="<?=get_the_title(get_the_ID())?>">
             <div class="overlay">
@@ -69,6 +70,7 @@
         </a>
     </div>
         <?php
+        $d += 50;
     }
     ?>
         </div>

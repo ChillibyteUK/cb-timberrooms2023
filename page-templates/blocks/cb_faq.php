@@ -21,11 +21,12 @@
     $counter = 0;
     $show = '';
     $collapsed = 'collapsed';
+    $d = 0;
     while (have_rows('faqs')) {
         the_row();
         $ac = $accordion . '_' . $counter;
         ?>
-        <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question" class="accordion-item">
+        <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question" class="accordion-item" data-aos="fade-up" data-aos-anchor=".faq_block__inner" data-aos-delay="<?=$d?>">
             <div class="accordion-head accordion-collapse <?=$collapsed?>" itemprop="name" data-bs-toggle="collapse" id="heading_<?=$ac?>" data-bs-target="#c<?=$ac?>" role="button" aria-expanded="true" aria-controls="c<?=$ac?>">
                 <div class="pb-1"><?=get_sub_field('question')?></div>
             </div>
@@ -39,6 +40,7 @@
         $counter++;
         $show = '';
         $collapsed = 'collapsed';
+        $d += 50;
     }
     echo '</div>';
      ?>

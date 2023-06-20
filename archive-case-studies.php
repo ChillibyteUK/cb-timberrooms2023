@@ -9,11 +9,12 @@ $img = wp_get_attachment_image_url(get_field('case_studies_archive_hero','option
 <main id="main" class="caseStudies">
     <link rel="preload" as="image" href="<?=$img?>">
     <header class="hero" style="background-image:url(<?=$img?>)">
-        <h1>View our Case Studies</h1>
+        <h1 data-aos="fade">View our Case Studies</h1>
     </header>
     <div class="container-xl py-5">
         <div class="w-100 mb-4" id="csgrid">
             <?php
+        $d = 0;
     while (have_posts()) {
         the_post();
         $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
@@ -23,7 +24,7 @@ $img = wp_get_attachment_image_url(get_field('case_studies_archive_hero','option
         $slug = acf_slugify(basename(get_the_permalink()));
         $catclass = '';
         ?>
-            <div class="<?=$catclass?> caseStudy">
+            <div class="<?=$catclass?> caseStudy" data-aos="fade" data-aos-delay="<?=$d?>">
                 <a class="caseStudy_card" href="<?=$slug?>">
                     <div class="caseStudy_card__image">
                         <img src="<?=$img?>" alt="">
@@ -35,7 +36,8 @@ $img = wp_get_attachment_image_url(get_field('case_studies_archive_hero','option
                     </div>
                 </a>
             </div>
-            <?php
+        <?php
+        $d += 50;
     }
 ?>
         </div>

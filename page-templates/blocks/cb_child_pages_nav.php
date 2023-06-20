@@ -9,6 +9,7 @@ $q = new WP_Query(array(
     'order'          => 'ASC',
     'orderby'        => 'menu_order'
  ));
+ $d = 0;
  while($q->have_posts()) {
     $q->the_post();
 
@@ -20,7 +21,7 @@ $q = new WP_Query(array(
     }
 
     ?>
-            <a class="child_pages__card" href="<?=get_the_permalink()?>">
+            <a class="child_pages__card" href="<?=get_the_permalink()?>" data-aos="fade-up" data-aos-delay="<?=$d?>">
                 <div class="child_pages__image">
                     <img src="<?=$img?>" alt="">
                 </div>
@@ -31,6 +32,7 @@ $q = new WP_Query(array(
                 </div>
             </a>
     <?php
+    $d += 50;
  }
         ?>
         </div>

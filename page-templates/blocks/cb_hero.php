@@ -13,5 +13,5 @@ $class = $block['className'] ?? null ?: '';
 ?>
 <link rel="preload" as="image" href="<?=$img?>">
 <header class="hero <?=$class?>" style="background-image:url(<?=$img?>)">
-    <h1><?=get_field('title')?></h1>
+    <h1 data-aos="fade"><?=get_field('title')?></h1>
 </header>

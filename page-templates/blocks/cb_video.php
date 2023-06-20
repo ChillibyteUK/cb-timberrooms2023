@@ -2,7 +2,7 @@
 $bg = get_vimeo_data_from_id(get_field('vimeo_id'), 'thumbnail_url');
 ?>
 <section class="video">
-    <div class="lite-vimeo">
+    <div class="lite-vimeo" data-aos="fade">
         <lite-vimeo videoid="<?=get_field('vimeo_id')?>" style="background-image:url('<?=$bg?>');"></lite-vimeo>
     </div>
 </section>

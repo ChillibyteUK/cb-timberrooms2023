@@ -1,5 +1,5 @@
 <section class="cta">
-    <div class="container-xl text-center">
+    <div class="container-xl text-center" data-aos="fade">
         <img src="<?=get_stylesheet_directory_uri()?>/img/timberrooms-logo.png" alt="">
         <h3>Are you considering a Garden Room?</h3>
         <a href="/contact/" class="h5">Book a Free Site Survey</a>
