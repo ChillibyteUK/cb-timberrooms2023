@@ -25,7 +25,7 @@ $img = wp_get_attachment_image_url(get_field('case_studies_archive_hero','option
         $catclass = '';
         ?>
             <div class="<?=$catclass?> caseStudy" data-aos="fade" data-aos-delay="<?=$d?>">
-                <a class="caseStudy_card" href="<?=$slug?>">
+                <a class="caseStudy_card" href="<?=get_the_permalink()?>">
                     <div class="caseStudy_card__image">
                         <img src="<?=$img?>" alt="">
                     </div>
