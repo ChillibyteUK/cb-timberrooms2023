@@ -32,6 +32,17 @@ foreach (parse_blocks(get_the_content()) as $b) {
     if ($b['blockName'] == 'core/image') {
         $galleryExtras[] = $b['attrs']['id'];
     }
+    if ($b['blockName'] == 'core/columns') {
+        foreach ($b['innerBlocks'] as $column) {
+            if ($column['blockName'] === 'core/column') {
+                foreach ($column['innerBlocks'] as $innerBlock) {
+                    if ($innerBlock['blockName'] === 'core/image') {
+                        $galleryExtras[] = $innerBlock['attrs']['id'];
+                    }
+                }
+            }
+        }
+    }
 }
 
 ?>
@@ -59,23 +70,39 @@ foreach (parse_blocks(get_the_content()) as $b) {
                     To see more of our bespoke designs please visit the <a href="/case-studies/">case studies</a> page. For more information and to book a free site survey please call <?=do_shortcode('[contact_phone]')?> or email <?=do_shortcode('[contact_email]')?>
                 </div>
                 <?php
-                if (get_field('gallery')) {
+                if (get_field('gallery') || $galleryExtras) {
                     ?>
                 <h3>Gallery</h3>
                 <div class="image-gallery mb-3">
                     <?php
                     $d = 0;
-                    $gallery = get_field('gallery');
-                    $gallery = array_merge($gallery, $galleryExtras);
-                    foreach($gallery as $i) {
-                        ?>
-                    <div data-thumb="<?=wp_get_attachment_image_url( $i, 'large' )?>" data-aos="fade" data-aos-delay="<?=$d?>" data-aos-anchor=".image-gallery">
-                        <a href="<?=wp_get_attachment_image_url( $i, 'full' )?>" data-fancybox="gallery">
-                            <img src="<?=wp_get_attachment_image_url( $i, 'medium' )?>">
-                        </a>
-                    </div>
-                        <?php
-                        $d += 50;
+                    
+                    if (get_field('gallery')) {
+
+                        foreach(get_field('gallery') as $i) {
+                            ?>
+                        <div data-thumb="<?=wp_get_attachment_image_url( $i, 'large' )?>" data-aos="fade" data-aos-delay="<?=$d?>" data-aos-anchor=".image-gallery">
+                            <a href="<?=wp_get_attachment_image_url( $i, 'full' )?>" data-fancybox="gallery">
+                                <img src="<?=wp_get_attachment_image_url( $i, 'medium' )?>">
+                            </a>
+                        </div>
+                            <?php
+                            $d += 50;
+                        }
+                    }
+
+                    if ($galleryExtras) {
+
+                        foreach($galleryExtras as $i) {
+                            ?>
+                        <div data-thumb="<?=wp_get_attachment_image_url( $i, 'large' )?>" data-aos="fade" data-aos-delay="<?=$d?>" data-aos-anchor=".image-gallery">
+                            <a href="<?=wp_get_attachment_image_url( $i, 'full' )?>" data-fancybox="gallery">
+                                <img src="<?=wp_get_attachment_image_url( $i, 'medium' )?>">
+                            </a>
+                        </div>
+                            <?php
+                            $d += 50;
+                        }
                     }
                     ?>
                 </div>
