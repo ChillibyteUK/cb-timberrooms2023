@@ -69,6 +69,7 @@ foreach (parse_blocks(get_the_content()) as $b) {
                 <div class="cta fw-bold">
                     To see more of our bespoke designs please visit the <a href="/case-studies/">case studies</a> page. For more information and to book a free site survey please call <?=do_shortcode('[contact_phone]')?> or email <?=do_shortcode('[contact_email]')?>
                 </div>
+                <?=cb_social_share(get_the_ID())?>
                 <?php
                 if (get_field('gallery') || $galleryExtras) {
                     ?>

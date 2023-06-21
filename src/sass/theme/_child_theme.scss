@@ -65,6 +65,15 @@ a.anchor {
     }
 }
 
+.social-share {
+    a {
+        font-size: var(--fs-450);
+        &:hover {
+            color: var(--col-primary-400);
+        }
+    }
+}
+
 // :not(.share-icons,.social-icons,figure,.cb,.rplg-biz-name) > a[target="_blank"]:not(.btn)::after {
 //     content: "\f08e";
 //     font-family: "Font Awesome 6 Free";

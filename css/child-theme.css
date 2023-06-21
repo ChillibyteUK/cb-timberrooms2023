@@ -23547,6 +23547,7 @@ header.hero h1, header.hero .h1 {
 .image-gallery div[data-thumb] {
   overflow: hidden;
   border-radius: var(--border1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .image-gallery div[data-thumb]:hover img {
   transform: scale(1.05);
@@ -23703,6 +23704,13 @@ a.anchor {
 }
 .share-icons a:not(:last-of-type) {
   margin-right: 0.5rem;
+}
+
+.social-share a {
+  font-size: var(--fs-450);
+}
+.social-share a:hover {
+  color: var(--col-primary-400);
 }
 
 #breadcrumbs {
