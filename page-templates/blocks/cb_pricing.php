@@ -1,16 +1,16 @@
 <section class="pricing has-dark-background-color">
     <div class="container-xl">
         <?php
-        while(have_rows('models')) {
+        while(have_rows('cards')) {
             the_row();
             ?>
         <div class="pricing__card">
             <img src="" alt="">
-            <div class="pricing__size">size</div>
-            <div class="pricing__price">price</div>
+            <div class="pricing__size"><?=get_sub_field('size')?></div>
+            <div class="pricing__price">£<?=number_format(get_sub_field('price'))?></div>
             <div class="pricing__features">
                 <ul>
-                    <li>feature</li>
+                    <?=cb_list(get_sub_field('features'))?>
                 </ul>
             </div>
         </div>
