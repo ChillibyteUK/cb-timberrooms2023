@@ -106,11 +106,12 @@ wp_head();
     <?php understrap_body_attributes(); ?>>
     <?php
 do_action('wp_body_open');
+/*
 ?>
 <div id="wrapper-navbar" class="fixed-top p-0">
     <nav class="navbar navbar-expand-md p-0">
         <div class="container-xl py-2 nav-top align-items-center">
-            <a href="/" class="logo" aria-label="Alltrans Homepage"></a>
+            <a href="/" class="logo" aria-label="Timber Rooms Homepage"></a>
             <div class="button-container d-md-none">
                 <button class="navbar-toggler mt-2" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
@@ -132,8 +133,38 @@ do_action('wp_body_open');
         'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
     )
 );
+*/
 ?>
-            </div>
+<div id="wrapper-navbar" class="fixed-top p-0">
+    <div class="topnav">
+        <a href="/" class="logo" aria-label="Timber Rooms Homepage"></a>
+        <div class="button-container text-end d-flex align-items-center justify-content-end d-md-none">
+            <button class="navbar-toggler mt-2" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+            aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-md p-0">
+        <div class="collapse navbar-collapse" id="navbar">
+                    <?php
+                    wp_nav_menu(
+    array(
+        'theme_location'  => 'primary_nav',
+        'container_class' => 'container-xl w-100',
+        'menu_class'      => 'navbar-nav justify-content-around',
+        'fallback_cb'     => '',
+        'menu_id'         => 'navbarr',
+        'depth'           => 3,
+        'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+    )
+);
+        ?>
         </div>
     </nav>
 </div>
+<!--            </div>
+        </div>
+    </nav>
+</div> -->

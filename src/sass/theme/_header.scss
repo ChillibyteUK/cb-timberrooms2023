@@ -1,4 +1,4 @@
-
+/*
 #wrapper-navbar {
     background-color: var(--col-primary-400);
 
@@ -69,4 +69,69 @@
         max-width: 100%;
     }
 
+}
+*/
+
+#wrapper-navbar {
+    .topnav {
+        display: grid;
+        place-content: center;
+        gap: 1rem;
+        background-color: var(--col-primary-400);
+        min-height: var(--h-top);
+        @media (max-width:767px) {
+            grid-template-columns: 1fr 0.5fr;
+        }
+        .logo {
+            background-image: url(../img/timberrooms-logo.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: inline-block;
+            aspect-ratio: 4 / 1;
+            width: min(400px,70vw);
+            max-width: 100%;
+        }
+        .button-container {
+            .navbar-toggler {
+                color: var(--col-light-400);
+            }
+        }
+    }
+    .navbar {
+        background-color: var(--col-light-400);
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        a {
+            color: var(--col-primary-400);
+        }
+    }
+
+    .nav-item {
+        &.current-menu-parent > a {
+            color: var(--col-highlight-400);
+        }
+        &.current-menu-item,
+        &.current_page_item  {
+            a {
+                color: var(--col-highlight-400);
+            }
+        }
+    }
+    a {
+        color: var(--col-primary-400);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        &:hover {
+            color: var(--col-highlight-400);
+        }
+    }
+    .dropdown-menu {
+        a {
+            color: var(--col-primary-400);
+            &:active {
+                color: var(--col-highlight-400);
+            }
+        }
+    }
 }

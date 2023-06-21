@@ -9,6 +9,7 @@
   --col-light-400: #fafafa;
   --col-grey-200: #e2e2e2;
   --h-top: 70px;
+  --h-top-desktop: 130px;
   --fw-400: 400;
   --fw-900: 700;
   --fs-200: clamp(0.90rem, calc(0.95rem + -0.07vw), 0.94rem);
