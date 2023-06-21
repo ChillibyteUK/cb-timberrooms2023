@@ -23447,6 +23447,9 @@ header.hero h1, header.hero .h1 {
 .pricing__features {
   color: var(--col-highlight-400);
 }
+.pricing__features ul {
+  padding-left: 1rem;
+}
 
 .wp-block-quote--cb {
   position: relative;
