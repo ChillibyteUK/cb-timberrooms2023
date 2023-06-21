@@ -23437,6 +23437,7 @@ header.hero h1, header.hero .h1 {
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
+  border-radius: var(--border1);
 }
 .pricing__size, .pricing__price {
   font-size: var(--fs-450);
