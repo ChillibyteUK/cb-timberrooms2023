@@ -23413,7 +23413,7 @@ header.hero h1, header.hero .h1 {
 .pricing {
   display: grid;
   gap: 1rem;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 .pricing__card {
   background-color: var(--col-light-400);

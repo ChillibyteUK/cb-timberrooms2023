@@ -1,7 +1,7 @@
 .pricing {
     display: grid;
     gap: 1rem;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     &__card {
         background-color: var(--col-light-400);
         padding: 1rem;
