@@ -67,8 +67,8 @@
         },
         {
             "key": "field_64916d36bcaea",
-            "label": "Bottom Margin?",
-            "name": "bottom_margin",
+            "label": "Centre Title?",
+            "name": "centre_title",
             "aria-label": "",
             "type": "checkbox",
             "instructions": "",
@@ -109,5 +109,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687252301
+    "modified": 1687345020
 }

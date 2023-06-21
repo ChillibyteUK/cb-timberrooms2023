@@ -10,12 +10,15 @@ else {
 
 $class = $block['className'] ?? null ?: '';
 
-if ((get_field('bottom_margin')[0] ?? null) == 'Yes') {
-    $class .= ' mb-5';
+$hclass = '';
+if ((get_field('centre_title')[0] ?? null) == 'Yes') {
+     $hclass .= ' text-center';
 }
 
 ?>
 <link rel="preload" as="image" href="<?=$img?>">
 <header class="hero <?=$class?>" style="background-image:url(<?=$img?>)">
-    <h1 data-aos="fade"><?=get_field('title')?></h1>
 </header>
+<div class="container-xl mt-5 mb-4">
+<h1 data-aos="fade" class="<?=$hclass?>"><?=get_field('title')?></h1>
+</div>
