@@ -1,0 +1,18 @@
+.pricing {
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: 1fr 1fr;
+    &__card {
+        background-color: var(--col-light-400);
+        padding: 1rem;
+        border-radius: var(--border2);
+    }
+    &__size,
+    &__price {
+        font-size: var(--fs-450);
+        font-weight: var(--fw-900);
+    }
+    &__features {
+        color: var(--col-highlight-400);
+    }
+}

@@ -23410,6 +23410,24 @@ header.hero h1, header.hero .h1 {
   font-size: var(--fs-450);
 }
 
+.pricing {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: 1fr 1fr;
+}
+.pricing__card {
+  background-color: var(--col-light-400);
+  padding: 1rem;
+  border-radius: var(--border2);
+}
+.pricing__size, .pricing__price {
+  font-size: var(--fs-450);
+  font-weight: var(--fw-900);
+}
+.pricing__features {
+  color: var(--col-highlight-400);
+}
+
 .wp-block-quote--cb {
   position: relative;
   z-index: 0;
