@@ -10,7 +10,7 @@ $img = wp_get_attachment_image_url(get_field('case_studies_archive_hero','option
     <link rel="preload" as="image" href="<?=$img?>">
     <header class="hero" data-parallax="scroll" data-image-src="<?=$img?>"></header>
     <div class="container-xl py-5">
-        <h1 data-aos="fade" class="mb-4">View our Case Studies</h1>
+        <h1 data-aos="fade" class="mb-4 text-center">View our Case Studies</h1>
         <div class="w-100 mb-4" id="csgrid">
             <?php
         $d = 0;
