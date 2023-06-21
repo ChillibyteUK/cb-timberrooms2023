@@ -2,17 +2,30 @@
     &__grid {
         display: grid;
         gap: 1rem;
-        grid-template-columns: 1fr 1fr;
+        @media(min-width:768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width:992px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
     &__card {
         background-color: var(--col-light-400);
         padding: 1rem;
         border-radius: var(--border2);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+    &__image {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
     }
     &__size,
     &__price {
         font-size: var(--fs-450);
         font-weight: var(--fw-900);
+        color: var(--col-primary-400);
     }
     &__features {
         color: var(--col-highlight-400);
