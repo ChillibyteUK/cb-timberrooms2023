@@ -23591,9 +23591,15 @@ header.hero h1, header.hero .h1 {
 }
 
 .case_study {
-  padding-top: var(--h-top);
+  padding-top: calc(var(--h-top) + 2rem);
 }
-.case_study .container-xl {
+@media (min-width: 768px) {
+  .case_study {
+    padding-top: calc(var(--h-top-desktop) + 2rem);
+  }
+}
+.case_study .container-xl,
+.case_study .container {
   background-color: var(--col-light-400);
   color: var(--col-primary-400);
   border-radius: var(--border2);

@@ -47,7 +47,7 @@ foreach (parse_blocks(get_the_content()) as $b) {
 
 ?>
 <main class="case_study pb-3">
-    <div class="container-xl pt-3">
+    <div class="container pt-3">
         <div class="row">
             <div class="col-md-9">
                 <h1 class="mb-3"><?=get_the_title()?></h1>

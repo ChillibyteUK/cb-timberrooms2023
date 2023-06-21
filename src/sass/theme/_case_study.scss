@@ -1,6 +1,11 @@
 .case_study {
-    padding-top: var(--h-top);
-    .container-xl {
+    padding-top: calc(var(--h-top) + 2rem);
+    @media (min-width:768px) {
+        padding-top: calc(var(--h-top-desktop) + 2rem);
+    }
+
+    .container-xl,
+    .container {
         background-color: var(--col-light-400);
         color: var(--col-primary-400);
         border-radius: var(--border2);
