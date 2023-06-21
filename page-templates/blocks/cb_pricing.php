@@ -1,5 +1,6 @@
 <section class="pricing has-dark-background-color">
     <div class="container-xl">
+        <div class="pricing__grid">
         <?php
         while(have_rows('cards')) {
             the_row();
@@ -17,5 +18,6 @@
             <?php
         }
         ?>
+        </div>
     </div>
 </section>

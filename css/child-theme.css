@@ -23410,7 +23410,7 @@ header.hero h1, header.hero .h1 {
   font-size: var(--fs-450);
 }
 
-.pricing {
+.pricing__grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
