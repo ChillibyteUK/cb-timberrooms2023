@@ -23107,9 +23107,9 @@ footer .container-xl {
   justify-content: space-around;
 }
 
-header.hero {
+.hero {
   margin-top: var(--h-top);
-  background-color: var(--col-primary-400);
+  background-color: transparent;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -23118,11 +23118,11 @@ header.hero {
   place-content: center;
 }
 @media (min-width: 768px) {
-  header.hero {
+  .hero {
     margin-top: var(--h-top-desktop);
   }
 }
-header.hero h1, header.hero .h1 {
+.hero h1, .hero .h1 {
   color: white;
   font-size: 2rem;
   font-size: var(--fs-900);
@@ -23734,7 +23734,7 @@ header.hero h1, header.hero .h1 {
   color: var(--col-primary-400);
 }
 
-main {
+body {
   background-color: var(--col-primary-400);
   color: var(--col-light-400);
 }

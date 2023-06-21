@@ -17,7 +17,7 @@ if ((get_field('centre_title')[0] ?? null) == 'Yes') {
 
 ?>
 <link rel="preload" as="image" href="<?=$img?>">
-<header class="hero <?=$class?>" style="background-image:url(<?=$img?>)">
+<header class="hero <?=$class?>" data-parallax="scroll" data-image-src="<?=$img?>">
 </header>
 <div class="container-xl mt-5 mb-4">
 <h1 data-aos="fade" class="<?=$hclass?>"><?=get_field('title')?></h1>
