@@ -8,8 +8,8 @@ defined('ABSPATH') || exit;
         <div class="row">
             <div class="col-lg-3">
                 <div class="mb-4">
-                    <img src="<?=get_stylesheet_directory_uri()?>/img/timberrooms-logo.png"
-                        class="footer__logo" alt="" width=300 height=54>
+                    <img src="<?=get_stylesheet_directory_uri()?>/img/timberrooms-logo--wo.png"
+                        class="footer__logo" alt="" width=300 height=60>
                     <div class="social-links">
                         <?=do_shortcode('[social_fb_icon]')?>
                         <?=do_shortcode('[social_ig_icon]')?>

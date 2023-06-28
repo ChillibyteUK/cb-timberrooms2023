@@ -83,12 +83,12 @@
             grid-template-columns: 1fr 0.5fr;
         }
         .logo {
-            background-image: url(../img/timberrooms-logo.png);
+            background-image: url(../img/timberrooms-logo--wo.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
             display: inline-block;
-            aspect-ratio: 4 / 1;
+            aspect-ratio: 5 / 1;
             width: min(400px,70vw);
             max-width: 100%;
         }
