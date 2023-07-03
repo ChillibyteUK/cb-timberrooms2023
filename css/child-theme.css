@@ -22466,6 +22466,10 @@ strong, b {
   margin-inline: auto;
 }
 
+.has-small-font-size {
+  font-size: var(--fs-200);
+}
+
 .text--white {
   color: #fff;
 }
