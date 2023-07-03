@@ -23494,7 +23494,7 @@ footer .container-xl {
 }
 @media (min-width: 992px) {
   .pricing__grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, auto);
   }
 }
 .pricing__card {
