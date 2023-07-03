@@ -23486,6 +23486,7 @@ footer .container-xl {
 .pricing__grid {
   display: grid;
   gap: 1rem;
+  place-content: center;
 }
 @media (min-width: 768px) {
   .pricing__grid {
