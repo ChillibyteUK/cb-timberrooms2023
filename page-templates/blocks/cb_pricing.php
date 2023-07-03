@@ -10,7 +10,7 @@
             <?php
             if (get_sub_field('model_name')) {
                 ?>
-            <h3><?=get_sub_field('model_name')?></h3>
+            <h3 class="h4"><?=get_sub_field('model_name')?></h3>
                 <?php
             }
             ?>
