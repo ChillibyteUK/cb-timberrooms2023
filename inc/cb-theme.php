@@ -88,29 +88,9 @@ function widgets_init()
         'editor-color-palette',
         array(
             array(
-                'name'  => 'Blue',
+                'name'  => 'Orange',
                 'slug'  => 'primary',
-                'color' => '#00A0DE',
-            ),
-            array(
-                'name'  => 'Dark Blue',
-                'slug'  => 'dark',
-                'color' => '#00487C',
-            ),
-            array(
-                'name'  => 'Purple',
-                'slug'  => 'darkest',
-                'color' => '#0D0630',
-            ),
-            array(
-                'name'  => 'Green',
-                'slug'  => 'highlight',
-                'color' => '#53DD6C',
-            ),
-            array(
-                'name'  => 'Grey',
-                'slug'  => 'grey',
-                'color' => '#FFF0F0',
+                'color' => '#eb7024',
             ),
         )
     );
