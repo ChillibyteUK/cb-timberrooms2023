@@ -16,7 +16,7 @@
             ?>
             <img class="pricing__image mb-3" src="<?=wp_get_attachment_image_url(get_sub_field('image'),'large')?>" alt="">
             <div class="pricing__size"><?=get_sub_field('size')?></div>
-            <div class="pricing__price mb-3">£<?=number_format(get_sub_field('price'),2)?> inc VAT</div>
+            <div class="pricing__price mb-3">From £<?=number_format(get_sub_field('price'),2)?> inc VAT</div>
             <div class="pricing__features">
                 <ul>
                     <?=cb_list(get_sub_field('features'))?>
