@@ -23529,6 +23529,9 @@ footer .container-xl {
 .pricing__features ul {
   padding-left: 1rem;
 }
+.pricing__link:hover {
+  color: var(--col-highlight-400);
+}
 
 .wp-block-quote--cb {
   position: relative;

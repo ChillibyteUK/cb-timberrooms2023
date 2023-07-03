@@ -26,7 +26,7 @@
             if (get_sub_field('more_info')) {
                 $l = get_sub_field('more_info');
                 ?>
-            <a href="<?=$l['url']?>">Find out more</a>
+            <a href="<?=$l['url']?>" class="pricing__link">Find out more</a>
                 <?php
             }
             ?>

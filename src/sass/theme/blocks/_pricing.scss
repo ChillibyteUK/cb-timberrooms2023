@@ -36,4 +36,9 @@
             padding-left: 1rem;
         }
     }
+    &__link {
+        &:hover {
+            color: var(--col-highlight-400);
+        }
+    }
 }
