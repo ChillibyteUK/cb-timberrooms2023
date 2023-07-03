@@ -43,6 +43,27 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
+                    "key": "field_64a2a76f78e70",
+                    "label": "Model Name",
+                    "name": "model_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6492b58c79ada"
+                },
+                {
                     "key": "field_6492b59579adb",
                     "label": "Image",
                     "name": "image",
@@ -132,6 +153,23 @@
                     "placeholder": "",
                     "new_lines": "br",
                     "parent_repeater": "field_6492b58c79ada"
+                },
+                {
+                    "key": "field_64a2a77e78e71",
+                    "label": "More Info",
+                    "name": "more_info",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_6492b58c79ada"
                 }
             ]
         }
@@ -154,5 +192,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687336402
+    "modified": 1688381331
 }

@@ -7,6 +7,13 @@
             the_row();
             ?>
         <div class="pricing__card" data-aos="fade-up" data-aos-delay="<?=$d?>">
+            <?php
+            if (get_sub_field('title')) {
+                ?>
+            <h3><?=get_sub_field('title')?></h3>
+                <?php
+            }
+            ?>
             <img class="pricing__image" src="<?=wp_get_attachment_image_url(get_sub_field('image'),'large')?>" alt="">
             <div class="pricing__size"><?=get_sub_field('size')?></div>
             <div class="pricing__price">£<?=number_format(get_sub_field('price'),2)?> inc VAT</div>
@@ -15,6 +22,14 @@
                     <?=cb_list(get_sub_field('features'))?>
                 </ul>
             </div>
+            <?php
+            if (get_sub_field('more_info')) {
+                $l = get_sub_field('more_info');
+                ?>
+            <a href="<?=$l['url']?>">Find out more</a>
+                <?php
+            }
+            ?>
         </div>
             <?php
             $d += 50;
