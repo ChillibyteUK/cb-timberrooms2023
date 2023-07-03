@@ -23498,6 +23498,7 @@ footer .container-xl {
   }
 }
 .pricing__card {
+  min-width: 25%;
   background-color: var(--col-light-400);
   padding: 1rem;
   border-radius: var(--border2);
