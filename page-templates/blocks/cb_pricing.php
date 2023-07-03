@@ -8,9 +8,9 @@
             ?>
         <div class="pricing__card" data-aos="fade-up" data-aos-delay="<?=$d?>">
             <?php
-            if (get_sub_field('title')) {
+            if (get_sub_field('model_name')) {
                 ?>
-            <h3><?=get_sub_field('title')?></h3>
+            <h3><?=get_sub_field('model_name')?></h3>
                 <?php
             }
             ?>
