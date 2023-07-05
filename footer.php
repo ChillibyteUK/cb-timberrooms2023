@@ -17,7 +17,7 @@ defined('ABSPATH') || exit;
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-5">
                 <div class="footer__heading">Contact Us</div>
                 <ul class="fa-ul mb-4">
                     <li><span class="fa-li"><i class="fa-solid fa-phone"></i></span> <a
@@ -31,12 +31,11 @@ defined('ABSPATH') || exit;
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3"><!--
+            <!-- div class="col-md-3">
                 <div class="footer__heading">Locations</div>
                 <?=wp_nav_menu(array('theme_location' => 'footer_menu1'))?>
-                -->
-            </div>
-            <div class="col-md-3">
+            </div -->
+            <div class="col-md-4">
                 <div class="footer__heading">Navigation</div>
                 <?=wp_nav_menu(array('theme_location' => 'footer_menu2'))?>
             </div>
