@@ -31,12 +31,13 @@ defined('ABSPATH') || exit;
                     </li>
                 </ul>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3"><!--
                 <div class="footer__heading">Locations</div>
                 <?=wp_nav_menu(array('theme_location' => 'footer_menu1'))?>
+                -->
             </div>
             <div class="col-lg-3">
-                <div class="footer__heading">Links</div>
+                <div class="footer__heading">Navigation</div>
                 <?=wp_nav_menu(array('theme_location' => 'footer_menu2'))?>
             </div>
         </div>
