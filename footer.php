@@ -7,7 +7,7 @@ defined('ABSPATH') || exit;
     <div class="container-xl pb-4">
         <div class="row">
             <div class="col-lg-3">
-                <div class="mb-4">
+                <div class="mb-4 text-center text-md-start">
                     <img src="<?=get_stylesheet_directory_uri()?>/img/timberrooms-logo--wo.png"
                         class="footer__logo" alt="" width=300 height=60>
                     <div class="social-links">
@@ -26,8 +26,8 @@ defined('ABSPATH') || exit;
                     <li><span class="fa-li"><i class="fa-solid fa-envelope"></i></span> <a
                             href="mailto:<?=get_field('contact_email', 'options')?>"><?=get_field('contact_email', 'options')?></a>
                     </li>
-                    <li><span class="fa-li"><i class="fa-solid fa-map-marker-alt"></i></span>
-                        <?=get_field('contact_address', 'options')?>
+                    <li><span class="fa-li"><i class="fa-solid fa-map-marker-alt"></i></span> <a
+                            href="<?=get_field('gmb_link','options')?>" target="_blank"><?=get_field('contact_address', 'options')?></a>
                     </li>
                 </ul>
             </div>

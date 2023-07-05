@@ -100,6 +100,26 @@
             "append": ""
         },
         {
+            "key": "field_64a52216a4874",
+            "label": "GMB Link",
+            "name": "gmb_link",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/goo.gl\/maps\/8xC7S3Hb4fLQZNPy9",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_64907e0a3be90",
             "label": "Social",
             "name": "social",
@@ -335,5 +355,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687191103
+    "modified": 1688543787
 }
