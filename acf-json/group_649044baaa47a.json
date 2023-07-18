@@ -36,7 +36,8 @@
             },
             "choices": {
                 "Bespoke": "Bespoke",
-                "Pods": "Pods"
+                "Pods": "Pods",
+                "Golf": "Golf"
             },
             "default_value": "Bespoke",
             "return_format": "value",
@@ -241,5 +242,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689678181
+    "modified": 1689686145
 }

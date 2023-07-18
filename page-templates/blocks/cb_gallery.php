@@ -1,5 +1,16 @@
 <?php
-$theme = get_field('theme') == 'Pods' ? 'has-prefab-color' : 'has-primary-color';
+$theme = get_field('theme');
+
+switch ($theme) {
+    case 'Pods':
+        $theme = 'has-prefab-color';
+        break;
+    case 'Golf':
+        $theme = 'has-golf-color';
+        break;
+    default:
+        $theme = 'has-primary-color';
+}
 ?>
 <link
   rel="stylesheet"
