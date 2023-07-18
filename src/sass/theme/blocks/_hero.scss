@@ -24,5 +24,11 @@
         text-shadow: 1px 1px 6px var(--col-primary-400);
     }
 
+}
 
+.logo {
+    img {
+        width: min(500px,90vw);
+        margin-inline: auto;
+    }
 }

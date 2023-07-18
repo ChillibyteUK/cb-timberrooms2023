@@ -128,15 +128,15 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_team_cols',
-        //     'title'				=> __('CB Team Cols'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_team_cols.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_logo',
+            'title'				=> __('CB Logo'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_logo.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
         // acf_register_block_type(array(
         //     'name'				=> 'cb_notice',
         //     'title'				=> __('CB Notice'),

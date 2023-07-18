@@ -23144,6 +23144,11 @@ footer .container-xl {
   text-shadow: 1px 1px 6px var(--col-primary-400);
 }
 
+.logo img {
+  width: min(500px, 90vw);
+  margin-inline: auto;
+}
+
 .video .lite-vimeo {
   width: min(800px, 90vw);
   margin-inline: auto;
