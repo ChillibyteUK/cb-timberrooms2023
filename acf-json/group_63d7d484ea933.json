@@ -39,7 +39,7 @@
         },
         {
             "key": "field_63c68e6a52f3f",
-            "label": "Theme",
+            "label": "Background Theme",
             "name": "theme",
             "aria-label": "",
             "type": "radio",
@@ -47,16 +47,40 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "20",
                 "class": "",
                 "id": ""
             },
             "choices": {
                 "Dark": "Dark",
-                "Mid": "Mid",
-                "Light": "Light"
+                "Mid": "Mid"
             },
-            "default_value": "Light",
+            "default_value": "Dark",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_64b66da749462",
+            "label": "Heading Theme",
+            "name": "heading_theme",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Bespoke": "Bespoke",
+                "Pods": "Pods"
+            },
+            "default_value": "Bespoke",
             "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
@@ -73,7 +97,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "20",
                 "class": "",
                 "id": ""
             },
@@ -98,7 +122,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "20",
                 "class": "",
                 "id": ""
             },
@@ -111,7 +135,6 @@
             "allow_null": 0,
             "other_choice": 0,
             "layout": "vertical",
-            "acfe_field_group_condition": 0,
             "save_other_choice": 0
         },
         {
@@ -124,7 +147,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "20",
                 "class": "",
                 "id": ""
             },
@@ -276,5 +299,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686932678
+    "modified": 1689677884
 }

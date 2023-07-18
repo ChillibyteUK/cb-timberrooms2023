@@ -92,6 +92,11 @@ function widgets_init()
                 'slug'  => 'primary',
                 'color' => '#eb7024',
             ),
+            array(
+                'name'  => 'Pink',
+                'slug'  => 'prefab',
+                'color' => '#d821bc',
+            ),
         )
     );
 }

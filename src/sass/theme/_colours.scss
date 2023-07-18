@@ -5,6 +5,10 @@
 .has-primary-color {
     color: var(--col-highlight-400) !important;
 }
+.has-prefab-color {
+    color: var(--col-prefab-400) !important;
+}
+
 .has-primary-background-color {
     background-color: var(--col-primary) !important;
 }
@@ -30,7 +34,7 @@
     color: var(--col-grey) !important;
 }
 .has-grey-background-color {
-    background-color: var(--col-grey) !important;
+    background-color: var(--col-grey-200) !important;
 }
 
 .bg-grey--half {

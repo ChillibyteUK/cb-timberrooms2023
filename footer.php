@@ -7,8 +7,8 @@ defined('ABSPATH') || exit;
     <div class="container-xl pb-4">
         <div class="row">
             <div class="col-md-3">
-                <div class="mb-4 text-center text-md-start">
-                    <img src="<?=get_stylesheet_directory_uri()?>/img/timberrooms-logo--wo.png"
+                <div class="mt-2 mb-4 text-center text-md-start">
+                    <img src="<?=get_stylesheet_directory_uri()?>/img/timberrooms-logo--wo.svg"
                         class="footer__logo" alt="" width=300 height=60>
                     <div class="social-links">
                         <?=do_shortcode('[social_fb_icon]')?>

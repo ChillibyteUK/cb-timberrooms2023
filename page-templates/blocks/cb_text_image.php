@@ -6,12 +6,14 @@ switch ($colour) {
         $background = 'has-dark-background-color text-white';
         break;
     case 'Mid':
-        $background = 'has-grey-background-color';
+        $background = 'has-grey-background-color text-dark';
         break;
     // case 'Light':
     //     $background = '';
     //     break;
 }
+
+$theme = get_field('heading_theme') == 'Pods' ? 'has-prefab-color' : 'has-primary-color';
 
 $breakout = '';
 if (get_field('breakout')[0] ?? null && get_field('breakout')[0] == 'Yes') {
@@ -45,10 +47,10 @@ if (get_field('order') == 'image-text') {
 ?>
 <section class="text_image <?=$breakout?>">
     <div class="container-xl <?=$background?> py-5">
-        <div class="d-lg-none" data-aos="fade"><h2><?=get_field('title')?></h2></div>
+        <div class="d-lg-none <?=$theme?>" data-aos="fade"><h2><?=get_field('title')?></h2></div>
         <div class="row align-items-center g-4">
             <div class="<?=$splitText?> <?=$orderText?>" data-aos="<?=$fadeText?>">
-                <h2 class="d-none d-lg-block"><?=get_field('title')?></h2>
+                <h2 class="d-none d-lg-block <?=$theme?>"><?=get_field('title')?></h2>
                 <div><?=get_field('content')?></div>
                 <?php
                 if (get_field('cta')) {

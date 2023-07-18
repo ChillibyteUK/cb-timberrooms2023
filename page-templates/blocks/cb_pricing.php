@@ -1,3 +1,6 @@
+<?php
+$theme = get_field('theme') == 'Pods' ? 'has-prefab-color' : 'has-primary-color';
+?>
 <section class="pricing has-dark-background-color py-5">
     <div class="container-xl">
         <div class="pricing__grid">
@@ -10,7 +13,7 @@
             <?php
             if (get_sub_field('model_name')) {
                 ?>
-            <h3 class="h4"><?=get_sub_field('model_name')?></h3>
+            <h3 class="h4 <?=$theme?>"><?=get_sub_field('model_name')?></h3>
                 <?php
             }
             ?>
@@ -26,7 +29,7 @@
             if (get_sub_field('more_info')) {
                 $l = get_sub_field('more_info');
                 ?>
-            <a href="<?=$l['url']?>" class="pricing__link">Find out more</a>
+            <a href="<?=$l['url']?>" class="pricing__link <?=$theme?>">Find out more</a>
                 <?php
             }
             ?>

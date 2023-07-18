@@ -10,18 +10,19 @@ $col-grey: #FFF0F0;
     --hsl-col-highlight-400: 23 83% 53%;
     --hsl-col-primary-400: 0 0% 20%;
     --hsl-col-primary-900: 0 0% 12%;
-
+    --hsl-col-prefab-400: 309 73% 49%;
 
     --col-primary-400: hsl(var(--hsl-col-primary-400));
     --col-primary-900: hsl(var(--hsl-col-primary-900));
     --col-highlight-400: hsl(var(--hsl-col-highlight-400));
+    --col-prefab-400: hsl(var(--hsl-col-prefab-400));
 
     --col-light-400: #fafafa;
 
     --col-grey-200: #e2e2e2;
 
     --h-top: 70px;
-    --h-top-desktop: 120px;
+    --h-top-desktop: 138px;
 
     --fw-400: 400;
     --fw-900: 700;

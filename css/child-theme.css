@@ -3,13 +3,15 @@
   --hsl-col-highlight-400: 23 83% 53%;
   --hsl-col-primary-400: 0 0% 20%;
   --hsl-col-primary-900: 0 0% 12%;
+  --hsl-col-prefab-400: 309 73% 49%;
   --col-primary-400: hsl(var(--hsl-col-primary-400));
   --col-primary-900: hsl(var(--hsl-col-primary-900));
   --col-highlight-400: hsl(var(--hsl-col-highlight-400));
+  --col-prefab-400: hsl(var(--hsl-col-prefab-400));
   --col-light-400: #fafafa;
   --col-grey-200: #e2e2e2;
   --h-top: 70px;
-  --h-top-desktop: 120px;
+  --h-top-desktop: 138px;
   --fw-400: 400;
   --fw-900: 700;
   --fs-200: clamp(0.90rem, calc(0.95rem + -0.07vw), 0.94rem);
@@ -22478,6 +22480,10 @@ strong, b {
   color: var(--col-highlight-400) !important;
 }
 
+.has-prefab-color {
+  color: var(--col-prefab-400) !important;
+}
+
 .has-primary-background-color {
   background-color: var(--col-primary) !important;
 }
@@ -22511,7 +22517,7 @@ strong, b {
 }
 
 .has-grey-background-color {
-  background-color: var(--col-grey) !important;
+  background-color: var(--col-grey-200) !important;
 }
 
 .bg-grey--half {
@@ -22599,6 +22605,7 @@ strong, b {
   gap: 1rem;
   background-color: var(--col-primary-400);
   min-height: var(--h-top);
+  padding-block: 1.25rem;
 }
 @media (max-width: 767px) {
   #wrapper-navbar .topnav {
@@ -22606,12 +22613,12 @@ strong, b {
   }
 }
 #wrapper-navbar .topnav .logo {
-  background-image: url(../img/timberrooms-logo--wo.png);
+  background-image: url(../img/timberrooms-logo--wo.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
-  aspect-ratio: 5/1;
+  aspect-ratio: 7/1;
   width: min(400px, 70vw);
   max-width: 100%;
 }
@@ -23154,7 +23161,7 @@ footer .container-xl {
 }
 .cta img {
   width: 317px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .cta h3, .cta .h3 {
   font-size: var(--fs-500);

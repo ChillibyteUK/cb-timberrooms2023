@@ -1,4 +1,6 @@
-<!-- <link rel="stylesheet" href="<?=get_stylesheet_directory_uri()?>/css/jquery.fancybox.min.css" /> -->
+<?php
+$theme = get_field('theme') == 'Pods' ? 'has-prefab-color' : 'has-primary-color';
+?>
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
@@ -28,7 +30,7 @@
                             }
                             ?></figcaption>
                             <div class="overlay">
-                                <h3><?=get_sub_field('image_title')?></h3>
+                                <h3 class="<?=$theme?>"><?=get_sub_field('image_title')?></h3>
                                 <div class="text-center">
                                 <?php
                                 if (get_sub_field('town') != '') {

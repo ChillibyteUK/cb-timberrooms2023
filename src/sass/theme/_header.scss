@@ -79,16 +79,17 @@
         gap: 1rem;
         background-color: var(--col-primary-400);
         min-height: var(--h-top);
+        padding-block: 1.25rem;
         @media (max-width:767px) {
             grid-template-columns: 1fr 0.5fr;
         }
         .logo {
-            background-image: url(../img/timberrooms-logo--wo.png);
+            background-image: url(../img/timberrooms-logo--wo.svg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
             display: inline-block;
-            aspect-ratio: 5 / 1;
+            aspect-ratio: 7 / 1;
             width: min(400px,70vw);
             max-width: 100%;
         }
