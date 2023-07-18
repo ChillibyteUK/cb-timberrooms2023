@@ -93,6 +93,9 @@
             width: min(400px,70vw);
             max-width: 100%;
         }
+        .logo--pod {
+            background-image: url(../img/timberrooms-logo-prefab--wo.svg);
+        }
         .button-container {
             .navbar-toggler {
                 color: var(--col-light-400);
