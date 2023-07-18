@@ -13,7 +13,20 @@ switch ($colour) {
     //     break;
 }
 
-$theme = get_field('heading_theme') == 'Pods' ? 'has-prefab-color' : 'has-primary-color';
+
+$theme = get_field('heading_theme');
+
+switch ($theme) {
+    case 'Pods':
+        $theme = 'has-prefab-color';
+        break;
+    case 'Golf':
+        $theme = 'has-golf-color';
+        break;
+    default:
+        $theme = 'has-primary-color';
+}
+// $theme = get_field('heading_theme') == 'Golf' ? 'has-golf-color' : 'has-primary-color';
 
 $breakout = '';
 if (get_field('breakout')[0] ?? null && get_field('breakout')[0] == 'Yes') {
