@@ -4,10 +4,12 @@
   --hsl-col-primary-400: 0 0% 20%;
   --hsl-col-primary-900: 0 0% 12%;
   --hsl-col-prefab-400: 309 73% 49%;
+  --hsl-col-golf-400: 119 88% 20%;
   --col-primary-400: hsl(var(--hsl-col-primary-400));
   --col-primary-900: hsl(var(--hsl-col-primary-900));
   --col-highlight-400: hsl(var(--hsl-col-highlight-400));
   --col-prefab-400: hsl(var(--hsl-col-prefab-400));
+  --col-golf-400: hsl(var(--hsl-col-golf-400));
   --col-light-400: #fafafa;
   --col-grey-200: #e2e2e2;
   --h-top: 70px;
@@ -22482,6 +22484,10 @@ strong, b {
 
 .has-prefab-color {
   color: var(--col-prefab-400) !important;
+}
+
+.has-golf-color {
+  color: var(--col-golf-400) !important;
 }
 
 .has-primary-background-color {

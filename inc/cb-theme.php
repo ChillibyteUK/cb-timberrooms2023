@@ -97,6 +97,11 @@ function widgets_init()
                 'slug'  => 'prefab',
                 'color' => '#d821bc',
             ),
+            array(
+                'name'  => 'Green',
+                'slug'  => 'golf',
+                'color' => '#076106',
+            )
         )
     );
 }
