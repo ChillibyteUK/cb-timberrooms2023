@@ -88,7 +88,7 @@ switch ($theme) {
                         <a href="<?=get_the_permalink($i)?>">View Case Study</a>
                     </figcaption>
                     <div class="overlay">
-                        <h3><?=get_the_title($i)?></h3>
+                        <h3 class="<?=$theme?>"><?=get_the_title($i)?></h3>
                         <div class="text-center">
                         <?php
                         if ($town != '') {
