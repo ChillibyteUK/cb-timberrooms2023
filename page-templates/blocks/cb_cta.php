@@ -1,5 +1,18 @@
 <?php
-$logo = get_field('theme') == 'Pods' ? 'timberrooms-logo-prefab--wo.svg' : 'timberrooms-logo--wo.svg';
+if (null !== get_field('theme')) {
+    if (get_field('theme') == 'Pods') {
+        $logo = 'timberrooms-logo-prefab--wo.svg';
+    }
+    elseif (get_field('theme') == 'Golf') {
+        $logo = 'timberrooms-logo-golf--wo.svg';
+    }
+    else {
+        $logo = 'timberrooms-logo--wo.svg';
+    }
+}
+else {
+    $logo = 'timberrooms-logo--wo.svg';
+}
 // $theme = get_field('theme') == 'Pods' ? 'has-prefab-color' : 'has-primary-color';
 $theme = '';
 ?>

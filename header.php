@@ -107,8 +107,19 @@ wp_head();
     <?php
 do_action('wp_body_open');
 
-if (null !== get_field('is_pod_page')) {
-    $logo = get_field('is_pod_page')[0] == 'Yes' ? 'logo--pod' : '';
+if (null !== get_field('page_type')) {
+    if (get_field('page_type') == 'Prefab') {
+        $logo = 'logo--pod';
+    }
+    elseif (get_field('page_type') == 'Golf') {
+        $logo = 'logo--golf';
+    }
+    else {
+        $logo = 'logo--pod';
+    }
+}
+else {
+    $logo = '';
 }
 ?>
 <div id="wrapper-navbar" class="fixed-top p-0">

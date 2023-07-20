@@ -22631,6 +22631,9 @@ strong, b {
 #wrapper-navbar .topnav .logo--pod {
   background-image: url(../img/timberrooms-logo-prefab--wo.svg);
 }
+#wrapper-navbar .topnav .logo--golf {
+  background-image: url(../img/timberrooms-logo-golf--wo.svg);
+}
 #wrapper-navbar .topnav .button-container .navbar-toggler {
   color: var(--col-light-400);
 }
