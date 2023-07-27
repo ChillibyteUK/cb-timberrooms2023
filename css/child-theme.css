@@ -23130,6 +23130,10 @@ footer .container-xl {
   justify-content: space-around;
 }
 
+img.parallax-slider {
+  margin-top: 40px;
+}
+
 .hero {
   margin-top: var(--h-top);
   background-color: transparent;
