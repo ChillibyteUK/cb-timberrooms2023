@@ -115,12 +115,13 @@ if (null !== get_field('page_type')) {
         $logo = 'logo--golf';
     }
     else {
-        $logo = 'logo--pod';
+        $logo = '';
     }
 }
 else {
     $logo = '';
 }
+
 ?>
 <div id="wrapper-navbar" class="fixed-top p-0">
     <div class="topnav">

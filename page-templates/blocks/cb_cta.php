@@ -13,6 +13,7 @@ if (null !== get_field('theme')) {
 else {
     $logo = 'timberrooms-logo--wo.svg';
 }
+
 // $theme = get_field('theme') == 'Pods' ? 'has-prefab-color' : 'has-primary-color';
 $theme = '';
 ?>
