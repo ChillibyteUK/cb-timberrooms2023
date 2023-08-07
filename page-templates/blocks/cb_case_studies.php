@@ -6,7 +6,7 @@
     ));
     while ($q->have_posts()) {
         $q->the_post();
-        $img = get_the_post_thumbnail_url(get_the_ID());
+        $img = get_the_post_thumbnail_url(get_the_ID(),'large');
         $town = '';
         if (get_the_terms(get_the_ID(),'towns')) {
             $town = get_the_terms(get_the_ID(),'towns')[0]->name;
