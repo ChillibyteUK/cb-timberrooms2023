@@ -49,7 +49,7 @@ defined('ABSPATH') || exit;
                 &copy; <?=date('Y')?> Timber Rooms Ltd. Registered in England, no. 10969771
             </div>
             <div class="col-md-4 d-flex align-items-center justify-content-end flex-wrap gap-3">
-                <a href="/privacy/">Privacy & Cookies</a> |
+                <a href="/privacy-policy/">Privacy</a> & <a href="/cookie-policy/">Cookies</a> |
                 <a href="https://www.chillibyte.co.uk/" rel="nofollow noopener" target="_blank" class="cb"
                     title="Digital Marketing by Chillibyte"></a>
             </div>
