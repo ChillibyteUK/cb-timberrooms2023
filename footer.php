@@ -56,6 +56,7 @@ defined('ABSPATH') || exit;
         </div>
     </div>
 </div>
+<a href="/contact/" class="btn btn-landing">Book a Free Site Survey</a>
 <?php wp_footer();
 if (get_field('gtm_property', 'options')) {
     ?>
@@ -67,6 +68,32 @@ if (get_field('gtm_property', 'options')) {
 <?php
 }
 ?>
+<script>
+const button = document.querySelector('.btn-landing');
+const footerTop = document.querySelector('#footer-top');
+
+const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0
+};
+
+const callback = (entries, observer) => {
+  const entry = entries[0]; // We're only observing one target
+
+  if (entry.isIntersecting || entry.intersectionRatio > 0) {
+    // When the 'footer-top' element is in view
+    button.style.opacity = 0;
+  } else {
+    // When the 'footer-top' element is not in view
+    button.style.opacity = 1;
+  }
+};
+
+const observer = new IntersectionObserver(callback, options);
+
+observer.observe(footerTop);
+</script>
 </body>
 
 </html>

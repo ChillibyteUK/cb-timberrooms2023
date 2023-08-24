@@ -27,3 +27,22 @@
     }
 }
 
+.btn-landing {
+    @extend .btn-primary;
+    position: fixed;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    @media (min-width:992px) {
+        left: unset;
+        bottom: 6rem;
+        width: 100px;
+        min-width: unset;
+        border-radius: 100vw;
+        padding: 1rem;
+        font-size: 0.8rem;
+        aspect-ratio: 1;
+        display: grid;
+        place-content: center;
+    }
+}
