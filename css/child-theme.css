@@ -22774,6 +22774,7 @@ footer .container-xl {
   left: 0.5rem;
   right: 0.5rem;
   bottom: 0.5rem;
+  z-index: 999;
 }
 @media (min-width: 992px) {
   .btn-landing {
