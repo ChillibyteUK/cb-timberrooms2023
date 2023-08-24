@@ -76,6 +76,7 @@ if (get_field('bing_site_verification', 'options')) {
 }
 
 wp_head();
+if (is_front_page()) {
 ?>
 
     <script type="application/ld+json">
@@ -85,7 +86,7 @@ wp_head();
             "name": "Timber Rooms",
             "url": "https://www.timberrooms.co.uk/",
             "logo": "https://www.timberroooms.co.uk/wp-content/theme/cb-timberrooms2023/img/timberrooms-logo.png",
-            "description": "...",
+            "description": "Garden Rooms & Home Office Buildings | Timber Rooms",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Unit 10, Newbrook Business Park, Pound Lane",
@@ -97,9 +98,10 @@ wp_head();
             "telephone": "+44 (0) 1273 839491",
             "email": "hello@timberrooms.co.uk"
         }
-        }
     </script>
-
+<?php
+}
+?>
 </head>
 
 <body <?php body_class(); ?>
