@@ -86,7 +86,7 @@ if (is_front_page()) {
             "name": "Timber Rooms",
             "url": "https://www.timberrooms.co.uk/",
             "logo": "https://www.timberroooms.co.uk/wp-content/theme/cb-timberrooms2023/img/timberrooms-logo.png",
-            "description": "Garden Rooms & Home Office Buildings | Timber Rooms",
+            "description": "Bespoke timber rooms designed for your garden for many uses from home office, home gym to workroom. Contact us for a free consultation and quote.",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Unit 10, Newbrook Business Park, Pound Lane",
