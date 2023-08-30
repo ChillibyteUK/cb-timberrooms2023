@@ -23198,6 +23198,10 @@ img.parallax-slider {
   background-color: var(--col-highlight-400);
 }
 
+.video-placeholder-normal {
+  position: absolute;
+}
+
 .cta {
   --line-width: 150px;
   padding-block: 3rem;
