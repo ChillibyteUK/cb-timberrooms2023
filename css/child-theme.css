@@ -23199,7 +23199,7 @@ img.parallax-slider {
 }
 
 .video-placeholder-normal {
-  position: absolute;
+  position: absolute !important;
 }
 
 .cta {
