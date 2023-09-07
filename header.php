@@ -80,6 +80,7 @@ if (is_front_page()) {
 ?>
 
     <script type="application/ld+json">
+    [
         {
             "@context": "http://schema.org",
             "@type": "Organization",
@@ -97,7 +98,31 @@ if (is_front_page()) {
             },
             "telephone": "+44 (0) 1273 839491",
             "email": "hello@timberrooms.co.uk"
-        }
+        },
+        {
+            "@context": "http://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Timber Rooms Ltd",
+            "image": "https://www.timberrooms.co.uk/wp-content/uploads/2023/06/home-hero-scaled.jpg",
+            "telephone": "+441273839491",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Unit 10 Newbrook Business Park",
+                "addressLocality": "Steyning",
+                "addressRegion": "Sussex",
+                "postalCode": "BN44 3JD",
+                "addressCountry": "United Kingdom"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "ratingCount": "52",
+                "bestRating": "5",
+                "worstRating": "4"
+            },
+            "url": "https://www.timberrooms.co.uk/"
+            }
+        ]
     </script>
 <?php
 }
