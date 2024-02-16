@@ -56,7 +56,8 @@ $bg = get_vimeo_data_from_id(get_field('vimeo_id'), 'thumbnail_url');
             <div
                 class="<?=$splitText?> <?=$orderText?>">
                 <h2 class="d-none d-lg-block">
-                    <?=get_field('title')?></h2>
+                    <?=get_field('title')?>
+                </h2>
                 <div><?=get_field('content')?>
                 </div>
                 <?php
@@ -69,8 +70,8 @@ $bg = get_vimeo_data_from_id(get_field('vimeo_id'), 'thumbnail_url');
                 }
 ?>
             </div>
-            <div class="<?=$splitImage?> <?=$orderImage?>"
-                data-aos="<?=$fadeImage?>">
+            <div
+                class="<?=$splitImage?> <?=$orderImage?>">
                 <div class="lite-vimeo">
                     <lite-vimeo
                         videoid="<?=get_field('vimeo_id')?>"
@@ -86,3 +87,4 @@ add_action('wp_footer', function () {
 <script type=module src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
 <?php
 });
+?>
