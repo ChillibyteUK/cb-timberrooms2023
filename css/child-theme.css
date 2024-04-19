@@ -22532,6 +22532,14 @@ strong, b {
   background-position: center;
 }
 
+.text-tr-orange {
+  color: #eb7024 !important;
+}
+
+.text-tr-blue {
+  color: #65abfb !important;
+}
+
 /*
 #wrapper-navbar {
     background-color: var(--col-primary-400);
