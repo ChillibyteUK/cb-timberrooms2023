@@ -22532,11 +22532,13 @@ strong, b {
   background-position: center;
 }
 
-.text-tr-orange {
+.text-tr-orange,
+.text-tr-orange a {
   color: #eb7024 !important;
 }
 
-.text-tr-blue {
+.text-tr-blue,
+.text-tr-blue a {
   color: #65abfb !important;
 }
 
