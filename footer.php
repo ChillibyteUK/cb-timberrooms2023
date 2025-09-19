@@ -14,6 +14,7 @@ defined('ABSPATH') || exit;
                         <?=do_shortcode('[social_fb_icon]')?>
                         <?=do_shortcode('[social_ig_icon]')?>
                         <?=do_shortcode('[social_tw_icon]')?>
+                        <?=do_shortcode('[social_yt_icon]')?>
                     </div>
                 </div>
             </div>
