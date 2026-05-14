@@ -1,13 +1,22 @@
 .hero {
   margin-top: var(--h-top);
   position: relative;
-  overflow: hidden;
-  height: calc(50vh - var(--h-top));
-  min-height: 500px;
 
   @media (min-width: 768px) {
     margin-top: var(--h-top-desktop);
-    height: calc(50vh - var(--h-top-desktop));
+  }
+
+  // Image container — overflow hidden here, not on the whole block
+  &__bg {
+    position: relative;
+    overflow: hidden;
+    height: calc(50vh - var(--h-top));
+    min-height: 280px;
+
+    @media (min-width: 768px) {
+      height: calc(50vh - var(--h-top-desktop));
+      min-height: 500px;
+    }
   }
 
   &__parallax-img {
@@ -19,11 +28,36 @@
     object-position: center;
     will-change: transform;
   }
+
+  // Mobile: overlay at the bottom of the image with frosted-glass effect
+  // Desktop: flows below the image as a standard content row
+  &__content {
+    @media (max-width: 767px) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: hsl(var(--hsl-col-primary-900) / 0.6);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding-block: 1.25rem;
+
+      h1 {
+        font-size: var(--fs-600);
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      padding-block: 1.75rem 1rem;
+    }
+  }
 }
 
 .hero__cta-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.75rem;
   margin-top: 1.25rem;
 
