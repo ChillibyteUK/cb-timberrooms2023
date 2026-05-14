@@ -24,7 +24,7 @@ if ( 'Yes' === ( get_field( 'centre_title' )[0] ?? null ) ) {
 $block_id = $block['id'] ?? wp_unique_id( 'cb-hero-' );
 ?>
 <link rel="preload" as="image" href="<?= esc_url( $img ); ?>">
-<header id="<?= esc_attr( $block_id ); ?>" class="hero <?= esc_attr( $class ); ?>">
+<header id="<?= esc_attr( $block_id ); ?>" class="hero mb-md-4 <?= esc_attr( $class ); ?>">
 	<div class="hero__bg">
 		<img src="<?= esc_url( $img ); ?>" class="hero__parallax-img" alt="">
 	</div>
