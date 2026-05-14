@@ -1,37 +1,29 @@
-img.parallax-slider {
-    margin-top: 40px;
-}
 .hero {
-    margin-top: var(--h-top);
-    @media (min-width:768px) {
-        margin-top: var(--h-top-desktop);
-    }
-    // background-color: var(--col-primary-400);
-    background-color: transparent;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: calc(50vh - var(--h-top));
-    min-height: 500px;
+  margin-top: var(--h-top);
+  position: relative;
+  overflow: hidden;
+  height: calc(50vh - var(--h-top));
+  min-height: 500px;
 
-    display: grid;
-    place-content: center;
+  @media (min-width: 768px) {
+    margin-top: var(--h-top-desktop);
+    height: calc(50vh - var(--h-top-desktop));
+  }
 
-    h1 {
-        color: white;
-        font-size: 2rem;
-        font-size: var(--fs-900);
-        font-weight: var(--fw-900);
-        margin: 1rem 0;
-        text-align: center;
-        text-shadow: 1px 1px 6px var(--col-primary-400);
-    }
-
+  &__parallax-img {
+    position: absolute;
+    inset: -120px 0; // 240px total range (±120px) so image always covers
+    width: 100%;
+    height: calc(100% + 240px);
+    object-fit: cover;
+    object-position: center;
+    will-change: transform;
+  }
 }
 
 .logo {
-    img {
-        width: min(500px,90vw);
-        margin-inline: auto;
-    }
+  img {
+    width: min(500px, 90vw);
+    margin-inline: auto;
+  }
 }

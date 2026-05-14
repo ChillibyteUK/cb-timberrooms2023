@@ -1,0 +1,129 @@
+{
+  "version": 2,
+  "settings": {
+    "layout": {
+      "contentSize": "1360px",
+      "wideSize": "1600px"
+    },
+    "spacing": {
+      "blockGap": true,
+      "margin": true,
+      "padding": true,
+      "units": [
+        "px",
+        "em",
+        "rem",
+        "vh",
+        "vw",
+        "%"
+      ]
+    },
+    "color": {
+      "palette": [
+        {
+          "name": "white",
+          "slug": "white",
+          "color": "#ffffff",
+          "origin": "theme"
+        },
+        {
+          "name": "black",
+          "slug": "black",
+          "color": "#020202",
+          "origin": "theme"
+        },
+        {
+          "name": "primary-400",
+          "slug": "primary-400",
+          "color": "hsl(0 0% 20%)",
+          "origin": "theme"
+        },
+        {
+          "name": "primary-900",
+          "slug": "primary-900",
+          "color": "hsl(0 0% 12%)",
+          "origin": "theme"
+        },
+        {
+          "name": "highlight-400",
+          "slug": "highlight-400",
+          "color": "hsl(23 83% 53%)",
+          "origin": "theme"
+        },
+        {
+          "name": "prefab-400",
+          "slug": "prefab-400",
+          "color": "hsl(309 73% 49%)",
+          "origin": "theme"
+        },
+        {
+          "name": "golf-400",
+          "slug": "golf-400",
+          "color": "hsl(119 88% 32%)",
+          "origin": "theme"
+        },
+        {
+          "name": "light-400",
+          "slug": "light-400",
+          "color": "#fafafa",
+          "origin": "theme"
+        },
+        {
+          "name": "grey-200",
+          "slug": "grey-200",
+          "color": "#e2e2e2",
+          "origin": "theme"
+        }
+      ]
+    },
+    "typography": {
+      "fontSizes": [
+        {
+          "name": "200",
+          "slug": "200",
+          "size": "clamp(0.875rem, calc(0.9rem + -0.04vw), 0.94rem)"
+        },
+        {
+          "name": "400",
+          "slug": "400",
+          "size": "clamp(1.05rem, calc(1.05rem + 0vw), 1.05rem)"
+        },
+        {
+          "name": "450",
+          "slug": "450",
+          "size": "clamp(1.2rem, calc(1.18rem + 0.1vw), 1.35rem)"
+        },
+        {
+          "name": "500",
+          "slug": "500",
+          "size": "clamp(1.44rem, calc(1.38rem + 0.24vw), 1.65rem)"
+        },
+        {
+          "name": "600",
+          "slug": "600",
+          "size": "clamp(1.73rem, calc(1.63rem + 0.44vw), 2.05rem)"
+        },
+        {
+          "name": "700",
+          "slug": "700",
+          "size": "clamp(2.07rem, calc(1.93rem + 0.72vw), 2.57rem)"
+        },
+        {
+          "name": "800",
+          "slug": "800",
+          "size": "clamp(2.49rem, calc(2.28rem + 1.1vw), 3.21rem)"
+        },
+        {
+          "name": "900",
+          "slug": "900",
+          "size": "clamp(2.99rem, calc(2.69rem + 1.62vw), 4.01rem)"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "spacing": {
+      "blockGap": "28px"
+    }
+  }
+}

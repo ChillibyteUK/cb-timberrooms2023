@@ -1,0 +1,82 @@
+<?php
+/**
+ * Related Case Studies by Room Block Template.
+ *
+ * @package cb-timberrooms2023
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+$room = get_field( 'room' );
+
+$tax_room = array(
+    'taxonomy' => 'rooms',
+    'field'    => 'id',
+    'terms'    => array( $room ),
+);
+
+$q = new WP_Query(
+    array(
+		'post_type'      => 'case-studies',
+		'posts_per_page' => 3,
+		'tax_query'      => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+			'relation' => 'AND',
+			$tax_room,
+		),
+    )
+);
+$d = 0;
+if ( $q->have_posts() ) {
+    ?>
+<section class="cs_related has-dark-background-color py-5">
+    <div class="container-xl">
+        <h2 class="h3"><?= esc_html( get_the_title() ); ?> Case Studies</h2>
+        <div class="cs_related__grid">
+            <?php
+
+			while ( $q->have_posts() ) {
+				$q->the_post();
+				$img  = get_the_post_thumbnail_url( get_the_ID(), 'large' );
+				$town = '';
+				if ( get_the_terms( get_the_ID(), 'towns' ) ) {
+					$town = get_the_terms( get_the_ID(), 'towns' )[0]->name;
+				}
+				$county = '';
+				if ( get_the_terms( get_the_ID(), 'counties' ) ) {
+					$county = get_the_terms( get_the_ID(), 'counties' )[0]->name;
+				}
+
+				?>
+            <div class="cs_related__slide" data-aos="fade-up"
+                data-aos-delay="<?= esc_attr( $d ); ?>">
+                <a href="<?= esc_url( get_the_permalink( get_the_ID() ) ); ?>">
+                    <img src="<?= esc_url( $img ); ?>"
+                        alt="<?= esc_attr( get_the_title( get_the_ID() ) ); ?>">
+                    <div class="overlay">
+                        <h3><?= esc_html( get_the_title( get_the_ID() ) ); ?></h3>
+                        <div class="text-center">
+                            <?php
+							if ( '' !== $town ) {
+								echo esc_html( $town );
+							}
+							if ( $town && $county ) {
+								echo ' - ';
+							}
+							if ( '' !== $county ) {
+								echo esc_html( $county );
+							}
+							?>
+                        </div>
+                    </div>
+                </a>
+            </div>
+				<?php
+				$d += 50;
+			}
+			?>
+        </div>
+    </div>
+</section>
+	<?php
+}
+?>

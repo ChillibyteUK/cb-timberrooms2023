@@ -1,0 +1,111 @@
+// SCSS variables — used for Bootstrap overrides in _child_theme_variables.scss
+$col-primary: hsl(0, 0%, 20%);
+$col-dark: hsl(0, 0%, 10%);
+$col-darkest: hsl(0, 0%, 2%);
+$col-highlight: hsl(23, 83%, 53%);
+$col-grey: #fff0f0;
+
+:root {
+  /* ============================================================
+     COLOURS
+     ============================================================ */
+
+  --col-white: #ffffff;
+  --col-white-020: hsla(0 0% 100% / 0.2);
+  --col-white-070: hsla(0 0% 100% / 0.7);
+  --col-black: #020202;
+  --col-black-010: hsla(0 0% 1% / 0.05);
+  --col-black-020: hsla(0 0% 1% / 0.2);
+
+  // Primary — dark charcoal
+  --hsl-col-primary-400: 0 0% 20%;
+  --hsl-col-primary-900: 0 0% 12%;
+  --col-primary-400: hsl(var(--hsl-col-primary-400)); // #333333
+  --col-primary-900: hsl(var(--hsl-col-primary-900)); // #1f1f1f
+
+  // Highlight — warm orange
+  --hsl-col-highlight-400: 23 83% 53%;
+  --col-highlight-400: hsl(var(--hsl-col-highlight-400)); // #eb7024
+
+  // Sub-brand — Prefab (magenta) & Golf (green)
+  --hsl-col-prefab-400: 309 73% 49%;
+  --col-prefab-400: hsl(var(--hsl-col-prefab-400)); // #c923d1 approx
+  --hsl-col-golf-400: 119 88% 32%;
+  --col-golf-400: hsl(var(--hsl-col-golf-400)); // #0f9913 approx
+
+  // Neutrals
+  --col-light-400: #fafafa;
+  --col-grey-200: #e2e2e2;
+
+  /* ============================================================
+     TYPOGRAPHY — families & weights
+     ============================================================ */
+
+  --ff-heading:
+    "Noto Sans", "Lucida Sans", Arial, ui-sans-serif, system-ui, sans-serif;
+  --ff-body:
+    "Noto Sans", "Lucida Sans", Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-family: var(--ff-body); // compatibility alias
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-900: 700;
+  // named aliases
+  --fw-regular: var(--fw-400);
+  --fw-book: var(--fw-400);
+  --fw-medium: var(--fw-500);
+  --fw-semibold: var(--fw-600);
+  --fw-bold: var(--fw-900);
+
+  /* ============================================================
+     TYPOGRAPHY — line heights (per scale step)
+     ============================================================ */
+
+  --lh-200: 1.6;
+  --lh-400: 1.556;
+  --lh-450: 1.5;
+  --lh-500: 1.4;
+  --lh-600: 1.3;
+  --lh-700: 1.25;
+  --lh-800: 1.2;
+  --lh-900: 1.15;
+
+  /* ============================================================
+     TYPOGRAPHY — letter spacing
+     ============================================================ */
+
+  --ls--10: -0.01em;
+  --ls--5: -0.005em;
+  --ls-0: 0;
+  --ls-10: 0.01em;
+  --ls-20: 0.02em;
+  --ls-30: 0.03em;
+  --ls-80: 0.08em;
+
+  /* ============================================================
+     TYPOGRAPHY — font sizes (fluid type scale)
+     ============================================================ */
+
+  --fs-body: var(--fs-400);
+  --fs-200: clamp(0.875rem, calc(0.9rem + -0.04vw), 0.94rem); // ~14px / small
+  --fs-400: clamp(1.05rem, calc(1.05rem + 0vw), 1.05rem); // ~17px / body
+  --fs-450: clamp(1.2rem, calc(1.18rem + 0.1vw), 1.35rem); // ~19–22px / h5
+  --fs-500: clamp(1.44rem, calc(1.38rem + 0.24vw), 1.65rem); // ~23–26px / h4
+  --fs-600: clamp(1.73rem, calc(1.63rem + 0.44vw), 2.05rem); // ~28–33px / h3
+  --fs-700: clamp(2.07rem, calc(1.93rem + 0.72vw), 2.57rem); // ~33–41px / h2
+  --fs-800: clamp(2.49rem, calc(2.28rem + 1.1vw), 3.21rem); // ~40–51px / h1
+  --fs-900: clamp(2.99rem, calc(2.69rem + 1.62vw), 4.01rem); // ~48–64px / hero
+
+  /* ============================================================
+     UTILITIES
+     ============================================================ */
+
+  --transition: 250ms ease-out;
+  --border1: 0.5rem;
+  --border2: 1rem;
+
+  // Header heights — unified across breakpoints for predictable layout
+  --h-top: 80px;
+  --h-top-desktop: 80px;
+}

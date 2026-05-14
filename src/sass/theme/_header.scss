@@ -1,144 +1,142 @@
-/*
-#wrapper-navbar {
-    background-color: var(--col-primary-400);
+// ============================================================================
+// Header
+// ============================================================================
 
-    .navbar-toggler i {
-        color: #fff;
+#wrapper-navbar {
+  // Top bar — logo + hamburger row
+  .topnav {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem;
+    background-color: var(--col-primary-400);
+    min-height: var(--h-top);
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
+
+    @media (min-width: 768px) {
+      padding-inline: 1.5rem;
+      justify-content: space-between;
     }
 
-    .navbar {
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-        .collapsing {
-            transition: none;
-            display: none;
+    @media (min-width: 992px) {
+      min-height: var(--h-top-desktop);
+      padding-inline: 2rem;
+    }
+
+    .logo {
+      background-image: url(../img/timberrooms-logo--wo.svg);
+      background-position: center left;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: inline-block;
+      aspect-ratio: 7 / 1;
+      // Fluid width: fills available space on mobile, capped on desktop
+      width: clamp(180px, 55vw, 320px);
+    }
+
+    .logo--pod {
+      background-image: url(../img/timberrooms-logo-prefab--wo.svg);
+    }
+
+    .logo--golf {
+      background-image: url(../img/timberrooms-logo-golf--wo.svg);
+    }
+
+    .button-container {
+      .navbar-toggler {
+        color: var(--col-light-400);
+        // Ensure minimum 44×44px touch target
+        min-width: 44px;
+        min-height: 44px;
+        display: grid;
+        place-content: center;
+        padding: 0.5rem;
+        border: 1px solid hsla(var(--hsl-col-light-400, 0 0% 98%) / 0.4);
+        border-radius: var(--border1);
+
+        &:hover,
+        &:focus-visible {
+          border-color: var(--col-highlight-400);
+          color: var(--col-highlight-400);
+        }
+      }
+    }
+  }
+
+  // Nav bar — links row
+  .navbar {
+    background-color: var(--col-light-400);
+    box-shadow:
+      rgba(0, 0, 0, 0.12) 0px 1px 3px,
+      rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+    a {
+      color: var(--col-primary-400);
+    }
+
+    // Mobile nav — full-height overlay when open
+    #navbar {
+      @media (max-width: 767px) {
+        // Fills remaining viewport below the two header rows
+        max-height: calc(100dvh - var(--h-top) - 3.5rem);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+
+        .navbar-nav {
+          padding-block: 0.5rem;
         }
 
         .nav-item {
-            &.current_page_item  {
-                a {
-                    color: var(--col-highlight-400);
-                }
-            }
+          border-bottom: 1px solid var(--col-grey-200);
+
+          &:last-child {
+            border-bottom: none;
+          }
         }
-        a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            &:hover {
-                color: var(--col-highlight-400);
-            }
+
+        a.nav-link {
+          font-size: var(--fs-450);
+          padding-block: 0.875rem;
+          padding-inline: 1rem;
         }
-        .dropdown-menu {
-            a {
-                color: var(--col-primary-400);
-                &:active {
-                    color: var(--col-highlight-400);
-                }
-            }
-        }
-        
-        #navbar {
-            a {
-                padding-block: 0;
-            }
-            @media (max-width:767px) {
-                height: calc(100vh - var(--h-top));
-                .navbar-nav {
-                    height: 100%;
-                }
-                a {
-                    font-size: 1.2rem;
-                    padding: 1rem 0;
-                }
-            }
-        }
+      }
     }
-    .logo-container {
-        max-width: 180px;
-        margin-right: 1rem;
-    }
-    .logo {
-        background-image: url(../img/timberrooms-logo.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        display: inline-block;
-        aspect-ratio: 139 / 25;
-        width: 300px;
-        max-width: 100%;
+  }
+
+  // Active state — shared between mobile and desktop
+  .nav-item {
+    &.current-menu-parent > a {
+      color: var(--col-highlight-400);
     }
 
-}
-*/
+    &.current-menu-item,
+    &.current_page_item {
+      a {
+        color: var(--col-highlight-400);
+      }
+    }
+  }
 
-#wrapper-navbar {
-    .topnav {
-        display: grid;
-        place-content: center;
-        gap: 1rem;
-        background-color: var(--col-primary-400);
-        min-height: var(--h-top);
-        padding-block: 1.25rem;
-        @media (max-width:767px) {
-            grid-template-columns: 1fr 0.5fr;
-        }
-        .logo {
-            background-image: url(../img/timberrooms-logo--wo.svg);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            display: inline-block;
-            aspect-ratio: 7 / 1;
-            width: min(400px,70vw);
-            max-width: 100%;
-        }
-        .logo--pod {
-            background-image: url(../img/timberrooms-logo-prefab--wo.svg);
-        }
-        .logo--golf {
-            background-image: url(../img/timberrooms-logo-golf--wo.svg);
-        }
-        .button-container {
-            .navbar-toggler {
-                color: var(--col-light-400);
-            }
-        }
-    }
-    .navbar {
-        background-color: var(--col-light-400);
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-        a {
-            color: var(--col-primary-400);
-        }
-    }
+  a {
+    color: var(--col-primary-400);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: var(--fw-medium);
+    transition: color var(--transition);
 
-    .nav-item {
-        &.current-menu-parent > a {
-            color: var(--col-highlight-400);
-        }
-        &.current-menu-item,
-        &.current_page_item  {
-            a {
-                color: var(--col-highlight-400);
-            }
-        }
+    &:hover {
+      color: var(--col-highlight-400);
     }
+  }
+
+  .dropdown-menu {
     a {
-        color: var(--col-primary-400);
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 500;
-        &:hover {
-            color: var(--col-highlight-400);
-        }
+      color: var(--col-primary-400);
+
+      &:active {
+        color: var(--col-highlight-400);
+      }
     }
-    .dropdown-menu {
-        a {
-            color: var(--col-primary-400);
-            &:active {
-                color: var(--col-highlight-400);
-            }
-        }
-    }
+  }
 }

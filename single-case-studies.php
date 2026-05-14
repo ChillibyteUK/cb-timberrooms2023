@@ -110,11 +110,8 @@ foreach (parse_blocks(get_the_content()) as $b) {
                 <?php
                     add_action('wp_footer',function(){
                         ?>
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script>
-Fancybox.bind('[data-fancybox="gallery"]', {
-});
-</script>
+Fancybox.bind('[data-fancybox="gallery"]', {});
 </script>
                         <?php
                     });

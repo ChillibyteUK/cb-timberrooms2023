@@ -1,35 +1,32 @@
-'use strict'
+"use strict";
 
-module.exports = ctx => {
+const colors = [
+  "blue",
+  "indigo",
+  "purple",
+  "pink",
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "teal",
+  "cyan",
+  "white",
+  "gray",
+  "gray-dark",
+];
+
+module.exports = (ctx) => {
   return {
-    map: ctx.file.dirname.includes('examples') ?
-      false :
-      {
-        inline: false,
-        annotation: true,
-        sourcesContent: true
-      },
+    map: { inline: false, annotation: true, sourcesContent: true },
     plugins: {
       autoprefixer: {
-        cascade: false
+        cascade: false,
+        env: "bs5",
       },
-	  "postcss-understrap-palette-generator" : {
-		colors: [
-			"--bs-blue",
-			"--bs-indigo",
-			"--bs-purple",
-			"--bs-pink",
-			"--bs-red",
-			"--bs-orange",
-			"--bs-yellow",
-			"--bs-green",
-			"--bs-teal",
-			"--bs-cyan",
-			"--bs-white",
-			"--bs-gray",
-			"--bs-gray-dark"
-		]
-	  }
-    }
-  }
-}
+      "postcss-understrap-palette-generator": {
+        colors: colors.map((x) => `--bs-${x}`),
+      },
+    },
+  };
+};

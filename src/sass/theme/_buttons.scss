@@ -1,49 +1,67 @@
 .btn--small {
-    width: 160px;
-    padding: 0.75rem 1rem;
-    height: auto;
+  width: 160px;
+  padding: 0.75rem 1rem;
+  height: auto;
 }
 
 .btn {
-    position: relative;
-    border-radius: 0.25rem;
-    font-weight: 500;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    min-width: 8.125rem;
+  position: relative;
+  border-radius: 0.25rem;
+  font-weight: var(--fw-medium);
+  overflow: hidden;
+  transition:
+    background-color var(--transition),
+    box-shadow var(--transition),
+    color var(--transition);
+  min-width: 8.125rem;
 }
 
 .btn-primary,
 .btn--accent {
-    color: black;
-    text-transform: uppercase;
-    font-weight: 600;
-    background-color: var(--col-highlight-400);
-    font-size: 0.889rem;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    &:hover {
-        background: lighten($col-highlight, 10%);
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    }
+  color: black;
+  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+  background-color: var(--col-highlight-400);
+  font-size: 0.889rem;
+  box-shadow:
+    rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+  &:hover {
+    background: color-mix(in srgb, var(--col-highlight-400) 85%, white);
+    box-shadow:
+      rgba(0, 0, 0, 0.12) 0px 1px 3px,
+      rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
 }
 
+// Fixed landing CTA — full-width bar on mobile, floating pill on desktop
 .btn-landing {
-    @extend .btn-primary;
-    position: fixed;
-    left: 0.5rem;
-    right: 0.5rem;
-    bottom: 0.5rem;
-    z-index: 999;
-    @media (min-width:992px) {
-        left: unset;
-        bottom: 6rem;
-        width: 100px;
-        min-width: unset;
-        border-radius: 100vw;
-        padding: 1rem;
-        font-size: 0.8rem;
-        aspect-ratio: 1;
-        display: grid;
-        place-content: center;
-    }
+  @extend .btn-primary;
+  position: fixed;
+  // Mobile: full-width bar pinned to bottom, clear of browser chrome
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0;
+  min-width: unset;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  z-index: 999;
+  // Ensure it sits above browser bottom UI on iOS
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+
+  @media (min-width: 992px) {
+    left: unset;
+    right: 1.5rem;
+    bottom: 6rem;
+    width: 105px;
+    min-width: unset;
+    border-radius: 100vw;
+    padding: 1rem 1.25rem;
+    font-size: 0.8rem;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+  }
 }

@@ -1,4 +1,3 @@
-// @import "props";
 @import "typography";
 @import "colours";
 @import "header";
@@ -6,72 +5,91 @@
 @import "buttons";
 @import "blog";
 @import "forms";
+@import "a11y";
+@import "wp";
 @import "blocks/blocks";
 @import "case_study";
 
-
 body {
-    background-color: var(--col-primary-400);
-    color: var(--col-light-400);
+  background-color: var(--col-primary-400);
+  color: var(--col-light-400);
+
+  // Pad page bottom when the fixed landing CTA is visible on mobile
+  &:has(.btn-landing) {
+    @media (max-width: 991px) {
+      padding-bottom: calc(3.5rem + env(safe-area-inset-bottom));
+    }
+  }
 }
 
 a {
-    color: var(--col-highlight-400);
-    text-decoration: none;
-    transition: color var(--transition);
-    &:hover {
-        color: var(--col-light-400);
-    }
+  color: var(--col-highlight-400);
+  text-decoration: none;
+  transition: color var(--transition);
+  &:hover {
+    color: var(--col-light-400);
+  }
 }
 a.noline {
-    text-decoration: none;
+  text-decoration: none;
 }
 a.anchor {
-    display: block;
-    position: relative;
-    top: -150px;
-    visibility: hidden;
+  display: block;
+  position: relative;
+  top: calc(-1 * var(--h-top) - 1rem);
+  visibility: hidden;
+  @media (min-width: 992px) {
+    top: calc(-1 * var(--h-top-desktop) - 1rem);
+  }
 }
 
-@media (min-width:992px) {
-    .cols-lg-2 {
-        columns: 2;
-    }
-    .cols-lg-3 {
-        columns: 3;
-    }
+@media (min-width: 992px) {
+  .cols-lg-2 {
+    columns: 2;
+  }
+  .cols-lg-3 {
+    columns: 3;
+  }
 }
 
 .mw-md-75 {
-    @media (min-width:992px) {
-        max-width: 75%;
-        margin: auto;
-    }
+  @media (min-width: 992px) {
+    max-width: 75%;
+    margin: auto;
+  }
 }
 
-// @media (max-width:768px) {
-//     .wp-block-image {
-//         figure.alignright {
-//             float: none !important;
-//             margin: auto !important;
-//         }
-//     }
-// }
+// Admin bar offset for fixed/sticky headers
+.admin-bar #wrapper-navbar {
+  top: 32px;
+  @media (max-width: 782px) {
+    top: 46px;
+  }
+}
+
+// Float images stack on mobile
+@media (max-width: 768px) {
+  .wp-block-image figure.alignright,
+  .wp-block-image figure.alignleft {
+    float: none !important;
+    margin-inline: auto !important;
+  }
+}
 
 .share-icons {
-    padding-top: 1rem;
-    a:not(:last-of-type) {
-        margin-right: 0.5rem;
-    }
+  padding-top: 1rem;
+  a:not(:last-of-type) {
+    margin-right: 0.5rem;
+  }
 }
 
 .social-share {
-    a {
-        font-size: var(--fs-450);
-        &:hover {
-            color: var(--col-primary-400);
-        }
+  a {
+    font-size: var(--fs-450);
+    &:hover {
+      color: var(--col-primary-400);
     }
+  }
 }
 
 // :not(.share-icons,.social-icons,figure,.cb,.rplg-biz-name) > a[target="_blank"]:not(.btn)::after {
@@ -85,24 +103,21 @@ a.anchor {
 //     font-weight: 600;
 // }
 
-
 #breadcrumbs {
-    font-size: 0.889rem;
+  font-size: 0.889rem;
 }
-
 
 .reading {
-    font-size: 0.889rem;
-    font-style: italic;
+  font-size: 0.889rem;
+  font-style: italic;
 }
-
 
 rp-based {
-    color: var(--col-light-400) !important;
+  color: var(--col-light-400) !important;
 }
 rp-review-inner {
-    background-color: var(--col-light-400);
-    color: var(--col-primary-400);
+  background-color: var(--col-light-400);
+  color: var(--col-primary-400);
 }
 
 // show stuff that overflows horizontally

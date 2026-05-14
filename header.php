@@ -152,7 +152,7 @@ else {
 ?>
 <div id="wrapper-navbar" class="fixed-top p-0">
     <div class="topnav">
-        <a href="/" class="logo <?=$logo?>" aria-label="Timber Rooms Homepage"></a>
+        <a href="/" class="logo <?=$logo?> mx-md-auto" aria-label="Timber Rooms Homepage"></a>
         <div class="button-container text-end d-flex align-items-center justify-content-end d-md-none">
             <button class="navbar-toggler mt-2" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
