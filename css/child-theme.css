@@ -21569,6 +21569,19 @@ footer .container-xl {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
+.btn--outline {
+  color: var(--col-highlight-400);
+  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+  font-size: 0.889rem;
+  background-color: transparent;
+  border: 2px solid var(--col-highlight-400);
+}
+.btn--outline:hover {
+  background-color: var(--col-highlight-400);
+  color: black;
+}
+
 .btn-landing {
   position: fixed;
   left: 0;
@@ -22263,9 +22276,68 @@ input[type=radio]:focus-visible {
   will-change: transform;
 }
 
+.hero__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+.hero__cta-row .btn, .hero__cta-row .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-notices-wrapper .woocommerce-message .hero__cta-row a.button, .hero__cta-row .woocommerce-info a.button, .woocommerce-info .hero__cta-row a.button, .hero__cta-row body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .hero__cta-row button {
+  flex: 1 1 auto;
+}
+@media (min-width: 480px) {
+  .hero__cta-row .btn, .hero__cta-row .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-notices-wrapper .woocommerce-message .hero__cta-row a.button, .hero__cta-row .woocommerce-info a.button, .woocommerce-info .hero__cta-row a.button, .hero__cta-row body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .hero__cta-row button {
+    flex: 0 0 auto;
+  }
+}
+
 .logo img {
   width: min(500px, 90vw);
   margin-inline: auto;
+}
+
+.trust-bar {
+  background-color: var(--col-primary-900);
+  border-bottom: 1px solid hsl(var(--hsl-col-primary-900)/0.6);
+}
+.trust-bar__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.trust-bar__list::-webkit-scrollbar {
+  display: none;
+}
+.trust-bar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 0 0 auto;
+  min-width: 4.5rem;
+}
+.trust-bar__value {
+  display: block;
+  font-size: var(--fs-600);
+  font-weight: var(--fw-900);
+  line-height: 1.1;
+  color: var(--col-highlight-400);
+  white-space: nowrap;
+}
+.trust-bar__label {
+  display: block;
+  font-size: var(--fs-200);
+  color: var(--col-light-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.2rem;
+  white-space: nowrap;
 }
 
 .video .lite-vimeo {

@@ -35,6 +35,20 @@
   }
 }
 
+.btn--outline {
+  color: var(--col-highlight-400);
+  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+  font-size: 0.889rem;
+  background-color: transparent;
+  border: 2px solid var(--col-highlight-400);
+
+  &:hover {
+    background-color: var(--col-highlight-400);
+    color: black;
+  }
+}
+
 // Fixed landing CTA — full-width bar on mobile, floating pill on desktop
 .btn-landing {
   @extend .btn-primary;

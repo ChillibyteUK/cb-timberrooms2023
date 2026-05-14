@@ -14,6 +14,18 @@ function acf_blocks() {
     if ( function_exists( 'acf_register_block_type' ) ) {
         acf_register_block_type(
             array(
+				'name'            => 'cb_trust_bar',
+				'title'           => __( 'CB Trust Bar' ),
+				'description'     => __( 'Four key trust stats pulled from Site-Wide Settings.' ),
+				'category'        => 'layout',
+				'icon'            => 'awards',
+				'render_template' => 'blocks/cb-trust-bar.php',
+				'mode'            => 'edit',
+				'supports'        => array( 'mode' => false ),
+            )
+        );
+        acf_register_block_type(
+            array(
 				'name'            => 'cb_hero',
 				'title'           => __( 'CB Hero' ),
 				'category'        => 'layout',
@@ -231,7 +243,7 @@ function modify_core_add_container( $attributes, $content ) {
 function modify_core_heading( $attributes, $content ) {
     ob_start();
     $id = strtolower( wp_strip_all_tags( $content ) );
-    $id = cbslugify( $id );
+    $id = sanitize_title( $id );
     ?>
 <div class="container-xl" id="<?= esc_attr( $id ); ?>">
     <?= $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>

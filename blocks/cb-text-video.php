@@ -64,7 +64,7 @@ $bg = get_vimeo_data_from_id( get_field( 'vimeo_id' ), 'thumbnail_url' );
                 <h2 class="d-none d-lg-block">
                     <?= esc_html( get_field( 'title' ) ); ?>
                 </h2>
-                <div><?= esc_html( get_field( 'content' ) ); ?></div>
+                <div><?= wp_kses_post( get_field( 'content' ) ); ?></div>
                 <?php
                 if ( get_field( 'cta' ) ) {
                     $cta_link = get_field( 'cta' );

@@ -1,0 +1,48 @@
+.trust-bar {
+  background-color: var(--col-primary-900);
+  border-bottom: 1px solid hsl(var(--hsl-col-primary-900) / 0.6);
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+    // Scrollable on very narrow screens without wrapping
+    overflow-x: auto;
+    scrollbar-width: none; // Firefox
+    &::-webkit-scrollbar {
+      display: none; // Chrome/Safari
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 0 0 auto;
+    min-width: 4.5rem;
+  }
+
+  &__value {
+    display: block;
+    font-size: var(--fs-600);
+    font-weight: var(--fw-900);
+    line-height: 1.1;
+    color: var(--col-highlight-400);
+    white-space: nowrap;
+  }
+
+  &__label {
+    display: block;
+    font-size: var(--fs-200);
+    color: var(--col-light-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.2rem;
+    white-space: nowrap;
+  }
+}

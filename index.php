@@ -37,7 +37,7 @@ get_header();
             <?php
         echo '<button class="btn btn-outline-primary active me-2 mb-2" data-filter="*">All</button>';
         foreach ($cats as $cat) {
-            echo '<button class="btn btn-outline-primary me-2 mb-2" data-filter=".' . cbslugify($cat->name) . '">' . $cat->cat_name . '</button>';
+            echo '<button class="btn btn-outline-primary me-2 mb-2" data-filter=".' . sanitize_title($cat->name) . '">' . $cat->cat_name . '</button>';
         }
         echo '<a href="/events/" class="btn btn-outline-primary me-2 mb-2">Events</a>';
         ?>
@@ -52,8 +52,8 @@ get_header();
                 }
                 $cats = get_the_category();
                 $category = wp_list_pluck($cats, 'name');
-                $flashcat = cbslugify($category[0]);
-                $catclass = implode(' ', array_map( 'cbslugify', $category ) );
+                $flashcat = sanitize_title($category[0]);
+                $catclass = implode(' ', array_map( 'sanitize_title', $category ) );
                 $category = implode(', ',$category);
 
                 if (has_category('event')) {

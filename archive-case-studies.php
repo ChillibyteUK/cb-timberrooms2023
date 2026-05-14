@@ -3,12 +3,50 @@
 defined('ABSPATH') || exit;
 
 get_header();
-$img = wp_get_attachment_image_url(get_field('case_studies_archive_hero','options'),'full');
+$hero_img = wp_get_attachment_image_url( get_field( 'case_studies_archive_hero', 'options' ), 'full' );
 ?>
 <!-- hero -->
 <main id="main" class="caseStudies">
-    <link rel="preload" as="image" href="<?=$img?>">
-    <header class="hero" data-parallax="scroll" data-image-src="<?=$img?>"></header>
+    <link rel="preload" as="image" href="<?= esc_url( $hero_img ); ?>">
+    <header id="cs-archive-hero" class="hero">
+        <img src="<?= esc_url( $hero_img ); ?>" class="hero__parallax-img" alt="">
+    </header>
+<script>
+( function () {
+	var section = document.getElementById( 'cs-archive-hero' );
+	if ( ! section ) return;
+
+	var img = section.querySelector( '.hero__parallax-img' );
+	if ( ! img ) return;
+
+	var ticking = false;
+
+	function update() {
+		var rect    = section.getBoundingClientRect();
+		var winH    = window.innerHeight;
+
+		if ( rect.bottom > 0 && rect.top < winH ) {
+			var percent    = ( winH - rect.top ) / ( winH + rect.height );
+			percent        = Math.max( 0, Math.min( 1, percent ) );
+			var translateY = ( percent - 0.5 ) * 240;
+			img.style.transform = 'translateY(' + translateY.toFixed( 1 ) + 'px)';
+		}
+
+		ticking = false;
+	}
+
+	function onScroll() {
+		if ( ! ticking ) {
+			window.requestAnimationFrame( update );
+			ticking = true;
+		}
+	}
+
+	window.addEventListener( 'scroll', onScroll, { passive: true } );
+	window.addEventListener( 'resize', onScroll );
+	onScroll();
+}() );
+</script>
     <div class="container-xl py-5">
         <h1 data-aos="fade" class="mb-4 text-center">View our Case Studies</h1>
         <div class="w-100 mb-4" id="csgrid">

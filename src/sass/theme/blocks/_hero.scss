@@ -21,6 +21,21 @@
   }
 }
 
+.hero__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+
+  .btn {
+    flex: 1 1 auto;
+
+    @media (min-width: 480px) {
+      flex: 0 0 auto;
+    }
+  }
+}
+
 .logo {
   img {
     width: min(500px, 90vw);
