@@ -8,10 +8,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-add_action('wp_head', function () {
-    echo '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>';
-});
-
 get_header();
 the_post();
 
@@ -81,12 +77,15 @@ foreach (parse_blocks(get_the_content()) as $b) {
                     if (get_field('gallery')) {
 
                         foreach(get_field('gallery') as $i) {
+                            $alt = esc_attr( get_post_meta( $i, '_wp_attachment_image_alt', true ) );
                             ?>
-                        <div data-thumb="<?=wp_get_attachment_image_url( $i, 'large' )?>" data-aos="fade" data-aos-delay="<?=$d?>" data-aos-anchor=".image-gallery">
-                            <a href="<?=wp_get_attachment_image_url( $i, 'full' )?>" data-fancybox="gallery">
-                                <img src="<?=wp_get_attachment_image_url( $i, 'medium' )?>">
+                        <figure class="gallery__image" data-aos="fade" data-aos-delay="<?= esc_attr( $d ); ?>" data-aos-anchor=".image-gallery">
+                            <a href="<?= esc_url( wp_get_attachment_image_url( $i, 'full' ) ); ?>" data-fancybox="cs-gallery">
+                                <img src="<?= esc_url( wp_get_attachment_image_url( $i, 'medium' ) ); ?>" alt="<?= $alt; ?>">
+                                <div class="overlay" style="pointer-events:none;"></div>
                             </a>
-                        </div>
+                            <?php if ( $alt ) : ?><figcaption><?= $alt; ?></figcaption><?php endif; ?>
+                        </figure>
                             <?php
                             $d += 50;
                         }
@@ -95,12 +94,15 @@ foreach (parse_blocks(get_the_content()) as $b) {
                     if ($galleryExtras) {
 
                         foreach($galleryExtras as $i) {
+                            $alt = esc_attr( get_post_meta( $i, '_wp_attachment_image_alt', true ) );
                             ?>
-                        <div data-thumb="<?=wp_get_attachment_image_url( $i, 'large' )?>" data-aos="fade" data-aos-delay="<?=$d?>" data-aos-anchor=".image-gallery">
-                            <a href="<?=wp_get_attachment_image_url( $i, 'full' )?>" data-fancybox="gallery">
-                                <img src="<?=wp_get_attachment_image_url( $i, 'medium' )?>">
+                        <figure class="gallery__image" data-aos="fade" data-aos-delay="<?= esc_attr( $d ); ?>" data-aos-anchor=".image-gallery">
+                            <a href="<?= esc_url( wp_get_attachment_image_url( $i, 'full' ) ); ?>" data-fancybox="cs-gallery">
+                                <img src="<?= esc_url( wp_get_attachment_image_url( $i, 'medium' ) ); ?>" alt="<?= $alt; ?>">
+                                <div class="overlay" style="pointer-events:none;"></div>
                             </a>
-                        </div>
+                            <?php if ( $alt ) : ?><figcaption><?= $alt; ?></figcaption><?php endif; ?>
+                        </figure>
                             <?php
                             $d += 50;
                         }
@@ -108,13 +110,29 @@ foreach (parse_blocks(get_the_content()) as $b) {
                     ?>
                 </div>
                 <?php
-                    add_action('wp_footer',function(){
+                    add_action( 'wp_footer', function () {
                         ?>
 <script>
-Fancybox.bind('[data-fancybox="gallery"]', {});
+( function () {
+	function initGallery() {
+		if ( typeof Fancybox === 'undefined' ) return;
+		Fancybox.bind( '[data-fancybox="cs-gallery"]', {
+			Carousel: {
+				formatCaption: function ( _carousel, slide ) {
+					return slide.triggerEl && slide.triggerEl.nextElementSibling || '';
+				},
+			},
+		} );
+	}
+	if ( document.readyState === 'loading' ) {
+		document.addEventListener( 'DOMContentLoaded', initGallery );
+	} else {
+		initGallery();
+	}
+}() );
 </script>
                         <?php
-                    });
+                    }, 9999 );
                 }
                 ?>
             </div>
