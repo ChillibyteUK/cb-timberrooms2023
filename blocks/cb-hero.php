@@ -43,10 +43,10 @@ if ( null !== get_field( 'theme' ) && 'None' !== get_field( 'theme' ) ) {
 ?>
 <div class="container-xl <?= esc_attr( $mt ); ?> mb-4">
 	<h1 data-aos="fade" class="<?= esc_attr( $hclass ); ?>"><?= esc_html( get_field( 'title' ) ); ?></h1>
-	<div class="hero__cta-row" data-aos="fade" data-aos-delay="100">
+	<!-- div class="hero__cta-row" data-aos="fade" data-aos-delay="100">
 		<a href="/contact/" class="btn btn--accent">Get a free quote &rarr;</a>
 		<a href="/room-types/" class="btn btn--outline">View rooms</a>
-	</div>
+	</div -->
 </div>
 <script>
 ( function () {
