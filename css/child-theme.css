@@ -22290,8 +22290,7 @@ input[type=radio]:focus-visible {
     left: 0;
     right: 0;
     background: hsl(var(--hsl-col-primary-900)/0.6);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(1px);
     padding-block: 1.25rem;
   }
   .hero__content h1, .hero__content .h1 {
