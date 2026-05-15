@@ -7,12 +7,14 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$img = '';
+$desktop_img = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+$mobile_img  = '';
+
 if ( get_field( 'background' ) ) {
-	$img = wp_get_attachment_image_url( get_field( 'background' ), 'full' );
-} else {
-	$img = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+	$mobile_img = wp_get_attachment_image_url( get_field( 'background' ), 'full' );
 }
+
+$img = $desktop_img ?: $mobile_img;
 
 $class = $block['className'] ?? '';
 
@@ -26,7 +28,14 @@ $block_id = $block['id'] ?? wp_unique_id( 'cb-hero-' );
 <link rel="preload" as="image" href="<?= esc_url( $img ); ?>">
 <header id="<?= esc_attr( $block_id ); ?>" class="hero mb-md-4 <?= esc_attr( $class ); ?>">
 	<div class="hero__bg">
+		<?php if ( $mobile_img ) : ?>
+		<picture>
+			<source media="(max-width: 767px)" srcset="<?= esc_url( $mobile_img ); ?>">
+			<img src="<?= esc_url( $img ); ?>" class="hero__parallax-img" alt="">
+		</picture>
+		<?php else : ?>
 		<img src="<?= esc_url( $img ); ?>" class="hero__parallax-img" alt="">
+		<?php endif; ?>
 	</div>
 	<?php if ( null !== get_field( 'theme' ) && 'None' !== get_field( 'theme' ) ) :
 		$logo = 'Pods' === get_field( 'theme' ) ? 'timberrooms-logo-prefab--wo.svg' : 'timberrooms-logo--wo.svg';

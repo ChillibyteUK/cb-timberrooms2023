@@ -72,7 +72,7 @@
             "name": "background",
             "aria-label": "",
             "type": "image",
-            "instructions": "Uses Featured Image if unset",
+            "instructions": "Hero image for mobile, if set.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -89,7 +89,8 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "medium"
+            "allow_in_bindings": 1,
+            "preview_size": "thumbnail"
         },
         {
             "key": "field_64916d36bcaea",
@@ -135,5 +136,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689682157
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1778857976
 }
