@@ -12,6 +12,27 @@ defined( 'ABSPATH' ) || exit;
  */
 function acf_blocks() {
     if ( function_exists( 'acf_register_block_type' ) ) {
+
+		// INSERT NEW BLOCKS HERE.
+
+		acf_register_block_type(
+			array(
+				'name'            => 'cb_room_type_cards',
+				'title'           => __( 'CB Room Type Cards' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/cb-room-type-cards.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+          
+				),
+			)
+		);
+
         acf_register_block_type(
             array(
 				'name'            => 'cb_trust_bar',

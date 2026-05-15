@@ -1,0 +1,26 @@
+{
+  "key": "group_cb_room_type_cards",
+  "title": "CB Room Type Cards",
+  "fields": [
+    {
+      "key": "field_cb_room_type_cards_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text",
+      "instructions": "Optional heading shown above the slider. Leave blank to omit.",
+      "required": 0,
+      "placeholder": "e.g. Explore Our Room Types"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/cb-room-type-cards"
+      }
+    ]
+  ],
+  "active": 1,
+  "description": ""
+}

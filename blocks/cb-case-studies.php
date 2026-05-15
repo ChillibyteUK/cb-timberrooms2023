@@ -57,45 +57,51 @@ defined( 'ABSPATH' ) || exit;
     </div>
 </section>
 <?php
-add_action(
-    'wp_footer',
-    function () {
-        ?>
+static $cb_case_studies_script_added = false;
+
+if ( ! $cb_case_studies_script_added ) {
+	$cb_case_studies_script_added = true;
+
+	add_action(
+		'wp_footer',
+		function () {
+			?>
 <script>
 ( function () {
-    function initCaseStudiesSlider() {
-        var el = document.querySelector( '.cs_slider' );
-        if ( ! el || typeof Swiper === 'undefined' ) {
-            return;
-        }
+	if ( typeof Swiper === 'undefined' ) {
+		return;
+	}
 
-        new Swiper( el, {
-            loop            : true,
-            slidesPerView   : 4,
-            slidesPerGroup  : 1,
-            spaceBetween    : 0,
-            speed           : 600,
-            autoplay        : {
-                delay               : 3000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter   : true,
-            },
-            breakpoints: {
-                0  : { slidesPerView: 1 },
-                480: { slidesPerView: 2 },
-                768: { slidesPerView: 3 },
-                992: { slidesPerView: 4 },
-            },
-        } );
-    }
+	document.querySelectorAll( '.cs_slider' ).forEach( function ( el ) {
+		if ( el.dataset.swiperInit ) {
+			return;
+		}
 
-    if ( document.readyState === 'loading' ) {
-        document.addEventListener( 'DOMContentLoaded', initCaseStudiesSlider );
-    } else {
-        initCaseStudiesSlider();
-    }
+		el.dataset.swiperInit = '1';
+
+		new Swiper( el, {
+			loop            : true,
+			slidesPerView   : 4,
+			slidesPerGroup  : 1,
+			spaceBetween    : 0,
+			speed           : 600,
+			autoplay        : {
+				delay               : 3000,
+				disableOnInteraction: false,
+				pauseOnMouseEnter   : true,
+			},
+			breakpoints: {
+				0  : { slidesPerView: 1 },
+				480: { slidesPerView: 2 },
+				768: { slidesPerView: 3 },
+				992: { slidesPerView: 4 },
+			},
+		} );
+	} );
 }() );
 </script>
-        <?php
-    }
-);
+			<?php
+		},
+		30
+	);
+}

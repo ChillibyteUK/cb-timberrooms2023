@@ -170,8 +170,8 @@ input[type="radio"]:focus-visible {
 // ARIA Live Regions
 // ============================================================================
 
-[aria-live="polite"],
-[aria-live="assertive"] {
+[aria-live="polite"]:not(.swiper-wrapper),
+[aria-live="assertive"]:not(.swiper-wrapper) {
   position: absolute;
   left: -10000px;
   width: 1px;
