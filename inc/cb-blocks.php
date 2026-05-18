@@ -17,6 +17,24 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'cb_mini_manual_testimonials',
+				'title'           => __( 'CB Mini Manual Testimonials' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/cb-mini-manual-testimonials.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+          
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'cb_room_type_cards',
 				'title'           => __( 'CB Room Type Cards' ),
 				'category'        => 'layout',

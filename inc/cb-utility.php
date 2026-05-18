@@ -172,12 +172,10 @@ add_action( 'admin_head', 'gb_gutenberg_admin_styles' );
 // The 'mode' registration key only sets the default for new blocks; existing blocks
 // have their mode persisted in the serialised HTML comment. This JS subscriber
 // watches the block store and resets any ACF block that drifts to preview/auto.
-add_action(
-	'enqueue_block_editor_assets',
-	function () {
-		wp_add_inline_script(
-			'wp-blocks',
-			"( function () {
+function cb_force_acf_blocks_into_edit_mode() {
+	wp_add_inline_script(
+		'wp-blocks',
+		"( function () {
 	var processed = {};
 	wp.data.subscribe( function () {
 		var select   = wp.data.select( 'core/block-editor' );
@@ -203,9 +201,9 @@ add_action(
 		}( blocks ) );
 	} );
 }() );"
-		);
-	}
-);
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'cb_force_acf_blocks_into_edit_mode' );
 
 // disable full-screen editor view by default.
 if ( is_admin() ) {
@@ -215,47 +213,6 @@ if ( is_admin() ) {
     }
     add_action( 'enqueue_block_editor_assets', 'jba_disable_editor_fullscreen_by_default' );
 }
-
-// Force all ACF blocks to always display in edit mode in the block editor.
-// The 'mode' registration key only sets the default for new blocks; existing blocks
-// have their mode persisted in the serialised HTML comment. This JS subscriber
-// watches the block store and resets any ACF block that drifts to preview/auto.
-add_action(
-	'enqueue_block_editor_assets',
-	function () {
-		wp_add_inline_script(
-			'wp-blocks',
-			"( function () {
-	var processed = {};
-	wp.data.subscribe( function () {
-		var select   = wp.data.select( 'core/block-editor' );
-		var dispatch = wp.data.dispatch( 'core/block-editor' );
-		if ( ! select || ! dispatch ) return;
-		var blocks = select.getBlocks();
-		( function walk( list ) {
-			list.forEach( function ( block ) {
-				if (
-					block.name &&
-					block.name.indexOf( 'acf/' ) === 0 &&
-					block.attributes &&
-					block.attributes.mode !== 'edit' &&
-					! processed[ block.clientId ]
-				) {
-					processed[ block.clientId ] = true;
-					dispatch.updateBlockAttributes( block.clientId, { mode: 'edit' } );
-				}
-				if ( block.innerBlocks && block.innerBlocks.length ) {
-					walk( block.innerBlocks );
-				}
-			} );
-		}( blocks ) );
-	} );
-}() );"
-		);
-	}
-);
-
-
 
 // God I hate Gravity Forms
 // Change textarea rows to 4 instead of 10.
