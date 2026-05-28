@@ -14,7 +14,7 @@ if ( get_field( 'background' ) ) {
 	$mobile_img = wp_get_attachment_image_url( get_field( 'background' ), 'full' );
 }
 
-$img = $desktop_img ?: $mobile_img;
+$img = $desktop_img ? $desktop_img : $mobile_img;
 
 $class = $block['className'] ?? '';
 
@@ -24,6 +24,8 @@ if ( 'Yes' === ( get_field( 'centre_title' )[0] ?? null ) ) {
 }
 
 $block_id = $block['id'] ?? wp_unique_id( 'cb-hero-' );
+
+$hide_ctas = get_field( 'hide_ctas' );
 ?>
 <link rel="preload" as="image" href="<?= esc_url( $img ); ?>">
 <header id="<?= esc_attr( $block_id ); ?>" class="hero mb-md-4 <?= esc_attr( $class ); ?>">
@@ -37,22 +39,31 @@ $block_id = $block['id'] ?? wp_unique_id( 'cb-hero-' );
 		<img src="<?= esc_url( $img ); ?>" class="hero__parallax-img" alt="">
 		<?php endif; ?>
 	</div>
-	<?php if ( null !== get_field( 'theme' ) && 'None' !== get_field( 'theme' ) ) :
+	<?php
+	if ( null !== get_field( 'theme' ) && 'None' !== get_field( 'theme' ) ) {
 		$logo = 'Pods' === get_field( 'theme' ) ? 'timberrooms-logo-prefab--wo.svg' : 'timberrooms-logo--wo.svg';
-	?>
+		?>
 	<div class="logo py-4">
 		<div class="container-xl text-center" data-aos="fade">
 			<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/' . $logo ); ?>" alt="">
 		</div>
 	</div>
-	<?php endif; ?>
+		<?php
+	}
+	?>
 	<div class="hero__content">
 		<div class="container-xl">
 			<h1 data-aos="fade" class="<?= esc_attr( $hclass ); ?>"><?= esc_html( get_field( 'title' ) ); ?></h1>
+			<?php
+			if ( ! $hide_ctas ) {
+				?>
 			<div class="hero__cta-row" data-aos="fade" data-aos-delay="100">
 				<a href="/contact/" class="btn btn--accent">Get a free quote &rarr;</a>
 				<a href="/room-types/" class="btn btn--outline">View rooms</a>
 			</div>
+				<?php
+			}
+			?>
 		</div>
 	</div>
 </header>
