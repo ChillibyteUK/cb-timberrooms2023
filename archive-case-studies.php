@@ -8,21 +8,33 @@ $hero_img = wp_get_attachment_image_url( get_field( 'case_studies_archive_hero',
 <!-- hero -->
 <main id="main" class="caseStudies">
     <link rel="preload" as="image" href="<?= esc_url( $hero_img ); ?>">
-    <header id="cs-archive-hero" class="hero">
-        <img src="<?= esc_url( $hero_img ); ?>" class="hero__parallax-img" alt="">
+    <header id="cs-archive-hero" class="hero mb-md-4">
+        <div class="hero__bg">
+            <img src="<?= esc_url( $hero_img ); ?>" class="hero__parallax-img" alt="">
+        </div>
+        <div class="hero__content">
+            <div class="container-xl">
+                <h1 data-aos="fade" class="text-center">View our Case Studies</h1>
+                <div class="hero__cta-row" data-aos="fade" data-aos-delay="100">
+                    <a href="/contact/" class="btn btn--accent">Get a free quote &rarr;</a>
+                    <a href="/room-types/" class="btn btn--outline">View rooms</a>
+                </div>
+            </div>
+        </div>
     </header>
 <script>
 ( function () {
 	var section = document.getElementById( 'cs-archive-hero' );
 	if ( ! section ) return;
 
+	var bg  = section.querySelector( '.hero__bg' );
 	var img = section.querySelector( '.hero__parallax-img' );
-	if ( ! img ) return;
+	if ( ! bg || ! img ) return;
 
 	var ticking = false;
 
 	function update() {
-		var rect    = section.getBoundingClientRect();
+		var rect    = bg.getBoundingClientRect();
 		var winH    = window.innerHeight;
 
 		if ( rect.bottom > 0 && rect.top < winH ) {
@@ -48,7 +60,6 @@ $hero_img = wp_get_attachment_image_url( get_field( 'case_studies_archive_hero',
 }() );
 </script>
     <div class="container-xl py-5">
-        <h1 data-aos="fade" class="mb-4 text-center">View our Case Studies</h1>
         <div class="w-100 mb-4" id="csgrid">
             <?php
         $d = 0;
