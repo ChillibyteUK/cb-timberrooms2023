@@ -94,6 +94,7 @@ $hero_img = wp_get_attachment_image_url( get_field( 'case_studies_archive_hero',
 			}
 			?>
         </div>
+        <?= numeric_posts_nav(); ?>
     </div>
     <?php
     require get_stylesheet_directory() . '/blocks/cb-cta.php';
