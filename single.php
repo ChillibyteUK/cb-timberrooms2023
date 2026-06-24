@@ -46,6 +46,7 @@ $img = get_the_post_thumbnail_url( get_the_ID(), 'full' );
                 array(
 					'category__in'   => $ids,
 					'posts_per_page' => 4,
+					'post__not_in'   => array( get_the_ID() ),
                 )
             );
             while ( $r->have_posts() ) {

@@ -64,7 +64,7 @@ $hero_id = wp_unique_id('cb-hero-');
 </script>
 
     <div class="container-xl pb-5">
-        <div class="row" id="grid">
+        <div class="row gap-4" id="grid">
             <?php
             while ( have_posts() ) {
                 the_post();
