@@ -77,8 +77,8 @@
   --transition: 250ms ease-out;
   --border1: 0.5rem;
   --border2: 1rem;
-  --h-top: 80px;
-  --h-top-desktop: 80px;
+  --h-top: 120px;
+  --h-top-desktop: 120px;
 }
 
 *,

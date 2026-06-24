@@ -1,106 +1,83 @@
 <?php
-// Exit if accessed directly.
-defined('ABSPATH') || exit;
+/**
+ * Single post template.
+ *
+ * @package cb-timberrooms2023
+ */
+
+defined( 'ABSPATH' ) || exit;
 get_header();
-$img = get_the_post_thumbnail_url(get_the_ID(),'full');
+$img = get_the_post_thumbnail_url( get_the_ID(), 'full' );
 ?>
 <main id="main" class="blog">
     <?php
     $content = get_the_content();
-    $blocks = parse_blocks($content);
+    $blocks  = parse_blocks( $content );
     $sidebar = array();
-    $after;
     ?>
     <section class="breadcrumbs container-xl">
     <?php
-    if (function_exists('yoast_breadcrumb')) {
-        yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+    if ( function_exists( 'yoast_breadcrumb' ) ) {
+        yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
     }
     ?>
     </section>
     <div class="container-xl">
         <div class="row g-4 pb-4">
-            <div class="col-lg-9 order-2">
-                <h1 class="blog__title"><?=get_the_title()?></h1>
-                <img src="<?=$img?>" alt="" class="blog__image">
+            <div class="col-lg-9">
+                <h1 class="blog__title"><?= wp_kses_post( get_the_title() ); ?></h1>
+                <img src="<?= esc_url( $img ); ?>" alt="" class="blog__image">
             <?php
             $count = estimate_reading_time_in_minutes( get_the_content(), 200, true, true );
-            echo $count;
+            echo wp_kses_post( $count );
 
-    foreach ($blocks as $block) {
-        if ($block['blockName'] == 'core/heading') {
-            if (!array_key_exists('level', $block['attrs'])) {
-                $heading = strip_tags($block['innerHTML']);
-                $id = acf_slugify($heading);
-                echo '<a id="' . $id . '" class="anchor"></a>';
-                $sidebar[$heading] = $id;
-            }
-        }
-        echo render_block($block);
-    }
+			foreach ( $blocks as $block ) {
+				echo render_block( $block );
+			}
             ?>
             </div>
-            <div class="col-lg-3 order-1">
-                <?php
-                if ($sidebar) {
-                    ?>
+            <div class="col-lg-3">
                 <div class="sidebar">
-                    <div class="h5 d-none d-lg-block">Quick Links</div>
-                    <div class="h5 d-lg-none" data-bs-toggle="collapse" href="#links" role="button">Quick Links</div>
-                    <div class="collapse d-lg-block" id="links">
-                        <?php
-                        foreach ($sidebar as $heading => $id) {
-                            ?>
-                            <li><a href="#<?=$id?>"><?=$heading?></a></li>
-                            <?php
-                        }
-                        ?>
-                    </div>
-                </div>
-                    <?php
-                }
-                ?>
-            </div>
-        </div>
         <section class="related pb-5">
-            <h3><span>Related</span> Guides</h3>
-            <div class="row g-4">
+            <h3 class="h4"><span>Related</span> Insights</h3>
             <?php
             $cats = get_the_category();
-            $ids = wp_list_pluck($cats,'term_id');
-            $r = new WP_Query(array(
-                'category__in' => $ids,
-                'posts_per_page' => 4
-            ));
-            while ($r->have_posts()) {
+            $ids  = wp_list_pluck( $cats, 'term_id' );
+            $r    = new WP_Query(
+                array(
+					'category__in'   => $ids,
+					'posts_per_page' => 4,
+                )
+            );
+            while ( $r->have_posts() ) {
                 $r->the_post();
                 ?>
-                <div class="col-md-6 col-xl-3">
-                    <a class="blog_card" href="<?=get_the_permalink()?>">
-                        <img src="<?=get_the_post_thumbnail_url(get_the_ID(),'large')?>" alt="" class="blog_card__image">
-                        <div class="blog_card__content">
-                            <h3 class="blog_card__title"><?=get_the_title()?></h3>
-                        </div>
-                    </a>
-                </div>
+				<a class="blog_card" href="<?= esc_url( get_the_permalink() ); ?>">
+					<div class="blog_card__image-wrap">
+						<img src="<?= esc_url( get_the_post_thumbnail_url( get_the_ID(), 'large' ) ); ?>" alt="" class="blog_card__image">
+					</div>
+					<div class="blog_card__content">
+						<h3 class="blog_card__title"><?= wp_kses_post( get_the_title() ); ?></h3>
+					</div>
+				</a>
                 <?php
             }
             ?>
             </div>
         </section>
-    </div>
-<section class="cta_block cta_block--light py-5">
-    <div class="container-xl">
-        <h2 class="cta__title">Get A <span>Cash Offer</span> For Your Property</h2>
-        <div class="cta__intro mb-4"><?=get_field('cta_intro')?></div>
-        <div class="form-container">
-            <div class="form-inner d-flex flex-wrap gap-4 justify-content-center">
-                <div class="text-center">Get a <span>Free Cash Offer</span> today</div>
-                <div class="d-sm-flex w-100 w-sm-auto">
-                    <input type="text" class="form-control mb-3 mb-sm-0 me-2" placeholder="Enter your Post Code">
-                    <button class="d-block w-100 w-sm-auto d-sm-inline btn btn--accent">Get Offer</button>
-                </div>
             </div>
+        </div>
+
+    </div>
+<section class="cta py-5 text-center">
+    <div class="container-xl" data-aos="fade">
+        <img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/timberrooms-logo--wo.png' ); ?>" alt="Timber Rooms">
+        <h3>Thinking about a Garden Room?</h3>
+        <a href="/contact/" class="h5">Book a Free Site Survey</a>
+        <div class="cta__grid">
+            <div class="line"></div>
+            <div class="h5">Call Now: <a href="tel:<?= esc_attr( parse_phone( get_field( 'contact_phone', 'options' ) ) ); ?>"><?= esc_html( get_field( 'contact_phone', 'options' ) ); ?></a></div>
+            <div class="line"></div>
         </div>
     </div>
 </section>

@@ -73,7 +73,7 @@ if ( 'image-text' === get_field( 'order' ) ) {
                 if ( get_field( 'cta' ) ) {
                     $cta_link = get_field( 'cta' );
                     ?>
-                    <a href="<?= esc_url( $cta_link['url'] ); ?>" class="btn btn--accent"><?= esc_url( $cta_link['title'] ); ?></a>
+                    <a href="<?= esc_url( $cta_link['url'] ); ?>" class="btn btn--accent"><?= esc_html( $cta_link['title'] ); ?></a>
                     <?php
                 }
                 ?>

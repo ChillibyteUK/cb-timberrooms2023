@@ -1,5 +1,10 @@
 <?php
-// Exit if accessed directly.
+/**
+ * CB Theme Functions.
+ *
+ * @package cb-timberrooms2023
+ */
+
 defined( 'ABSPATH' ) || exit;
 
 require_once CB_THEME_DIR . '/inc/cb-posttypes.php';
@@ -11,17 +16,6 @@ require_once CB_THEME_DIR . '/inc/cb-news.php';
 // Remove unwanted SVG filter injection WP.
 remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
 remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
-
-// Remove comment-reply.min.js from footer.
-function remove_comment_reply_header_hook() {
-    wp_deregister_script( 'comment-reply' );
-}
-add_action( 'init', 'remove_comment_reply_header_hook' );
-
-add_action( 'admin_menu', 'remove_comments_menu' );
-function remove_comments_menu() {
-    remove_menu_page( 'edit-comments.php' );
-}
 
 add_filter( 'theme_page_templates', 'child_theme_remove_page_template' );
 function child_theme_remove_page_template( $page_templates ) {
@@ -116,15 +110,15 @@ add_filter(
     'wpseo_breadcrumb_links',
     function ( $links ) {
 		global $post;
-		if ( is_singular( 'post' ) ) {
-			$t            = get_the_category( $post->ID );
-			$breadcrumb[] = array(
-				'url'  => '/guides/',
-				'text' => 'Guides',
-			);
+		// if ( is_singular( 'post' ) ) {
+		// 	$t            = get_the_category( $post->ID );
+		// 	$breadcrumb[] = array(
+		// 		'url'  => '/guides/',
+		// 		'text' => 'Guides',
+		// 	);
 
-			array_splice( $links, 1, -2, $breadcrumb );
-		}
+		// 	array_splice( $links, 1, -2, $breadcrumb );
+		// }
 		return $links;
     }
 );
@@ -191,11 +185,11 @@ function cb_theme_enqueue() {
     // wp_enqueue_script('lightbox-scripts', get_stylesheet_directory_uri() . '/js/lightbox.min.js', array(), $the_theme->get('Version'), true);
     // wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js', array(), null, true);
 
-	wp_enqueue_style( 'fancybox-style', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@6/dist/fancybox/fancybox.css', array() );
-	wp_enqueue_script( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@6/dist/fancybox/fancybox.umd.js', array(), null, true );
+	wp_enqueue_style( 'fancybox-style', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@6/dist/fancybox/fancybox.css', array() ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+	wp_enqueue_script( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@6/dist/fancybox/fancybox.umd.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 
-	wp_enqueue_style( 'aos-style', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array() );
-	wp_enqueue_script( 'aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true );
+	wp_enqueue_style( 'aos-style', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array() ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+	wp_enqueue_script( 'aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 
 	wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array() ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 	wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
