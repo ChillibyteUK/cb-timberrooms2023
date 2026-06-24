@@ -17,13 +17,18 @@ get_header();
 $hero_id = wp_unique_id('cb-hero-');
 ?>
 <link rel="preload" as="image" href="<?= esc_url($bg); ?>">
-<header id="<?= esc_attr($hero_id); ?>" class="hero mb-md-4">
+<header id="<?= esc_attr($hero_id); ?>" class="hero hero--blog mb-md-4">
     <div class="hero__bg">
         <img src="<?= esc_url($bg); ?>" class="hero__parallax-img" alt="">
     </div>
     <div class="hero__content">
         <div class="container-xl">
             <h1 data-aos="fade"><?= get_the_title($page_for_posts) ?></h1>
+			<?php
+			if ( get_the_content( null, false, $page_for_posts ) ) {
+				echo '<div data-aos="fade">' . wp_kses_post( get_the_content( null, false, $page_for_posts ) ) . '</div>';
+			}
+			?>
         </div>
     </div>
 </header>
@@ -58,12 +63,7 @@ $hero_id = wp_unique_id('cb-hero-');
 })();
 </script>
 
-    <div class="container-xl py-5">
-        <?php
-        if ( get_the_content( null, false, $page_for_posts ) ) {
-            echo '<div class="mb-5">' . wp_kses_post( get_the_content( null, false, $page_for_posts ) ) . '</div>';
-        }
-        ?>
+    <div class="container-xl pb-5">
         <div class="row" id="grid">
             <?php
             while ( have_posts() ) {

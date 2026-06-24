@@ -13,9 +13,8 @@ $img = get_the_post_thumbnail_url( get_the_ID(), 'full' );
     <?php
     $content = get_the_content();
     $blocks  = parse_blocks( $content );
-    $sidebar = array();
     ?>
-    <section class="breadcrumbs container-xl">
+    <section class="breadcrumbs container-xl pt-4">
     <?php
     if ( function_exists( 'yoast_breadcrumb' ) ) {
         yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
@@ -67,7 +66,6 @@ $img = get_the_post_thumbnail_url( get_the_ID(), 'full' );
         </section>
             </div>
         </div>
-
     </div>
 <section class="cta py-5 text-center">
     <div class="container-xl" data-aos="fade">

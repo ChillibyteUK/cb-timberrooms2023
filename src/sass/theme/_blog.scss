@@ -4,8 +4,7 @@
     color: initial;
 }
 
-.card {
-    margin: 0 0.5rem 1.5rem;
+.grid_item .card {
     border-radius: var(--border1);
     overflow: hidden;
     display: block;
@@ -33,7 +32,7 @@
         object-fit: cover;
         display: block;
         transition: transform var(--transition);
-        .card:hover & {
+        .grid_item .card:hover & {
             transform: scale(1.05);
         }
         &--placeholder {
@@ -107,7 +106,7 @@
     @media (min-width: 768px) {
         margin-top: calc( var(--h-top-desktop) + 2rem );
     }
-    padding-top: 2rem;
+    // padding-top: 2rem;
     &__image {
         margin-bottom: 1.5rem;
         aspect-ratio: 16 / 9;
@@ -166,10 +165,17 @@
     color: var(--col-highlight-400);
 }
 
-// Sidebar heading list
-.sidebar {
-    position: sticky;
-    top: calc( var(--h-top) + 3rem );
+// Blog archive hero — reset margin-top since hero__bg provides enough offset
+header.hero--blog {
+    margin-top: 0;
+}
+
+// Sticky sidebar on single posts
+.blog .sidebar {
+    @media (min-width: 992px) {
+        position: sticky;
+        top: calc(var(--h-top-desktop) + 3rem);
+    }
 }
 
 // Pagination
