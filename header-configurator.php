@@ -84,7 +84,7 @@ wp_head();
     <?php understrap_body_attributes(); ?>>
     <?php do_action('wp_body_open'); ?>
 <div id="wrapper-navbar" class="wrapper-navbar--configurator p-0">
-    <div class="topnav topnav--configurator d-flex align-items-center justify-content-end">
+    <div class="topnav--configurator d-flex align-items-center justify-content-end">
         <a href="<?=home_url('/')?>" class="btn btn-primary btn-back-to-site">Back to the main site</a>
     </div>
 </div>
