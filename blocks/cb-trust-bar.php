@@ -39,7 +39,11 @@ if ( empty( $has_stats ) ) {
 	<div class="container-xl">
 		<ul class="trust-bar__list" role="list">
 			<?php foreach ( $stats as $stat ) : ?>
-				<?php if ( empty( $stat['value'] ) ) : continue; endif; ?>
+				<?php
+				if ( empty( $stat['value'] ) ) :
+					continue;
+endif;
+				?>
 				<li class="trust-bar__item">
 					<strong class="trust-bar__value"><?= esc_html( $stat['value'] ); ?></strong>
 					<span class="trust-bar__label"><?= esc_html( $stat['label'] ); ?></span>

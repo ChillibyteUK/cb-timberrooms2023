@@ -1,0 +1,23 @@
+// ============================================================================
+// Configurator (no top nav)
+// ============================================================================
+
+.wrapper-navbar--configurator {
+  .topnav--configurator {
+    background-color: var(--col-primary-400);
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
+
+    @media (min-width: 768px) {
+      padding-inline: 1.5rem;
+    }
+
+    @media (min-width: 992px) {
+      padding-inline: 2rem;
+    }
+  }
+
+  .btn-back-to-site {
+    white-space: nowrap;
+  }
+}

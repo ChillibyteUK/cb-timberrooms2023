@@ -59,7 +59,13 @@ $hide_ctas = get_field( 'hide_ctas' );
 				?>
 			<div class="hero__cta-row" data-aos="fade" data-aos-delay="100">
 				<a href="/contact/" class="btn btn--accent">Get a free quote &rarr;</a>
+				<?php
+				if ( ! is_page( 'room-types' ) ) {
+					?>
 				<a href="/room-types/" class="btn btn--outline">View rooms</a>
+					<?php
+				}
+				?>
 			</div>
 				<?php
 			}

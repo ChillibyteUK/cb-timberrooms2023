@@ -21467,6 +21467,25 @@ p {
   color: var(--col-highlight-400);
 }
 
+.wrapper-navbar--configurator .topnav--configurator {
+  background-color: var(--col-primary-400);
+  padding-block: 0.75rem;
+  padding-inline: 1rem;
+}
+@media (min-width: 768px) {
+  .wrapper-navbar--configurator .topnav--configurator {
+    padding-inline: 1.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .wrapper-navbar--configurator .topnav--configurator {
+    padding-inline: 2rem;
+  }
+}
+.wrapper-navbar--configurator .btn-back-to-site {
+  white-space: nowrap;
+}
+
 footer {
   background-color: var(--col-primary-900);
   font-size: 0.889rem;
