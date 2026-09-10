@@ -140,6 +140,18 @@ function acf_blocks() {
         );
         acf_register_block_type(
             array(
+				'name'            => 'cb_partners',
+				'title'           => __( 'CB Partners' ),
+				'description'     => __( 'A centred eyebrow with a row of partner logos, all shown at the same height.' ),
+				'category'        => 'layout',
+				'icon'            => 'grid-view',
+				'render_template' => 'blocks/cb-partners.php',
+				'mode'            => 'edit',
+				'supports'        => array( 'mode' => false ),
+            )
+        );
+        acf_register_block_type(
+            array(
 				'name'            => 'cb_statement_banner',
 				'title'           => __( 'CB Statement Banner' ),
 				'description'     => __( 'Full-width parallax background image with a big centred heading and subtext.' ),

@@ -22600,6 +22600,27 @@ input[type=radio]:focus-visible {
   color: var(--col-white-070);
 }
 
+.partners__eyebrow {
+  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-200);
+  letter-spacing: var(--ls-80);
+  margin-bottom: 1.5rem;
+}
+.partners__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem 4rem;
+}
+.partners__logo {
+  height: 4.5rem;
+  width: auto;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
 .trust-bar {
   background-color: var(--col-primary-900);
   border-bottom: 1px solid hsl(var(--hsl-col-primary-900)/0.6);

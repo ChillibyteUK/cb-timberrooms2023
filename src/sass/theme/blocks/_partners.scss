@@ -1,0 +1,23 @@
+.partners {
+    &__eyebrow {
+        text-transform: uppercase;
+        font-weight: var(--fw-semibold);
+        font-size: var(--fs-200);
+        letter-spacing: var(--ls-80);
+        margin-bottom: 1.5rem;
+    }
+
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem 4rem;
+    }
+
+    &__logo {
+        height: 4.5rem;
+        width: auto;
+        object-fit: contain;
+    }
+}
