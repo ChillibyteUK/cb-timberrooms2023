@@ -22482,6 +22482,39 @@ input[type=radio]:focus-visible {
   margin-bottom: 0;
 }
 
+.process-steps__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 768px) {
+  .process-steps__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.process-steps__item {
+  padding: 1.5rem;
+  background-color: hsla(0, 0%, 100%, 0.04);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: var(--border1);
+}
+.process-steps__number {
+  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-200);
+  letter-spacing: var(--ls-80);
+  margin-bottom: 0.5rem;
+}
+.process-steps__title {
+  font-size: var(--fs-500);
+  margin-bottom: 0.5rem;
+}
+.process-steps__description {
+  color: var(--col-white-070);
+  margin-bottom: 0;
+}
+
 .trust-bar {
   background-color: var(--col-primary-900);
   border-bottom: 1px solid hsl(var(--hsl-col-primary-900)/0.6);

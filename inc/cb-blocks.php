@@ -92,6 +92,18 @@ function acf_blocks() {
         );
         acf_register_block_type(
             array(
+				'name'            => 'cb_process_steps',
+				'title'           => __( 'CB Process Steps' ),
+				'description'     => __( 'A numbered row of steps, e.g. "How we build yours".' ),
+				'category'        => 'layout',
+				'icon'            => 'list-view',
+				'render_template' => 'blocks/cb-process-steps.php',
+				'mode'            => 'edit',
+				'supports'        => array( 'mode' => false ),
+            )
+        );
+        acf_register_block_type(
+            array(
 				'name'            => 'cb_multi_video',
 				'title'           => __( 'CB Multi Video' ),
 				'description'     => __( 'A row of Vimeo thumbnails with a title and caption each, playing in a modal.' ),
