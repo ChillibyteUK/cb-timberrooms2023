@@ -18,6 +18,18 @@ defined( 'ABSPATH' ) || exit;
 					'post_parent'    => get_the_ID(),
 					'order'          => 'ASC',
 					'orderby'        => 'menu_order',
+					'meta_query'     => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+						'relation' => 'OR',
+						array(
+							'key'     => '_yoast_wpseo_meta-robots-noindex',
+							'compare' => 'NOT EXISTS',
+						),
+						array(
+							'key'     => '_yoast_wpseo_meta-robots-noindex',
+							'value'   => '1',
+							'compare' => '!=',
+						),
+					),
 				)
 			);
 			$d = 0;
