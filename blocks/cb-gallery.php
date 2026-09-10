@@ -19,11 +19,27 @@ switch ( $theme ) {
 	default:
 		$theme = 'has-primary-color';
 }
+
+$columns       = get_field( 'columns' ) ?: '3';
+$full_width    = 'Yes' === ( get_field( 'full_width' )[0] ?? null );
+$show_captions = 'Yes' === ( get_field( 'show_captions' )[0] ?? null );
+
+$grid_class = 'gallery__grid' . ( '4' === $columns ? ' gallery__grid--cols-4' : '' );
+
+$section_class = 'gallery has-dark-background-color py-5';
+if ( $full_width ) {
+	$section_class .= ' gallery--full';
+}
+if ( $show_captions ) {
+	$section_class .= ' gallery--captions';
+}
 ?>
 <!-- faq_block -->
-<section class="gallery has-dark-background-color py-5">
+<section class="<?= esc_attr( $section_class ); ?>">
+	<?php if ( ! $full_width ) : ?>
 	<div class="container-xl">
-		<div class="gallery__grid" id="lightslider">
+	<?php endif; ?>
+		<div class="<?= esc_attr( $grid_class ); ?>" id="lightslider">
 			<?php
 			$d       = 0;
 			$gallery = array_reverse( get_field( 'images' ) );
@@ -56,6 +72,9 @@ switch ( $theme ) {
 							</div>
 						</div>
 					</a>
+					<?php if ( $show_captions && $g['image_title'] ) : ?>
+						<div class="gallery__caption"><?= esc_html( $g['image_title'] ); ?></div>
+					<?php endif; ?>
 					<figcaption>
 						<?= esc_html( $g['image_title'] ); ?><br>
 						<?php
@@ -113,6 +132,9 @@ switch ( $theme ) {
 							<div class="text-center"><i class="fa-regular fa-eye"></i> Case Study</div>
 						</div>
 					</a>
+					<?php if ( $show_captions ) : ?>
+						<div class="gallery__caption"><?= esc_html( $cs_title ); ?></div>
+					<?php endif; ?>
 					<figcaption>
 						<?= esc_html( $cs_title ); ?><br>
 						<?php
@@ -135,7 +157,9 @@ switch ( $theme ) {
 			}
 			?>
 		</div>
+	<?php if ( ! $full_width ) : ?>
 	</div>
+	<?php endif; ?>
 </section>
 <?php
 add_action(

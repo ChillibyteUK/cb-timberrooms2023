@@ -1,0 +1,55 @@
+.icon-grid {
+    &__eyebrow {
+        text-transform: uppercase;
+        font-weight: var(--fw-semibold);
+        font-size: var(--fs-200);
+        letter-spacing: var(--ls-80);
+        margin-bottom: 1.5rem;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.65rem;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        background-color: hsl(0 0% 100% / 0.04);
+        border: 1px solid hsl(0 0% 100% / 0.08);
+        border-radius: var(--border1);
+    }
+
+    // Recolours the (single-colour) SVG via mask instead of <img>, so the
+    // icon follows --col-highlight-400 the same way the eyebrow text does.
+    &__icon {
+        display: block;
+        height: 2rem;
+        width: 2rem;
+        margin-inline: auto;
+        background-color: var(--col-highlight-400);
+        -webkit-mask-image: var(--icon-url);
+        mask-image: var(--icon-url);
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+    }
+
+    &__label {
+        font-size: var(--fs-200);
+        color: var(--col-white);
+    }
+}

@@ -92,6 +92,54 @@ function acf_blocks() {
         );
         acf_register_block_type(
             array(
+				'name'            => 'cb_multi_video',
+				'title'           => __( 'CB Multi Video' ),
+				'description'     => __( 'A row of Vimeo thumbnails with a title and caption each, playing in a modal.' ),
+				'category'        => 'layout',
+				'icon'            => 'video-alt3',
+				'render_template' => 'blocks/cb-multi-video.php',
+				'mode'            => 'edit',
+				'supports'        => array( 'mode' => false ),
+            )
+        );
+        acf_register_block_type(
+            array(
+				'name'            => 'cb_statement_banner',
+				'title'           => __( 'CB Statement Banner' ),
+				'description'     => __( 'Full-width parallax background image with a big centred heading and subtext.' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/cb-statement-banner.php',
+				'mode'            => 'edit',
+				'supports'        => array( 'mode' => false ),
+            )
+        );
+        acf_register_block_type(
+            array(
+				'name'            => 'cb_icon_grid',
+				'title'           => __( 'CB Icon Grid' ),
+				'description'     => __( 'A grid of icon + label cards, e.g. a list of what\'s included.' ),
+				'category'        => 'layout',
+				'icon'            => 'grid-view',
+				'render_template' => 'blocks/cb-icon-grid.php',
+				'mode'            => 'edit',
+				'supports'        => array( 'mode' => false ),
+            )
+        );
+        acf_register_block_type(
+            array(
+				'name'            => 'cb_lp_hero',
+				'title'           => __( 'CB LP Hero' ),
+				'description'     => __( 'Landing-page hero with a subtext line and configurable CTA buttons.' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/cb-lp-hero.php',
+				'mode'            => 'edit',
+				'supports'        => array( 'mode' => false ),
+            )
+        );
+        acf_register_block_type(
+            array(
 				'name'            => 'cb_video',
 				'title'           => __( 'CB Video' ),
 				'category'        => 'layout',

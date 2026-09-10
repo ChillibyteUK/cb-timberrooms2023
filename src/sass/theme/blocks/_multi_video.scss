@@ -1,0 +1,50 @@
+.multi-video {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2rem;
+    }
+
+    &__thumb {
+        display: block;
+        position: relative;
+        aspect-ratio: 16 / 9;
+        background-color: var(--col-primary-900);
+        background-size: cover;
+        background-position: center;
+        border-radius: var(--border2);
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
+    &__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: grid;
+        place-content: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background-color: var(--col-highlight-400);
+        color: var(--col-white);
+        font-size: 1.1rem;
+        transition: transform var(--transition);
+    }
+
+    &__thumb:hover &__play {
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    &__title {
+        font-size: var(--fs-500);
+        margin-top: 1rem;
+        margin-bottom: 0.25rem;
+    }
+
+    &__caption {
+        color: var(--col-white-070);
+        margin-bottom: 0;
+    }
+}

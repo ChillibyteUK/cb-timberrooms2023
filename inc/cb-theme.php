@@ -17,6 +17,17 @@ require_once CB_THEME_DIR . '/inc/cb-news.php';
 remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
 remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
 
+// Allow SVG uploads (needed for the CB Icon Grid block's icon field).
+// Rendered via <img src="..."> only, never inlined, so an uploaded SVG's
+// script content (if any) never executes in the page.
+add_filter(
+    'upload_mimes',
+    function ( $mimes ) {
+        $mimes['svg'] = 'image/svg+xml';
+        return $mimes;
+    }
+);
+
 add_filter( 'theme_page_templates', 'child_theme_remove_page_template' );
 function child_theme_remove_page_template( $page_templates ) {
     // unset($page_templates['page-templates/blank.php'],$page_templates['page-templates/empty.php'], $page_templates['page-templates/fullwidthpage.php'], $page_templates['page-templates/left-sidebarpage.php'], $page_templates['page-templates/right-sidebarpage.php'], $page_templates['page-templates/both-sidebarspage.php']);

@@ -1,0 +1,84 @@
+// Landing-page hero — a self-contained variant of .hero (see _hero.scss)
+// with its own background image, a subtext line, and configurable CTAs.
+.lp-hero {
+    margin-top: var(--h-top);
+    position: relative;
+    color: var(--col-white);
+
+    @media (min-width: 768px) {
+        margin-top: var(--h-top-desktop);
+    }
+
+    &__bg {
+        position: relative;
+        overflow: hidden;
+        height: calc(50vh - var(--h-top));
+        min-height: 280px;
+        background-color: var(--col-primary-900);
+
+        @media (min-width: 768px) {
+            height: calc(50vh - var(--h-top-desktop));
+            min-height: 500px;
+        }
+    }
+
+    &__parallax-img {
+        position: absolute;
+        inset: -120px 0;
+        width: 100%;
+        height: calc(100% + 240px);
+        object-fit: cover;
+        object-position: center;
+        will-change: transform;
+    }
+
+    &__content {
+        h1 {
+            color: var(--col-white);
+        }
+
+        @media (max-width: 767px) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: hsl(var(--hsl-col-primary-900) / 0.6);
+            backdrop-filter: blur(1px);
+            padding-block: 1.25rem;
+
+            h1 {
+                font-size: var(--fs-600);
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            padding-block: 1.75rem 1rem;
+        }
+    }
+
+    &__subtext {
+        color: var(--col-white-070);
+        margin-bottom: 0;
+
+        &.text-center {
+            margin-inline: auto;
+        }
+    }
+
+    &__cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 1.25rem;
+
+        .btn {
+            flex: 1 1 auto;
+
+            @media (min-width: 480px) {
+                flex: 0 0 auto;
+            }
+        }
+    }
+}

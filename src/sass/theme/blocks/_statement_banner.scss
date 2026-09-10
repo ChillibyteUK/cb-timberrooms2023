@@ -1,0 +1,49 @@
+// Full-width, mid-page statement banner — a big centred heading over a
+// parallax background image with a dark scrim. See _hero.scss / _lp_hero.scss
+// for the sibling blocks this borrows its parallax technique from.
+.statement-banner {
+    position: relative;
+
+    &__bg {
+        position: relative;
+        overflow: hidden;
+        height: 50vh;
+        min-height: 360px;
+    }
+
+    &__parallax-img {
+        position: absolute;
+        inset: -120px 0;
+        width: 100%;
+        height: calc(100% + 240px);
+        object-fit: cover;
+        object-position: center;
+        will-change: transform;
+    }
+
+    &__scrim {
+        position: absolute;
+        inset: 0;
+        background-color: hsl(var(--hsl-col-primary-900) / 0.55);
+    }
+
+    &__content {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-content: center;
+        color: var(--col-white);
+
+        h2 {
+            font-size: var(--fs-700);
+            font-weight: var(--fw-bold);
+            line-height: var(--lh-800);
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__subtext {
+        color: var(--col-white-070);
+        margin-bottom: 0;
+    }
+}

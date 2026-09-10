@@ -34,6 +34,7 @@ $has_stats = array_filter( $stats, fn( $s ) => ! empty( $s['value'] ) );
 if ( empty( $has_stats ) ) {
 	return;
 }
+
 ?>
 <section class="trust-bar" aria-label="<?php esc_attr_e( 'Key facts', 'cb-timberrooms2023' ); ?>">
 	<div class="container-xl">

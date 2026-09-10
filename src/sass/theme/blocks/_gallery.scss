@@ -12,6 +12,12 @@
     @media (min-width: 992px) {
       grid-template-columns: repeat(3, 1fr);
     }
+
+    &--cols-4 {
+      @media (min-width: 992px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
   }
 
   figcaption {
@@ -69,6 +75,43 @@
         font-size: var(--fs-500);
         padding-inline: 2rem;
       }
+    }
+
+    .gallery__caption {
+      display: none;
+    }
+  }
+
+  &--captions figure.gallery__image {
+    .gallery__caption {
+      display: block;
+      position: absolute;
+      left: 0.75rem;
+      bottom: 0.75rem;
+      z-index: 1;
+      padding: 0.35rem 0.75rem;
+      background-color: hsl(var(--hsl-col-primary-900) / 0.75);
+      color: var(--col-white);
+      font-size: var(--fs-200);
+      border-radius: var(--border1);
+      pointer-events: none;
+    }
+
+    // Title is already shown in the always-visible caption above —
+    // don't repeat it in the hover overlay too.
+    .overlay h3 {
+      display: none;
+    }
+  }
+
+  &--full {
+    .gallery__grid {
+      gap: 0;
+    }
+
+    figure.gallery__image {
+      border-radius: 0;
+      box-shadow: none;
     }
   }
 }

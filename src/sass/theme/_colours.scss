@@ -2,6 +2,14 @@
     color: #fff;
 }
 
+// Scopes the shared highlight colour to Golf green for an entire subtree
+// (see page-golf.php) so buttons, trust-bar stats etc. go green without
+// needing a per-block theme field.
+.theme-golf {
+    --hsl-col-highlight-400: var(--hsl-col-golf-400);
+    --col-highlight-400: var(--col-golf-400);
+}
+
 .has-primary-color {
     color: var(--col-highlight-400) !important;
 }
