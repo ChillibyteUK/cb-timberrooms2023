@@ -1,0 +1,159 @@
+.cb-pushthrough {
+    &__panel {
+        border-radius: var(--border1);
+        overflow: hidden;
+    }
+
+    &--full &__panel {
+        background-color: var(--col-primary-900);
+        background-image: repeating-linear-gradient(
+            90deg,
+            hsla(0 0% 100% / 0.05) 0px,
+            hsla(0 0% 100% / 0.05) 1px,
+            transparent 1px,
+            transparent 10px
+        );
+        color: var(--col-white);
+        padding-inline: 0;
+    }
+
+    &--full &__content {
+        padding: 3rem 1.5rem;
+
+        @media (min-width: 992px) {
+            padding: 3rem clamp(1.5rem, 5vw, 4rem);
+        }
+
+        h2 {
+            font-size: var(--fs-700);
+            font-weight: var(--fw-bold);
+            line-height: var(--lh-800);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--col-white-070);
+            font-size: var(--fs-450);
+            margin-bottom: 0;
+        }
+    }
+
+    &__image-container {
+        position: relative;
+        min-height: 260px;
+        display: grid;
+        place-content: center;
+
+        @media (min-width: 992px) {
+            min-height: 320px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background-image: linear-gradient(to right, var(--col-primary-900) 0%, transparent 100%);
+            pointer-events: none;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__cta {
+        z-index: 2;
+        display: grid;
+        place-content: center;
+        text-align: center;
+    }
+
+    &__button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        white-space: nowrap;
+        padding: 1rem 2rem;
+
+        &:hover .cb-pushthrough__arrow {
+            transform: translateX(3px);
+        }
+    }
+
+    &__arrow {
+        display: inline-block;
+        transition: transform var(--transition);
+    }
+
+    &__subtext {
+        margin: 0.5rem 0 0;
+        font-size: var(--fs-200);
+        color: var(--col-white);
+        font-weight: var(--fw-600);
+    }
+
+    // Slim variant — white call-to-action bar in a bordered card.
+    &--slim &__panel {
+        background-color: var(--col-white);
+        border: 1px solid var(--col-grey-200);
+        color: var(--col-primary-900);
+    }
+
+    &__slim-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem 2rem;
+        padding: 1.5rem 2rem;
+    }
+
+    &--slim &__content {
+        flex: 1 1 260px;
+
+        h2 {
+            font-size: var(--fs-500);
+            font-weight: var(--fw-bold);
+            margin-bottom: 0.25rem;
+        }
+
+        p {
+            color: hsl(0 0% 20% / 0.75);
+            font-size: var(--fs-200);
+            margin-bottom: 0;
+        }
+    }
+
+    &__stat {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 2rem;
+        border-left: 1px solid var(--col-grey-200);
+    }
+
+    &__stat-number {
+        font-size: var(--fs-500);
+        font-weight: var(--fw-bold);
+        line-height: var(--lh-900);
+    }
+
+    &__stat-strap {
+        font-size: var(--fs-200);
+        font-weight: var(--fw-semibold);
+        text-transform: uppercase;
+        letter-spacing: var(--ls-20);
+        color: hsl(0 0% 20% / 0.6);
+    }
+
+    &--slim &__button {
+        flex: 0 0 auto;
+    }
+}

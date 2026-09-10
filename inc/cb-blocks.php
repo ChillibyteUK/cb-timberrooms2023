@@ -11,9 +11,26 @@ defined( 'ABSPATH' ) || exit;
  * Register ACF Blocks
  */
 function acf_blocks() {
-    if ( function_exists( 'acf_register_block_type' ) ) {
+	if ( function_exists( 'acf_register_block_type' ) ) {
 
 		// INSERT NEW BLOCKS HERE.
+
+		acf_register_block_type(
+			array(
+				'name'            => 'cb_pushthrough',
+				'title'           => __( 'CB Pushthrough' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/cb-pushthrough.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
 
 		acf_register_block_type(
 			array(
@@ -28,7 +45,6 @@ function acf_blocks() {
 					'anchor'    => true,
 					'className' => true,
 					'align'     => true,
-          
 				),
 			)
 		);
