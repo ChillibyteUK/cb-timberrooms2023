@@ -22663,6 +22663,14 @@ input[type=radio]:focus-visible {
   margin-inline: auto;
   border-radius: var(--border2);
   overflow: hidden;
+  position: relative;
+  aspect-ratio: 16/9;
+}
+.video .lite-vimeo iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 .video .lite-vimeo #frame:hover .lvo-playbtn {
   background-color: var(--col-highlight-400);

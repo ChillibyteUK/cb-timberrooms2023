@@ -4,6 +4,19 @@
         margin-inline: auto;
         border-radius: var(--border2);
         overflow: hidden;
+        position: relative;
+        // Overridden inline per-instance with the video's real aspect
+        // ratio (fetched from Vimeo's oEmbed data) — this is just the
+        // fallback for when that lookup fails.
+        aspect-ratio: 16 / 9;
+
+        iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         #frame:hover .lvo-playbtn {
             background-color: var(--col-highlight-400);
         }

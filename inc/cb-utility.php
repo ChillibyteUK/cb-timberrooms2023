@@ -134,14 +134,18 @@ add_shortcode(
  * @return str            The specified data.
  */
 function get_vimeo_data_from_id( $video_id, $data ) {
-    // width can be 100, 200, 295, 640, 960 or 1280.
-    $request = wp_remote_get( 'https://vimeo.com/api/oembed.json?url=https://vimeo.com/' . $video_id . '&width=960' );
+    static $cache = array();
 
-    $response = wp_remote_retrieve_body( $request );
+    if ( ! isset( $cache[ $video_id ] ) ) {
+        // width can be 100, 200, 295, 640, 960 or 1280.
+        $request = wp_remote_get( 'https://vimeo.com/api/oembed.json?url=https://vimeo.com/' . $video_id . '&width=960' );
 
-    $video_array = json_decode( $response, true );
+        $response = wp_remote_retrieve_body( $request );
 
-    return $video_array[ $data ];
+        $cache[ $video_id ] = json_decode( $response, true );
+    }
+
+    return $cache[ $video_id ][ $data ] ?? null;
 }
 
 
