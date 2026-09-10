@@ -1,0 +1,104 @@
+// Reuses the same Bootstrap-collapse chevron mechanism as .faq_block
+// (see _faqs.scss) but dark-themed to match the rest of the page, with
+// a categorised, multi-column spec list instead of flat Q&A pairs.
+.spec-accordion {
+    &__panel {
+        background-color: hsl(0 0% 100% / 0.04);
+        border: 1px solid hsl(0 0% 100% / 0.08);
+        color: var(--col-white);
+        border-radius: var(--border2);
+        padding: 0.5rem 1.5rem;
+    }
+
+    .accordion-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) min-content;
+        position: relative;
+        padding: 1rem 0;
+        cursor: pointer;
+
+        h2 {
+            align-self: center;
+            font-size: var(--fs-600);
+            margin-bottom: 0;
+        }
+
+        &::after {
+            content: "\f106";
+            display: block;
+            position: relative;
+            align-self: center;
+            transition: all 0.3s ease;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 600;
+            color: inherit;
+        }
+
+        &.collapsed::after {
+            transform: rotate(-180deg);
+        }
+    }
+
+    &__body {
+        padding-bottom: 1.5rem;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    // Fine dividing lines between cells, as per the design — a vertical
+    // line between columns (removed on the last column of each row) and
+    // a horizontal line between rows (removed on the last item).
+    &__category {
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid hsl(0 0% 100% / 0.12);
+
+        @media (min-width: 768px) {
+            border-right: 1px solid hsl(0 0% 100% / 0.12);
+
+            &:nth-child(3n) {
+                border-right: none;
+            }
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        h4 {
+            font-size: var(--fs-200);
+            text-transform: uppercase;
+            letter-spacing: var(--ls-20);
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: var(--fs-200);
+            color: var(--col-white-070);
+        }
+
+        li {
+            padding-block: 0.15rem;
+        }
+    }
+
+    &__price {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid hsl(0 0% 100% / 0.12);
+
+        span {
+            font-size: var(--fs-200);
+            color: var(--col-white-070);
+        }
+    }
+}

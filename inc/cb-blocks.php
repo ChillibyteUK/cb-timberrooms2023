@@ -92,6 +92,24 @@ function acf_blocks() {
         );
         acf_register_block_type(
             array(
+				'name'            => 'cb_spec_accordion',
+				'title'           => __( 'CB Spec Accordion' ),
+				'description'     => __( 'A collapsible panel that expands into a multi-column categorised specification list.' ),
+				'category'        => 'layout',
+				'icon'            => 'list-view',
+				'render_template' => 'blocks/cb-spec-accordion.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'  => false,
+					'color' => array(
+						'background' => true,
+						'text'       => false,
+					),
+				),
+            )
+        );
+        acf_register_block_type(
+            array(
 				'name'            => 'cb_process_steps',
 				'title'           => __( 'CB Process Steps' ),
 				'description'     => __( 'A numbered row of steps, e.g. "How we build yours".' ),
@@ -111,7 +129,13 @@ function acf_blocks() {
 				'icon'            => 'video-alt3',
 				'render_template' => 'blocks/cb-multi-video.php',
 				'mode'            => 'edit',
-				'supports'        => array( 'mode' => false ),
+				'supports'        => array(
+					'mode'  => false,
+					'color' => array(
+						'background' => true,
+						'text'       => false,
+					),
+				),
             )
         );
         acf_register_block_type(

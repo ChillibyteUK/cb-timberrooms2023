@@ -18,8 +18,11 @@ if ( ! have_rows( 'videos' ) ) {
 
 $block_id = $block['id'] ?? wp_unique_id( 'cb-multi-video-' );
 $group    = 'multi-video-' . $block_id;
+
+$has_bg_color = ! empty( $block['backgroundColor'] ) || ! empty( $block['style']['color']['background'] );
+$class        = 'multi-video' . ( $has_bg_color ? ' py-5' : '' );
 ?>
-<section class="multi-video py-5">
+<section <?php echo get_block_wrapper_attributes( array( 'class' => $class ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<div class="container-xl">
 		<div class="multi-video__grid">
 			<?php
