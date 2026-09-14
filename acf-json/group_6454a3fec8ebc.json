@@ -108,6 +108,52 @@
             ]
         },
         {
+            "key": "field_74f9c1a2b5e01",
+            "label": "Final Block Text",
+            "name": "final_block_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional. Shown as a final tile in the grid, filling whatever space is left in the last row, e.g. \"Powered by the GC Launch Monitor\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_74f9c1a2b5e02",
+            "label": "Final Block Logo",
+            "name": "final_block_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Optional logo shown alongside the final block text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_664adeada7cd8",
             "label": "Price Line",
             "name": "price_line",

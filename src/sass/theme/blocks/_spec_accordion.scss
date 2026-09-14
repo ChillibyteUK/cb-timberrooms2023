@@ -67,7 +67,14 @@
             }
         }
 
+        // Normally the last item in the grid; when a final block follows it
+        // (see &--adjoins-final below) it's no longer :last-child, so the
+        // same border removal is applied by that modifier class instead.
         &:last-child {
+            border-bottom: none;
+        }
+
+        &--adjoins-final {
             border-bottom: none;
         }
 
@@ -88,6 +95,31 @@
 
         li {
             padding-block: 0.15rem;
+        }
+    }
+
+    // Optional tile shown after the categories, filling whatever grid space
+    // is left in the last row (min 1 column, up to the full row width) —
+    // the exact span is computed server-side and set via inline style.
+    &__final {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1.25rem 1.5rem;
+        border-bottom: none;
+
+        &-logo {
+            max-width: 8rem;
+            max-height: 3rem;
+            width: auto;
+            height: auto;
+        }
+
+        &-text {
+            font-size: var(--fs-200);
+            color: var(--col-white-070);
+            margin-bottom: 0;
         }
     }
 
