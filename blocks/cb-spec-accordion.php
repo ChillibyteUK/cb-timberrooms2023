@@ -81,7 +81,7 @@ $class        = 'spec-accordion' . ( $has_bg_color ? ' py-5' : '' );
 									<img class="spec-accordion__final-logo" src="<?= esc_url( $final_logo['url'] ); ?>" alt="<?= esc_attr( $final_logo['alt'] ); ?>">
 								<?php endif; ?>
 								<?php if ( $final_text ) : ?>
-									<p class="spec-accordion__final-text"><?= esc_html( $final_text ); ?></p>
+									<p class="spec-accordion__final-text"><?= wp_kses_post( $final_text ); ?></p>
 								<?php endif; ?>
 							</div>
 						<?php endif; ?>
