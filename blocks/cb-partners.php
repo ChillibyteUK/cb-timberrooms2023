@@ -20,7 +20,7 @@ if ( ! have_rows( 'logos' ) ) {
 <section class="partners py-5">
 	<div class="container-xl text-center">
 		<?php if ( $eyebrow ) : ?>
-			<div class="partners__eyebrow has-primary-color"><?= esc_html( $eyebrow ); ?></div>
+			<div class="partners__eyebrow has-primary-color"><?= wp_kses_post( $eyebrow ); ?></div>
 		<?php endif; ?>
 		<div class="partners__grid">
 			<?php
