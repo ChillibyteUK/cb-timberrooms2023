@@ -19,6 +19,9 @@
             padding: 0;
         }
 
+        // lite-vimeo's play button lives inside its shadow DOM, so this
+        // can never actually match — see the shadow-root style injection
+        // in cb-video.php instead, which is the only way to theme it.
         #frame:hover .lvo-playbtn {
             background-color: var(--col-highlight-400);
         }
