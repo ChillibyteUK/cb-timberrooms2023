@@ -66,6 +66,32 @@
             "toggle": 0,
             "save_custom": 0,
             "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_7a1e5c93d0f16",
+            "label": "Autoplay",
+            "name": "autoplay",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "Autoplay the video muted on load. When off, the video shows as a click-to-play thumbnail instead.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Yes": "Yes"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 0,
+            "allow_in_bindings": 1,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
         }
     ],
     "location": [
@@ -89,5 +115,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1789048832
+    "modified": 1789049000
 }
