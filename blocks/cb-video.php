@@ -57,17 +57,34 @@ if ( ! $autoplay ) :
 <script>
 ( function () {
 	// lite-vimeo's play button lives inside a shadow root, so it can't be
-	// reached with a normal stylesheet rule — inject one directly into
-	// each instance's shadow root instead. CSS custom properties still
-	// inherit through the shadow boundary, so var(--col-highlight-400)
-	// here correctly resolves to Golf green under .theme-golf.
+	// restyled with a normal stylesheet rule — inject one directly into
+	// each instance's shadow root instead, replacing its dark rounded-
+	// square default with the same round/highlight-colour button used on
+	// CB Multi Video. CSS custom properties still inherit through the
+	// shadow boundary, so var(--col-highlight-400) here correctly
+	// resolves to Golf green under .theme-golf.
 	function themeLiteVimeoButtons() {
 		document.querySelectorAll( 'lite-vimeo' ).forEach( function ( el ) {
 			if ( ! el.shadowRoot || el.dataset.themedPlaybtn ) return;
 			el.dataset.themedPlaybtn = '1';
 
 			var style = document.createElement( 'style' );
-			style.textContent = '#frame:hover .lvo-playbtn { background-color: var(--col-highlight-400); }';
+			style.textContent =
+				'.lvo-playbtn, #frame:hover .lvo-playbtn {' +
+				'  width: 3.5rem;' +
+				'  height: 3.5rem;' +
+				'  background-color: var(--col-highlight-400);' +
+				'  opacity: 1;' +
+				'  border-radius: 50%;' +
+				'  transition: transform 250ms ease-out;' +
+				'}' +
+				'#frame:hover .lvo-playbtn {' +
+				'  transform: translate3d(-50%, -50%, 0) scale(1.08);' +
+				'}' +
+				'.lvo-playbtn:before {' +
+				'  border-width: 10px 0 10px 16px;' +
+				'  left: calc(50% + 2px);' +
+				'}';
 			el.shadowRoot.appendChild( style );
 		} );
 	}
