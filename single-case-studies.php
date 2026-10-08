@@ -189,27 +189,27 @@ foreach ( parse_blocks( get_the_content() ) as $b ) {
 						</div>
 					</div>
 				</section>
-				<?php
-				// pushthrough block — rendered with variables so it can be called from the template.
-				$pushthrough = array(
-					'variant'     => 'slim',
-					'title'       => 'Not sure what your garden room would cost?',
-					'content'     => 'Configure the size, cladding and finish online and get an indicative price in minutes.',
-					'link'        => array(
-						'url'    => site_url( '/configurator/' ),
-						'title'  => 'Try the configurator',
-						'target' => '',
-					),
-					'stat_number' => '2,500+',
-					'stat_strap'  => 'Rooms built',
-				);
-
-				// Include the block template which accepts a $pushthrough array.
-				include locate_template( 'blocks/cb-pushthrough.php' );
-				echo '<div class="pb-5"></div>';
-				?>
 			</div>
 		</div>
+		<?php
+		// pushthrough block — rendered with variables so it can be called from the template.
+		$pushthrough = array(
+			'variant'     => 'slim',
+			'title'       => 'Not sure what your garden room would cost?',
+			'content'     => 'Configure the size, cladding and finish online and get an indicative price in minutes.',
+			'link'        => array(
+				'url'    => site_url( '/configurator/' ),
+				'title'  => 'Try the configurator',
+				'target' => '',
+			),
+			'stat_number' => '2,500+',
+			'stat_strap'  => 'Rooms built',
+		);
+
+		// Include the block template which accepts a $pushthrough array.
+		include locate_template( 'blocks/cb-pushthrough.php' );
+		echo '<div class="pb-5"></div>';
+		?>
 	</div>
 </main>
 <?php
