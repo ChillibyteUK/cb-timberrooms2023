@@ -196,6 +196,7 @@ foreach ( parse_blocks( get_the_content() ) as $b ) {
 		<?php
 		// pushthrough block — rendered with variables so it can be called from the template.
 		$pushthrough = array(
+			'style'       => 'border: none;',
 			'variant'     => 'slim',
 			'title'       => 'Not sure what your garden room would cost?',
 			'content'     => 'Configure the size, cladding and finish online and get an indicative price in minutes.',

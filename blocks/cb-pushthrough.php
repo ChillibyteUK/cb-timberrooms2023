@@ -18,6 +18,7 @@ $defaults = array(
 	'button_subtext' => '',
 	'stat_number'    => '',
 	'stat_strap'     => '',
+	'class'          => '',
 );
 
 $input = null;
@@ -44,7 +45,7 @@ if ( is_array( $input ) ) {
 
 ?>
 <section class="cb-pushthrough cb-pushthrough--<?= esc_attr( $variant ); ?>">
-	<div class="container-xl">
+	<div class="container-xl" <?= ! empty( $class ) ? 'style="' . esc_attr( $class ) . '"' : ''; ?>">
 		<?php if ( 'full' === $variant ) : ?>
 			<div class="cb-pushthrough__panel">
 				<div class="row g-0 cb-pushthrough__inner">
