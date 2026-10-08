@@ -23461,6 +23461,14 @@ input[type=radio]:focus-visible {
   flex: 0 0 auto;
 }
 
+.single-case-studies .cb-pushthrough.cb-pushthrough--slim .container-xl {
+  padding: 0;
+  border: none;
+}
+.single-case-studies .cb-pushthrough.cb-pushthrough--slim {
+  margin-block: 2rem;
+}
+
 .case_study {
   padding-top: calc(var(--h-top) + 2rem);
 }

@@ -18,7 +18,6 @@ $defaults = array(
 	'button_subtext' => '',
 	'stat_number'    => '',
 	'stat_strap'     => '',
-	'class'          => '',
 );
 
 $input = null;
@@ -30,7 +29,7 @@ if ( isset( $pushthrough ) && is_array( $pushthrough ) ) {
 
 if ( is_array( $input ) ) {
 	extract( wp_parse_args( $input, $defaults ), EXTR_OVERWRITE );
-	// Now $variant, $title, $content, $link, $image, $button_subtext, $stat_number, $stat_strap are available
+	// Now $variant, $title, $content, $link, $image, $button_subtext, $stat_number, $stat_strap, $class, $style are available
 } else {
 	// Fallback to ACF fields when no override provided
 	$variant        = get_field( 'variant' ) ? get_field( 'variant' ) : 'full';
@@ -45,7 +44,7 @@ if ( is_array( $input ) ) {
 
 ?>
 <section class="cb-pushthrough cb-pushthrough--<?= esc_attr( $variant ); ?>">
-	<div class="container-xl" <?= ! empty( $class ) ? 'style="' . esc_attr( $class ) . '"' : ''; ?>">
+	<div class="container-xl">
 		<?php if ( 'full' === $variant ) : ?>
 			<div class="cb-pushthrough__panel">
 				<div class="row g-0 cb-pushthrough__inner">
