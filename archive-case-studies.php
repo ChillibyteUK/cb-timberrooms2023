@@ -12,21 +12,21 @@ $hero_img = wp_get_attachment_image_url( get_field( 'case_studies_archive_hero',
 ?>
 <!-- hero -->
 <main id="main" class="caseStudies">
-    <link rel="preload" as="image" href="<?= esc_url( $hero_img ); ?>">
-    <header id="cs-archive-hero" class="hero mb-md-4">
-        <div class="hero__bg">
-            <img src="<?= esc_url( $hero_img ); ?>" class="hero__parallax-img" alt="">
-        </div>
-        <div class="hero__content">
-            <div class="container-xl">
-                <h1 data-aos="fade" class="text-center">View our Case Studies</h1>
-                <div class="hero__cta-row" data-aos="fade" data-aos-delay="100">
-                    <a href="/contact/" class="btn btn--accent">Get a free quote &rarr;</a>
-                    <a href="/room-types/" class="btn btn--outline">View rooms</a>
-                </div>
-            </div>
-        </div>
-    </header>
+	<link rel="preload" as="image" href="<?= esc_url( $hero_img ); ?>">
+	<header id="cs-archive-hero" class="hero mb-md-4">
+		<div class="hero__bg">
+			<img src="<?= esc_url( $hero_img ); ?>" class="hero__parallax-img" alt="">
+		</div>
+		<div class="hero__content">
+			<div class="container-xl">
+				<h1 data-aos="fade" class="text-center">View our Case Studies</h1>
+				<div class="hero__cta-row" data-aos="fade" data-aos-delay="100">
+					<a href="/contact/" class="btn btn--accent">Get a free quote &rarr;</a>
+					<a href="/room-types/" class="btn btn--outline">View rooms</a>
+				</div>
+			</div>
+		</div>
+	</header>
 <script>
 ( function () {
 	var section = document.getElementById( 'cs-archive-hero' );
@@ -64,9 +64,9 @@ $hero_img = wp_get_attachment_image_url( get_field( 'case_studies_archive_hero',
 	onScroll();
 }() );
 </script>
-    <div class="container-xl py-5">
-        <div class="w-100 mb-4" id="csgrid">
-            <?php
+	<div class="container-xl py-5">
+		<div class="w-100 mb-4" id="csgrid">
+			<?php
 			$d = 0;
 			while ( have_posts() ) {
 				the_post();
@@ -77,28 +77,45 @@ $hero_img = wp_get_attachment_image_url( get_field( 'case_studies_archive_hero',
 				$slug     = acf_slugify( basename( get_the_permalink() ) );
 				$catclass = '';
 				?>
-            <div class="<?= esc_attr( $catclass ); ?> caseStudy" data-aos="fade" data-aos-delay="<?= esc_attr( $d ); ?>">
-                <a class="caseStudy_card" href="<?= esc_url( get_the_permalink() ); ?>">
-                    <div class="caseStudy_card__image">
-                        <img src="<?= esc_url( $img ); ?>" alt="">
-                    </div>
-                    <div class="caseStudy_card__content">
-                        <div class="article-title mb-2">
-                            <?= esc_html( get_the_title() ); ?>
-                        </div>
-                    </div>
-                </a>
-            </div>
+			<div class="<?= esc_attr( $catclass ); ?> caseStudy" data-aos="fade" data-aos-delay="<?= esc_attr( $d ); ?>">
+				<a class="caseStudy_card" href="<?= esc_url( get_the_permalink() ); ?>">
+					<div class="caseStudy_card__image">
+						<img src="<?= esc_url( $img ); ?>" alt="">
+					</div>
+					<div class="caseStudy_card__content">
+						<div class="article-title mb-2">
+							<?= esc_html( get_the_title() ); ?>
+						</div>
+					</div>
+				</a>
+			</div>
 				<?php
 				$d += 50;
 			}
 			?>
-        </div>
-        <?= numeric_posts_nav(); ?>
-    </div>
-    <?php
-    require get_stylesheet_directory() . '/blocks/cb-cta.php';
-    ?>
+		</div>
+		<?= numeric_posts_nav(); ?>
+	</div>
+	<?php
+	require get_stylesheet_directory() . '/blocks/cb-cta.php';
+	// pushthrough block — rendered with variables so it can be called from the template.
+	$pushthrough = array(
+		'variant'     => 'slim',
+		'title'       => 'Not sure what your garden room would cost?',
+		'content'     => 'Configure the size, cladding and finish online and get an indicative price in minutes.',
+		'link'        => array(
+			'url'    => site_url( '/configurator/' ),
+			'title'  => 'Try the configurator',
+			'target' => '',
+		),
+		'stat_number' => '2,500+',
+		'stat_strap'  => 'Rooms built',
+	);
+
+	// Include the block template which accepts a $pushthrough array.
+	require locate_template( 'blocks/cb-pushthrough.php' );
+	echo '<div class="pb-5"></div>';
+	?>
 </main>
 <?php
 get_footer();
