@@ -7,14 +7,40 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$variant        = get_field( 'variant' ) ? get_field( 'variant' ) : 'full';
-$title          = get_field( 'title' );
-$content        = get_field( 'content' );
-$link           = get_field( 'link' );
-$image          = get_field( 'image' );
-$button_subtext = get_field( 'button_subtext' );
-$stat_number    = get_field( 'stat_number' );
-$stat_strap     = get_field( 'stat_strap' );
+// Allow overriding fields by passing an array into this template. Useful when calling from page.php.
+// Provide an array named $pushthrough or $args with any of the keys below to override ACF values.
+$defaults = array(
+	'variant'        => 'full',
+	'title'          => '',
+	'content'        => '',
+	'link'           => null,
+	'image'          => null,
+	'button_subtext' => '',
+	'stat_number'    => '',
+	'stat_strap'     => '',
+);
+
+$input = null;
+if ( isset( $pushthrough ) && is_array( $pushthrough ) ) {
+	$input = $pushthrough;
+} elseif ( isset( $args ) && is_array( $args ) ) {
+	$input = $args;
+}
+
+if ( is_array( $input ) ) {
+	extract( wp_parse_args( $input, $defaults ), EXTR_OVERWRITE );
+	// Now $variant, $title, $content, $link, $image, $button_subtext, $stat_number, $stat_strap are available
+} else {
+	// Fallback to ACF fields when no override provided
+	$variant        = get_field( 'variant' ) ? get_field( 'variant' ) : 'full';
+	$title          = get_field( 'title' );
+	$content        = get_field( 'content' );
+	$link           = get_field( 'link' );
+	$image          = get_field( 'image' );
+	$button_subtext = get_field( 'button_subtext' );
+	$stat_number    = get_field( 'stat_number' );
+	$stat_strap     = get_field( 'stat_strap' );
+}
 
 ?>
 <section class="cb-pushthrough cb-pushthrough--<?= esc_attr( $variant ); ?>">
@@ -37,7 +63,7 @@ $stat_strap     = get_field( 'stat_strap' );
 							<img class="cb-pushthrough__image" src="<?= esc_url( $image['url'] ); ?>" alt="<?= esc_attr( $image['alt'] ); ?>">
 							<?php if ( $link ) : ?>
 								<div class="cb-pushthrough__cta">
-									<a href="<?= esc_url( $link['url'] ); ?>" class="btn btn-primary cb-pushthrough__button"<?= $link['target'] ? ' target="_blank"' : ''; ?>>
+									<a href="<?= esc_url( $link['url'] ); ?>" class="btn btn-primary cb-pushthrough__button"<?= ! empty( $link['target'] ) ? ' target="_blank"' : ''; ?>>
 										<?= esc_html( $link['title'] ); ?> <span class="cb-pushthrough__arrow" aria-hidden="true">&rarr;</span>
 									</a>
 									<?php if ( $button_subtext ) : ?>
@@ -72,7 +98,7 @@ $stat_strap     = get_field( 'stat_strap' );
 					</div>
 				<?php endif; ?>
 				<?php if ( $link ) : ?>
-					<a href="<?= esc_url( $link['url'] ); ?>" class="btn btn-primary cb-pushthrough__button"<?= $link['target'] ? ' target="_blank"' : ''; ?>>
+					<a href="<?= esc_url( $link['url'] ); ?>" class="btn btn-primary cb-pushthrough__button"<?= ! empty( $link['target'] ) ? ' target="_blank"' : ''; ?>>
 						<?= esc_html( $link['title'] ); ?> <span class="cb-pushthrough__arrow" aria-hidden="true">&rarr;</span>
 					</a>
 				<?php endif; ?>
