@@ -14,7 +14,7 @@ get_header();
 	the_post();
 	the_content();
 
-	if ( is_front_page() ) {
+	if ( !is_front_page() ) {
 		// pushthrough block — rendered with variables so it can be called from the template.
 		$pushthrough = array(
 			'variant' => 'slim',
@@ -31,6 +31,7 @@ get_header();
 
 		// Include the block template which accepts a $pushthrough array.
 		include locate_template( 'blocks/cb-pushthrough.php' );
+		echo '<div class="pb-5"></div>';
 	}
 	?>
 </main>
