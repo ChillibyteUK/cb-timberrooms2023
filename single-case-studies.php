@@ -191,6 +191,8 @@ foreach ( parse_blocks( get_the_content() ) as $b ) {
 				</section>
 			</div>
 		</div>
+	</div>
+	<div class="container py-5">
 		<?php
 		// pushthrough block — rendered with variables so it can be called from the template.
 		$pushthrough = array(
@@ -207,8 +209,7 @@ foreach ( parse_blocks( get_the_content() ) as $b ) {
 		);
 
 		// Include the block template which accepts a $pushthrough array.
-		include locate_template( 'blocks/cb-pushthrough.php' );
-		echo '<div class="pb-5"></div>';
+		require locate_template( 'blocks/cb-pushthrough.php' );
 		?>
 	</div>
 </main>
