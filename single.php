@@ -52,7 +52,7 @@ $img = get_the_post_thumbnail_url( get_the_ID(), 'full' );
 			while ( $r->have_posts() ) {
 				$r->the_post();
 				?>
-				<a class="blog_card" href="<?= esc_url( get_the_permalink() ); ?>">
+				<a class="blog_card mb-3" href="<?= esc_url( get_the_permalink() ); ?>">
 					<div class="blog_card__image-wrap">
 						<img src="<?= esc_url( get_the_post_thumbnail_url( get_the_ID(), 'large' ) ); ?>" alt="" class="blog_card__image">
 					</div>
