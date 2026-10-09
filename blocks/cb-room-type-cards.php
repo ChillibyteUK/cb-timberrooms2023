@@ -52,6 +52,10 @@ if ( empty( $rooms ) ) {
 					$img    = get_the_post_thumbnail_url( $room->ID, 'large' );
 					$ctitle = get_the_title( $room->ID );
 					$url    = get_permalink( $room->ID );
+					// Skip any room pages that are temporary drafts or test pages named with "-temp" in the URL.
+					if ( preg_match( '/-temp/', $url ) ) {
+						continue;
+					}
 					?>
 				<div class="swiper-slide room-type-cards__slide">
 					<a href="<?= esc_url( $url ); ?>" class="room-type-cards__card">
