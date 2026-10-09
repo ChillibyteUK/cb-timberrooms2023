@@ -201,7 +201,7 @@ foreach ( parse_blocks( get_the_content() ) as $b ) {
 		'link'        => array(
 			'url'    => site_url( '/configurator/' ),
 			'title'  => 'Try the configurator',
-			'target' => '',	
+			'target' => '',
 		),
 		'stat_number' => '2,500+',
 		'stat_strap'  => 'Rooms built',

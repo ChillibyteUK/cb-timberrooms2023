@@ -3106,31 +3106,31 @@ body .gform_wrapper .gform_footer .input-group-sm > button,
   opacity: 0.65;
 }
 
-.btn-primary, body .gform_wrapper .gform_footer button, .btn-landing {
+.btn-primary, body .gform_wrapper .gform_footer button, .btn-golf, .btn-landing {
   color: #fff;
   background-color: hsl(0, 0%, 20%);
   border-color: hsl(0, 0%, 20%);
 }
-.btn-primary:hover, body .gform_wrapper .gform_footer button:hover, .btn-landing:hover {
+.btn-primary:hover, body .gform_wrapper .gform_footer button:hover, .btn-golf:hover, .btn-landing:hover {
   color: #fff;
   background-color: rgb(17%, 17%, 17%);
   border-color: rgb(16%, 16%, 16%);
 }
-.btn-check:focus + .btn-primary, body .gform_wrapper .gform_footer .btn-check:focus + button, .btn-check:focus + .btn-landing, .btn-primary:focus, body .gform_wrapper .gform_footer button:focus, .btn-landing:focus {
+.btn-check:focus + .btn-primary, body .gform_wrapper .gform_footer .btn-check:focus + button, .btn-check:focus + .btn-golf, .btn-check:focus + .btn-landing, .btn-primary:focus, body .gform_wrapper .gform_footer button:focus, .btn-golf:focus, .btn-landing:focus {
   color: #fff;
   background-color: rgb(17%, 17%, 17%);
   border-color: rgb(16%, 16%, 16%);
   box-shadow: 0 0 0 0.25rem rgba(32%, 32%, 32%, 0.5);
 }
-.btn-check:checked + .btn-primary, body .gform_wrapper .gform_footer .btn-check:checked + button, .btn-check:checked + .btn-landing, .btn-check:active + .btn-primary, body .gform_wrapper .gform_footer .btn-check:active + button, .btn-check:active + .btn-landing, .btn-primary:active, body .gform_wrapper .gform_footer button:active, .btn-landing:active, .btn-primary.active, body .gform_wrapper .gform_footer button.active, .active.btn-landing, .show > .btn-primary.dropdown-toggle, body .gform_wrapper .gform_footer .show > button.dropdown-toggle, .show > .dropdown-toggle.btn-landing {
+.btn-check:checked + .btn-primary, body .gform_wrapper .gform_footer .btn-check:checked + button, .btn-check:checked + .btn-golf, .btn-check:checked + .btn-landing, .btn-check:active + .btn-primary, body .gform_wrapper .gform_footer .btn-check:active + button, .btn-check:active + .btn-golf, .btn-check:active + .btn-landing, .btn-primary:active, body .gform_wrapper .gform_footer button:active, .btn-golf:active, .btn-landing:active, .btn-primary.active, body .gform_wrapper .gform_footer button.active, .active.btn-golf, .active.btn-landing, .show > .btn-primary.dropdown-toggle, body .gform_wrapper .gform_footer .show > button.dropdown-toggle, .show > .dropdown-toggle.btn-golf, .show > .dropdown-toggle.btn-landing {
   color: #fff;
   background-color: rgb(16%, 16%, 16%);
   border-color: rgb(15%, 15%, 15%);
 }
-.btn-check:checked + .btn-primary:focus, body .gform_wrapper .gform_footer .btn-check:checked + button:focus, .btn-check:checked + .btn-landing:focus, .btn-check:active + .btn-primary:focus, body .gform_wrapper .gform_footer .btn-check:active + button:focus, .btn-check:active + .btn-landing:focus, .btn-primary:active:focus, body .gform_wrapper .gform_footer button:active:focus, .btn-landing:active:focus, .btn-primary.active:focus, body .gform_wrapper .gform_footer button.active:focus, .active.btn-landing:focus, .show > .btn-primary.dropdown-toggle:focus, body .gform_wrapper .gform_footer .show > button.dropdown-toggle:focus, .show > .dropdown-toggle.btn-landing:focus {
+.btn-check:checked + .btn-primary:focus, body .gform_wrapper .gform_footer .btn-check:checked + button:focus, .btn-check:checked + .btn-golf:focus, .btn-check:checked + .btn-landing:focus, .btn-check:active + .btn-primary:focus, body .gform_wrapper .gform_footer .btn-check:active + button:focus, .btn-check:active + .btn-golf:focus, .btn-check:active + .btn-landing:focus, .btn-primary:active:focus, body .gform_wrapper .gform_footer button:active:focus, .btn-golf:active:focus, .btn-landing:active:focus, .btn-primary.active:focus, body .gform_wrapper .gform_footer button.active:focus, .active.btn-golf:focus, .active.btn-landing:focus, .show > .btn-primary.dropdown-toggle:focus, body .gform_wrapper .gform_footer .show > button.dropdown-toggle:focus, .show > .dropdown-toggle.btn-golf:focus, .show > .dropdown-toggle.btn-landing:focus {
   box-shadow: 0 0 0 0.25rem rgba(32%, 32%, 32%, 0.5);
 }
-.btn-primary:disabled, body .gform_wrapper .gform_footer button:disabled, .btn-landing:disabled, .btn-primary.disabled, body .gform_wrapper .gform_footer button.disabled, .disabled.btn-landing {
+.btn-primary:disabled, body .gform_wrapper .gform_footer button:disabled, .btn-golf:disabled, .btn-landing:disabled, .btn-primary.disabled, body .gform_wrapper .gform_footer button.disabled, .disabled.btn-golf, .disabled.btn-landing {
   color: #fff;
   background-color: hsl(0, 0%, 20%);
   border-color: hsl(0, 0%, 20%);
@@ -21578,7 +21578,7 @@ footer .container-xl {
   min-width: 8.125rem;
 }
 
-.btn-primary, body .gform_wrapper .gform_footer button, .btn-landing,
+.btn-primary, body .gform_wrapper .gform_footer button, .btn-golf, .btn-landing,
 .btn--accent {
   color: black;
   text-transform: uppercase;
@@ -21587,7 +21587,7 @@ footer .container-xl {
   font-size: 0.889rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.btn-primary:hover, body .gform_wrapper .gform_footer button:hover, .btn-landing:hover,
+.btn-primary:hover, body .gform_wrapper .gform_footer button:hover, .btn-golf:hover, .btn-landing:hover,
 .btn--accent:hover {
   background: color-mix(in srgb, var(--col-highlight-400) 85%, white);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -21632,6 +21632,14 @@ footer .container-xl {
     display: grid;
     place-content: center;
   }
+}
+
+.btn-golf {
+  background-color: var(--col-golf-400);
+}
+.btn-golf:hover {
+  background: color-mix(in srgb, var(--col-golf-400) 85%, white);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .grid_item a {
@@ -23467,6 +23475,111 @@ input[type=radio]:focus-visible {
 }
 .single-case-studies .cb-pushthrough.cb-pushthrough--slim {
   margin-block: 2rem;
+}
+
+.cb-golf-pushthrough__panel {
+  border-radius: var(--border1);
+  overflow: hidden;
+}
+.cb-golf-pushthrough__panel {
+  background-color: var(--col-primary-900);
+  background-image: repeating-linear-gradient(90deg, hsla(0, 0%, 100%, 0.05) 0px, hsla(0, 0%, 100%, 0.05) 1px, transparent 1px, transparent 10px);
+  color: var(--col-white);
+  padding-inline: 0;
+}
+.cb-golf-pushthrough__content {
+  padding: 3rem 1.5rem;
+}
+@media (min-width: 992px) {
+  .cb-golf-pushthrough__content {
+    padding: 3rem clamp(1.5rem, 5vw, 4rem);
+  }
+}
+.cb-golf-pushthrough__content h2, .cb-golf-pushthrough__content .h2 {
+  font-size: var(--fs-700);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-800);
+  margin-bottom: 1rem;
+}
+.cb-golf-pushthrough__content p {
+  color: var(--col-white-070);
+  font-size: var(--fs-450);
+  margin-bottom: 0;
+}
+.cb-golf-pushthrough__image-container {
+  position: relative;
+  min-height: 260px;
+  display: grid;
+  place-content: center;
+}
+@media (min-width: 992px) {
+  .cb-golf-pushthrough__image-container {
+    min-height: 320px;
+  }
+}
+.cb-golf-pushthrough__image-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: linear-gradient(to right, var(--col-primary-900) 0%, transparent 100%);
+  pointer-events: none;
+}
+.cb-golf-pushthrough__image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.cb-golf-pushthrough__cta {
+  z-index: 2;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+.cb-golf-pushthrough__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  padding: 1rem 2rem;
+}
+.cb-golf-pushthrough__button:hover .cb-pushthrough__arrow {
+  transform: translateX(3px);
+}
+.cb-golf-pushthrough__arrow {
+  display: inline-block;
+  transition: transform var(--transition);
+}
+.cb-golf-pushthrough__subtext {
+  margin: 0.5rem 0 0;
+  font-size: var(--fs-200);
+  color: var(--col-white);
+  font-weight: var(--fw-600);
+}
+.cb-golf-pushthrough__stat {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-left: 2rem;
+  border-left: 1px solid var(--col-grey-200);
+}
+.cb-golf-pushthrough__stat-number {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-900);
+}
+.cb-golf-pushthrough__stat-strap {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-20);
+  color: hsla(0, 0%, 20%, 0.6);
 }
 
 .case_study {

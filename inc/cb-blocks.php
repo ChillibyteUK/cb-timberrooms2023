@@ -17,6 +17,24 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'cb_golf_pushthrough',
+				'title'           => __( 'CB Golf Pushthrough' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/cb-golf-pushthrough.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+          
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'cb_pushthrough',
 				'title'           => __( 'CB Pushthrough' ),
 				'category'        => 'layout',

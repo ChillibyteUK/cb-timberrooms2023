@@ -29,9 +29,9 @@ if ( isset( $pushthrough ) && is_array( $pushthrough ) ) {
 
 if ( is_array( $input ) ) {
 	extract( wp_parse_args( $input, $defaults ), EXTR_OVERWRITE );
-	// Now $variant, $title, $content, $link, $image, $button_subtext, $stat_number, $stat_strap, $class, $style are available
+	// Now $variant, $title, $content, $link, $image, $button_subtext, $stat_number, $stat_strap, $class, $style are available.
 } else {
-	// Fallback to ACF fields when no override provided
+	// Fallback to ACF fields when no override provided.
 	$variant        = get_field( 'variant' ) ? get_field( 'variant' ) : 'full';
 	$title          = get_field( 'title' );
 	$content        = get_field( 'content' );
