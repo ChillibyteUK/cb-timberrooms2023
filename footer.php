@@ -5,7 +5,7 @@ defined('ABSPATH') || exit;
 <div id="footer-top"></div>
 <footer class="footer pt-5">
     <div class="container-xl pb-4">
-        <div class="mb-4 text-center text-md-start">
+        <div class="mb-4 text-center">
             <img src="<?=get_stylesheet_directory_uri()?>/img/timberrooms-logo--wo.svg"
                 class="footer__logo" alt="" width=300 height=60>
         </div>
