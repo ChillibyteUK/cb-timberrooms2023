@@ -10,12 +10,6 @@ defined('ABSPATH') || exit;
                 <div class="mt-2 mb-4 text-center text-md-start">
                     <img src="<?=get_stylesheet_directory_uri()?>/img/timberrooms-logo--wo.svg"
                         class="footer__logo" alt="" width=300 height=60>
-                    <div class="social-links">
-                        <?=do_shortcode('[social_fb_icon]')?>
-                        <?=do_shortcode('[social_ig_icon]')?>
-                        <?=do_shortcode('[social_tw_icon]')?>
-                        <?=do_shortcode('[social_yt_icon]')?>
-                    </div>
                 </div>
                 <div class="footer__heading">Contact Us</div>
                 <ul class="fa-ul mb-4">
@@ -29,8 +23,14 @@ defined('ABSPATH') || exit;
                             href="<?=get_field('gmb_link','options')?>" target="_blank"><?=get_field('contact_address', 'options')?></a>
                     </li>
                 </ul>
+                <div class="social-links">
+                    <?=do_shortcode('[social_fb_icon]')?>
+                    <?=do_shortcode('[social_ig_icon]')?>
+                    <?=do_shortcode('[social_tw_icon]')?>
+                    <?=do_shortcode('[social_yt_icon]')?>
+                </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6"><style>@media (min-width:992px) { #menu-footer-menu-1-locations{columns:2;} }</style>
                 <div class="footer__heading">Room Types</div>
                 <?=wp_nav_menu(array('theme_location' => 'footer_menu1', 'class' => 'cols-md-2'))?>
             </div>
