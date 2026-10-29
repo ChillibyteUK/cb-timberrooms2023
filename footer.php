@@ -17,8 +17,6 @@ defined('ABSPATH') || exit;
                         <?=do_shortcode('[social_yt_icon]')?>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
                 <div class="footer__heading">Contact Us</div>
                 <ul class="fa-ul mb-4">
                     <li><span class="fa-li"><i class="fa-solid fa-phone"></i></span> <a
@@ -32,9 +30,9 @@ defined('ABSPATH') || exit;
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <div class="footer__heading">Room Types</div>
-                <?=wp_nav_menu(array('theme_location' => 'footer_menu1'))?>
+                <?=wp_nav_menu(array('theme_location' => 'footer_menu1', 'class' => 'cols-md-2'))?>
             </div>
             <div class="col-md-3">
                 <div class="footer__heading">Navigation</div>
