@@ -5,12 +5,12 @@ defined('ABSPATH') || exit;
 <div id="footer-top"></div>
 <footer class="footer pt-5">
     <div class="container-xl pb-4">
+        <div class="mb-4 text-center text-md-start">
+            <img src="<?=get_stylesheet_directory_uri()?>/img/timberrooms-logo--wo.svg"
+                class="footer__logo" alt="" width=300 height=60>
+        </div>
         <div class="row">
             <div class="col-md-3">
-                <div class="mt-2 mb-4 text-center text-md-start">
-                    <img src="<?=get_stylesheet_directory_uri()?>/img/timberrooms-logo--wo.svg"
-                        class="footer__logo" alt="" width=300 height=60>
-                </div>
                 <div class="footer__heading">Contact Us</div>
                 <ul class="fa-ul mb-4">
                     <li><span class="fa-li"><i class="fa-solid fa-phone"></i></span> <a
